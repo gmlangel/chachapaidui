@@ -85,6 +85,8 @@
 		4EC8880A1F6A2C7A00840757 /* GMLExtension_IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC888011F6A2C7A00840757 /* GMLExtension_IOS.m */; };
 		4EC8880B1F6A2C7A00840757 /* GMLProxy_IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC888041F6A2C7A00840757 /* GMLProxy_IOS.m */; };
 		4EC8880C1F6A2C7A00840757 /* GMLProxyFactory_IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC888061F6A2C7A00840757 /* GMLProxyFactory_IOS.m */; };
+		4EC8880E1F6A345C00840757 /* GMLSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8880D1F6A345C00840757 /* GMLSocketManager.swift */; };
+		4EC8880F1F6A345C00840757 /* GMLSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8880D1F6A345C00840757 /* GMLSocketManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -158,8 +160,6 @@
 		4EC887CA1F6A23B700840757 /* GMLProxyFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLProxyFactory.h; sourceTree = "<group>"; };
 		4EC887CB1F6A23B700840757 /* GMLProxyFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLProxyFactory.m; sourceTree = "<group>"; };
 		4EC887CC1F6A23B700840757 /* GMLViewProtocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLViewProtocal.h; sourceTree = "<group>"; };
-		4EC887F91F6A272500840757 /* MacHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacHeader.h; sourceTree = "<group>"; };
-		4EC887FA1F6A278800840757 /* IOSHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSHeader.h; sourceTree = "<group>"; };
 		4EC887FC1F6A2C7A00840757 /* GMLCoreDispatcher_IOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLCoreDispatcher_IOS.h; sourceTree = "<group>"; };
 		4EC887FD1F6A2C7A00840757 /* GMLCoreDispatcher_IOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLCoreDispatcher_IOS.m; sourceTree = "<group>"; };
 		4EC887FE1F6A2C7A00840757 /* GMLEvent_IOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLEvent_IOS.h; sourceTree = "<group>"; };
@@ -172,6 +172,7 @@
 		4EC888051F6A2C7A00840757 /* GMLProxyFactory_IOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLProxyFactory_IOS.h; sourceTree = "<group>"; };
 		4EC888061F6A2C7A00840757 /* GMLProxyFactory_IOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLProxyFactory_IOS.m; sourceTree = "<group>"; };
 		4EC888071F6A2C7A00840757 /* GMLViewProtocal_IOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLViewProtocal_IOS.h; sourceTree = "<group>"; };
+		4EC8880D1F6A345C00840757 /* GMLSocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLSocketManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,7 +227,6 @@
 				4EC887061F6A1DD200840757 /* Assets.xcassets */,
 				4EC887081F6A1DD200840757 /* LaunchScreen.storyboard */,
 				4EC8870B1F6A1DD200840757 /* Info.plist */,
-				4EC887FA1F6A278800840757 /* IOSHeader.h */,
 			);
 			path = chacha_IOS;
 			sourceTree = "<group>";
@@ -241,7 +241,6 @@
 				4EC887271F6A1EEC00840757 /* Main.storyboard */,
 				4EC8872A1F6A1EEC00840757 /* Info.plist */,
 				4EC8872E1F6A1F2300840757 /* BaseWindow.swift */,
-				4EC887F91F6A272500840757 /* MacHeader.h */,
 			);
 			path = chacha_Mac;
 			sourceTree = "<group>";
@@ -269,6 +268,7 @@
 				4EC887331F6A202500840757 /* AsyncSocket.m */,
 				4EC887341F6A202500840757 /* AsyncUdpSocket.h */,
 				4EC887351F6A202500840757 /* AsyncUdpSocket.m */,
+				4EC8880D1F6A345C00840757 /* GMLSocketManager.swift */,
 			);
 			path = AsyncSocket;
 			sourceTree = "<group>";
@@ -519,6 +519,7 @@
 				4EC8879F1F6A202500840757 /* ioapi.c in Sources */,
 				4EC887B51F6A202500840757 /* ZipArchive.mm in Sources */,
 				4EC887AF1F6A202500840757 /* SelectRoleScene.swift in Sources */,
+				4EC8880E1F6A345C00840757 /* GMLSocketManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,6 +560,7 @@
 				4EC887721F6A202500840757 /* AsyncSocket.m in Sources */,
 				4EC887A41F6A202500840757 /* unzip.c in Sources */,
 				4EC8878C1F6A202500840757 /* GMLResourceManager.swift in Sources */,
+				4EC8880F1F6A345C00840757 /* GMLSocketManager.swift in Sources */,
 				4EC8877C1F6A202500840757 /* GMLContactTestBitMaskEnum.swift in Sources */,
 				4EC887821F6A202500840757 /* GMLExtensions.m in Sources */,
 			);
