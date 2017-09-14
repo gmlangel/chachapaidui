@@ -1,0 +1,783 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4EC887001F6A1DD100840757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC886FF1F6A1DD100840757 /* AppDelegate.swift */; };
+		4EC887021F6A1DD100840757 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887011F6A1DD100840757 /* ViewController.swift */; };
+		4EC887051F6A1DD200840757 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EC887031F6A1DD100840757 /* Main.storyboard */; };
+		4EC887071F6A1DD200840757 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC887061F6A1DD200840757 /* Assets.xcassets */; };
+		4EC8870A1F6A1DD200840757 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EC887081F6A1DD200840757 /* LaunchScreen.storyboard */; };
+		4EC887221F6A1EEC00840757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887211F6A1EEC00840757 /* AppDelegate.swift */; };
+		4EC887241F6A1EEC00840757 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887231F6A1EEC00840757 /* ViewController.swift */; };
+		4EC887261F6A1EEC00840757 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC887251F6A1EEC00840757 /* Assets.xcassets */; };
+		4EC887291F6A1EEC00840757 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EC887271F6A1EEC00840757 /* Main.storyboard */; };
+		4EC8872F1F6A1F2300840757 /* BaseWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8872E1F6A1F2300840757 /* BaseWindow.swift */; };
+		4EC887711F6A202500840757 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887331F6A202500840757 /* AsyncSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4EC887721F6A202500840757 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887331F6A202500840757 /* AsyncSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4EC887731F6A202500840757 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887351F6A202500840757 /* AsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4EC887741F6A202500840757 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887351F6A202500840757 /* AsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4EC887791F6A202500840757 /* GMLAniType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8873C1F6A202500840757 /* GMLAniType.swift */; };
+		4EC8877A1F6A202500840757 /* GMLAniType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8873C1F6A202500840757 /* GMLAniType.swift */; };
+		4EC8877B1F6A202500840757 /* GMLContactTestBitMaskEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8873D1F6A202500840757 /* GMLContactTestBitMaskEnum.swift */; };
+		4EC8877C1F6A202500840757 /* GMLContactTestBitMaskEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8873D1F6A202500840757 /* GMLContactTestBitMaskEnum.swift */; };
+		4EC8877D1F6A202500840757 /* GMLDynamicScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8873E1F6A202500840757 /* GMLDynamicScene.swift */; };
+		4EC8877E1F6A202500840757 /* GMLDynamicScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8873E1F6A202500840757 /* GMLDynamicScene.swift */; };
+		4EC8877F1F6A202500840757 /* GMLDynamicSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8873F1F6A202500840757 /* GMLDynamicSceneFactory.swift */; };
+		4EC887801F6A202500840757 /* GMLDynamicSceneFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8873F1F6A202500840757 /* GMLDynamicSceneFactory.swift */; };
+		4EC887811F6A202500840757 /* GMLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887411F6A202500840757 /* GMLExtensions.m */; };
+		4EC887821F6A202500840757 /* GMLExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887411F6A202500840757 /* GMLExtensions.m */; };
+		4EC887831F6A202500840757 /* GMLGameConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887431F6A202500840757 /* GMLGameConfig.m */; };
+		4EC887841F6A202500840757 /* GMLGameConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887431F6A202500840757 /* GMLGameConfig.m */; };
+		4EC887851F6A202500840757 /* GMLLogCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887441F6A202500840757 /* GMLLogCenter.swift */; };
+		4EC887861F6A202500840757 /* GMLLogCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887441F6A202500840757 /* GMLLogCenter.swift */; };
+		4EC887871F6A202500840757 /* GMLMonster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887451F6A202500840757 /* GMLMonster.swift */; };
+		4EC887881F6A202500840757 /* GMLMonster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887451F6A202500840757 /* GMLMonster.swift */; };
+		4EC887891F6A202500840757 /* GMLMouseEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887471F6A202500840757 /* GMLMouseEvent.m */; };
+		4EC8878A1F6A202500840757 /* GMLMouseEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887471F6A202500840757 /* GMLMouseEvent.m */; };
+		4EC8878B1F6A202500840757 /* GMLResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887481F6A202500840757 /* GMLResourceManager.swift */; };
+		4EC8878C1F6A202500840757 /* GMLResourceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887481F6A202500840757 /* GMLResourceManager.swift */; };
+		4EC8878D1F6A202500840757 /* GMLScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887491F6A202500840757 /* GMLScene.swift */; };
+		4EC8878E1F6A202500840757 /* GMLScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887491F6A202500840757 /* GMLScene.swift */; };
+		4EC8878F1F6A202500840757 /* MonsterAlignType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8874A1F6A202500840757 /* MonsterAlignType.swift */; };
+		4EC887901F6A202500840757 /* MonsterAlignType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8874A1F6A202500840757 /* MonsterAlignType.swift */; };
+		4EC8879D1F6A202500840757 /* GMLMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8875A1F6A202500840757 /* GMLMain.swift */; };
+		4EC8879E1F6A202500840757 /* GMLMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8875A1F6A202500840757 /* GMLMain.swift */; };
+		4EC8879F1F6A202500840757 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8875D1F6A202500840757 /* ioapi.c */; };
+		4EC887A01F6A202500840757 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8875D1F6A202500840757 /* ioapi.c */; };
+		4EC887A11F6A202500840757 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8875F1F6A202500840757 /* mztools.c */; };
+		4EC887A21F6A202500840757 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8875F1F6A202500840757 /* mztools.c */; };
+		4EC887A31F6A202500840757 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887611F6A202500840757 /* unzip.c */; };
+		4EC887A41F6A202500840757 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887611F6A202500840757 /* unzip.c */; };
+		4EC887A51F6A202500840757 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887631F6A202500840757 /* zip.c */; };
+		4EC887A61F6A202500840757 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887631F6A202500840757 /* zip.c */; };
+		4EC887A71F6A202500840757 /* GuideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887661F6A202500840757 /* GuideScene.swift */; };
+		4EC887A81F6A202500840757 /* GuideScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887661F6A202500840757 /* GuideScene.swift */; };
+		4EC887A91F6A202500840757 /* LoginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887671F6A202500840757 /* LoginScene.swift */; };
+		4EC887AA1F6A202500840757 /* LoginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887671F6A202500840757 /* LoginScene.swift */; };
+		4EC887AB1F6A202500840757 /* LogoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887681F6A202500840757 /* LogoScene.swift */; };
+		4EC887AC1F6A202500840757 /* LogoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887681F6A202500840757 /* LogoScene.swift */; };
+		4EC887AD1F6A202500840757 /* PreloadScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887691F6A202500840757 /* PreloadScene.swift */; };
+		4EC887AE1F6A202500840757 /* PreloadScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887691F6A202500840757 /* PreloadScene.swift */; };
+		4EC887AF1F6A202500840757 /* SelectRoleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8876A1F6A202500840757 /* SelectRoleScene.swift */; };
+		4EC887B01F6A202500840757 /* SelectRoleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8876A1F6A202500840757 /* SelectRoleScene.swift */; };
+		4EC887B11F6A202500840757 /* GMLTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8876D1F6A202500840757 /* GMLTool.m */; };
+		4EC887B21F6A202500840757 /* GMLTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8876D1F6A202500840757 /* GMLTool.m */; };
+		4EC887B31F6A202500840757 /* HeartbeatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8876E1F6A202500840757 /* HeartbeatManager.swift */; };
+		4EC887B41F6A202500840757 /* HeartbeatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8876E1F6A202500840757 /* HeartbeatManager.swift */; };
+		4EC887B51F6A202500840757 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887701F6A202500840757 /* ZipArchive.mm */; };
+		4EC887B61F6A202500840757 /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887701F6A202500840757 /* ZipArchive.mm */; };
+		4EC887B91F6A203F00840757 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC887B81F6A203F00840757 /* libz.tbd */; };
+		4EC887BB1F6A204800840757 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC887BA1F6A204800840757 /* libz.tbd */; };
+		4EC887BD1F6A20CF00840757 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC887BC1F6A20CF00840757 /* SpriteKit.framework */; };
+		4EC887BF1F6A20D900840757 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EC887BE1F6A20D900840757 /* SpriteKit.framework */; };
+		4EC887CD1F6A23B700840757 /* GMLCoreDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887C21F6A23B700840757 /* GMLCoreDispatcher.m */; };
+		4EC887CE1F6A23B700840757 /* GMLEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887C41F6A23B700840757 /* GMLEvent.m */; };
+		4EC887CF1F6A23B700840757 /* GMLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887C61F6A23B700840757 /* GMLExtension.m */; };
+		4EC887D01F6A23B700840757 /* GMLProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887C91F6A23B700840757 /* GMLProxy.m */; };
+		4EC887D11F6A23B700840757 /* GMLProxyFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887CB1F6A23B700840757 /* GMLProxyFactory.m */; };
+		4EC888081F6A2C7A00840757 /* GMLCoreDispatcher_IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887FD1F6A2C7A00840757 /* GMLCoreDispatcher_IOS.m */; };
+		4EC888091F6A2C7A00840757 /* GMLEvent_IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887FF1F6A2C7A00840757 /* GMLEvent_IOS.m */; };
+		4EC8880A1F6A2C7A00840757 /* GMLExtension_IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC888011F6A2C7A00840757 /* GMLExtension_IOS.m */; };
+		4EC8880B1F6A2C7A00840757 /* GMLProxy_IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC888041F6A2C7A00840757 /* GMLProxy_IOS.m */; };
+		4EC8880C1F6A2C7A00840757 /* GMLProxyFactory_IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC888061F6A2C7A00840757 /* GMLProxyFactory_IOS.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4EC886FD1F6A1DD100840757 /* chacha_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chacha_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EC886FF1F6A1DD100840757 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4EC887011F6A1DD100840757 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4EC887041F6A1DD100840757 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4EC887061F6A1DD200840757 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4EC887091F6A1DD200840757 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4EC8870B1F6A1DD200840757 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EC8871F1F6A1EEC00840757 /* chacha_Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chacha_Mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EC887211F6A1EEC00840757 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4EC887231F6A1EEC00840757 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4EC887251F6A1EEC00840757 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4EC887281F6A1EEC00840757 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4EC8872A1F6A1EEC00840757 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EC8872E1F6A1F2300840757 /* BaseWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWindow.swift; sourceTree = "<group>"; };
+		4EC887321F6A202500840757 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		4EC887331F6A202500840757 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		4EC887341F6A202500840757 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		4EC887351F6A202500840757 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		4EC8873A1F6A202500840757 /* currentHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = currentHeader.h; sourceTree = "<group>"; };
+		4EC8873C1F6A202500840757 /* GMLAniType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLAniType.swift; sourceTree = "<group>"; };
+		4EC8873D1F6A202500840757 /* GMLContactTestBitMaskEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLContactTestBitMaskEnum.swift; sourceTree = "<group>"; };
+		4EC8873E1F6A202500840757 /* GMLDynamicScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLDynamicScene.swift; sourceTree = "<group>"; };
+		4EC8873F1F6A202500840757 /* GMLDynamicSceneFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLDynamicSceneFactory.swift; sourceTree = "<group>"; };
+		4EC887401F6A202500840757 /* GMLExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLExtensions.h; sourceTree = "<group>"; };
+		4EC887411F6A202500840757 /* GMLExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLExtensions.m; sourceTree = "<group>"; };
+		4EC887421F6A202500840757 /* GMLGameConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLGameConfig.h; sourceTree = "<group>"; };
+		4EC887431F6A202500840757 /* GMLGameConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLGameConfig.m; sourceTree = "<group>"; };
+		4EC887441F6A202500840757 /* GMLLogCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLLogCenter.swift; sourceTree = "<group>"; };
+		4EC887451F6A202500840757 /* GMLMonster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLMonster.swift; sourceTree = "<group>"; };
+		4EC887461F6A202500840757 /* GMLMouseEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLMouseEvent.h; sourceTree = "<group>"; };
+		4EC887471F6A202500840757 /* GMLMouseEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLMouseEvent.m; sourceTree = "<group>"; };
+		4EC887481F6A202500840757 /* GMLResourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLResourceManager.swift; sourceTree = "<group>"; };
+		4EC887491F6A202500840757 /* GMLScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLScene.swift; sourceTree = "<group>"; };
+		4EC8874A1F6A202500840757 /* MonsterAlignType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterAlignType.swift; sourceTree = "<group>"; };
+		4EC8875A1F6A202500840757 /* GMLMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLMain.swift; sourceTree = "<group>"; };
+		4EC8875C1F6A202500840757 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
+		4EC8875D1F6A202500840757 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
+		4EC8875E1F6A202500840757 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
+		4EC8875F1F6A202500840757 /* mztools.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mztools.c; sourceTree = "<group>"; };
+		4EC887601F6A202500840757 /* mztools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mztools.h; sourceTree = "<group>"; };
+		4EC887611F6A202500840757 /* unzip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unzip.c; sourceTree = "<group>"; };
+		4EC887621F6A202500840757 /* unzip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unzip.h; sourceTree = "<group>"; };
+		4EC887631F6A202500840757 /* zip.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = zip.c; sourceTree = "<group>"; };
+		4EC887641F6A202500840757 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
+		4EC887661F6A202500840757 /* GuideScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuideScene.swift; sourceTree = "<group>"; };
+		4EC887671F6A202500840757 /* LoginScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScene.swift; sourceTree = "<group>"; };
+		4EC887681F6A202500840757 /* LogoScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoScene.swift; sourceTree = "<group>"; };
+		4EC887691F6A202500840757 /* PreloadScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreloadScene.swift; sourceTree = "<group>"; };
+		4EC8876A1F6A202500840757 /* SelectRoleScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectRoleScene.swift; sourceTree = "<group>"; };
+		4EC8876C1F6A202500840757 /* GMLTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLTool.h; sourceTree = "<group>"; };
+		4EC8876D1F6A202500840757 /* GMLTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLTool.m; sourceTree = "<group>"; };
+		4EC8876E1F6A202500840757 /* HeartbeatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartbeatManager.swift; sourceTree = "<group>"; };
+		4EC8876F1F6A202500840757 /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
+		4EC887701F6A202500840757 /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
+		4EC887B81F6A203F00840757 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
+		4EC887BA1F6A204800840757 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		4EC887BC1F6A20CF00840757 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
+		4EC887BE1F6A20D900840757 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.2.sdk/System/Library/Frameworks/SpriteKit.framework; sourceTree = DEVELOPER_DIR; };
+		4EC887C11F6A23B700840757 /* GMLCoreDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLCoreDispatcher.h; sourceTree = "<group>"; };
+		4EC887C21F6A23B700840757 /* GMLCoreDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLCoreDispatcher.m; sourceTree = "<group>"; };
+		4EC887C31F6A23B700840757 /* GMLEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLEvent.h; sourceTree = "<group>"; };
+		4EC887C41F6A23B700840757 /* GMLEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLEvent.m; sourceTree = "<group>"; };
+		4EC887C51F6A23B700840757 /* GMLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLExtension.h; sourceTree = "<group>"; };
+		4EC887C61F6A23B700840757 /* GMLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLExtension.m; sourceTree = "<group>"; };
+		4EC887C71F6A23B700840757 /* GMLKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLKit.h; sourceTree = "<group>"; };
+		4EC887C81F6A23B700840757 /* GMLProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLProxy.h; sourceTree = "<group>"; };
+		4EC887C91F6A23B700840757 /* GMLProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLProxy.m; sourceTree = "<group>"; };
+		4EC887CA1F6A23B700840757 /* GMLProxyFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLProxyFactory.h; sourceTree = "<group>"; };
+		4EC887CB1F6A23B700840757 /* GMLProxyFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLProxyFactory.m; sourceTree = "<group>"; };
+		4EC887CC1F6A23B700840757 /* GMLViewProtocal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLViewProtocal.h; sourceTree = "<group>"; };
+		4EC887F91F6A272500840757 /* MacHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacHeader.h; sourceTree = "<group>"; };
+		4EC887FA1F6A278800840757 /* IOSHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IOSHeader.h; sourceTree = "<group>"; };
+		4EC887FC1F6A2C7A00840757 /* GMLCoreDispatcher_IOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLCoreDispatcher_IOS.h; sourceTree = "<group>"; };
+		4EC887FD1F6A2C7A00840757 /* GMLCoreDispatcher_IOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLCoreDispatcher_IOS.m; sourceTree = "<group>"; };
+		4EC887FE1F6A2C7A00840757 /* GMLEvent_IOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLEvent_IOS.h; sourceTree = "<group>"; };
+		4EC887FF1F6A2C7A00840757 /* GMLEvent_IOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLEvent_IOS.m; sourceTree = "<group>"; };
+		4EC888001F6A2C7A00840757 /* GMLExtension_IOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLExtension_IOS.h; sourceTree = "<group>"; };
+		4EC888011F6A2C7A00840757 /* GMLExtension_IOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLExtension_IOS.m; sourceTree = "<group>"; };
+		4EC888021F6A2C7A00840757 /* GMLKit_IOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLKit_IOS.h; sourceTree = "<group>"; };
+		4EC888031F6A2C7A00840757 /* GMLProxy_IOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLProxy_IOS.h; sourceTree = "<group>"; };
+		4EC888041F6A2C7A00840757 /* GMLProxy_IOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLProxy_IOS.m; sourceTree = "<group>"; };
+		4EC888051F6A2C7A00840757 /* GMLProxyFactory_IOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLProxyFactory_IOS.h; sourceTree = "<group>"; };
+		4EC888061F6A2C7A00840757 /* GMLProxyFactory_IOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLProxyFactory_IOS.m; sourceTree = "<group>"; };
+		4EC888071F6A2C7A00840757 /* GMLViewProtocal_IOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLViewProtocal_IOS.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4EC886FA1F6A1DD100840757 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EC887BF1F6A20D900840757 /* SpriteKit.framework in Frameworks */,
+				4EC887B91F6A203F00840757 /* libz.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EC8871C1F6A1EEC00840757 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EC887BD1F6A20CF00840757 /* SpriteKit.framework in Frameworks */,
+				4EC887BB1F6A204800840757 /* libz.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4EC886DE1F6A1D1D00840757 = {
+			isa = PBXGroup;
+			children = (
+				4EC887301F6A202500840757 /* currentEngine */,
+				4EC886FE1F6A1DD100840757 /* chacha_IOS */,
+				4EC887201F6A1EEC00840757 /* chacha_Mac */,
+				4EC886E81F6A1D1D00840757 /* Products */,
+				4EC887B71F6A203E00840757 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4EC886E81F6A1D1D00840757 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4EC886FD1F6A1DD100840757 /* chacha_IOS.app */,
+				4EC8871F1F6A1EEC00840757 /* chacha_Mac.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4EC886FE1F6A1DD100840757 /* chacha_IOS */ = {
+			isa = PBXGroup;
+			children = (
+				4EC887FB1F6A2C7A00840757 /* GMLKit_IOS */,
+				4EC886FF1F6A1DD100840757 /* AppDelegate.swift */,
+				4EC887011F6A1DD100840757 /* ViewController.swift */,
+				4EC887031F6A1DD100840757 /* Main.storyboard */,
+				4EC887061F6A1DD200840757 /* Assets.xcassets */,
+				4EC887081F6A1DD200840757 /* LaunchScreen.storyboard */,
+				4EC8870B1F6A1DD200840757 /* Info.plist */,
+				4EC887FA1F6A278800840757 /* IOSHeader.h */,
+			);
+			path = chacha_IOS;
+			sourceTree = "<group>";
+		};
+		4EC887201F6A1EEC00840757 /* chacha_Mac */ = {
+			isa = PBXGroup;
+			children = (
+				4EC887C01F6A23B700840757 /* GMLKit */,
+				4EC887211F6A1EEC00840757 /* AppDelegate.swift */,
+				4EC887231F6A1EEC00840757 /* ViewController.swift */,
+				4EC887251F6A1EEC00840757 /* Assets.xcassets */,
+				4EC887271F6A1EEC00840757 /* Main.storyboard */,
+				4EC8872A1F6A1EEC00840757 /* Info.plist */,
+				4EC8872E1F6A1F2300840757 /* BaseWindow.swift */,
+				4EC887F91F6A272500840757 /* MacHeader.h */,
+			);
+			path = chacha_Mac;
+			sourceTree = "<group>";
+		};
+		4EC887301F6A202500840757 /* currentEngine */ = {
+			isa = PBXGroup;
+			children = (
+				4EC887311F6A202500840757 /* AsyncSocket */,
+				4EC8873A1F6A202500840757 /* currentHeader.h */,
+				4EC8873B1F6A202500840757 /* engineCore */,
+				4EC8875A1F6A202500840757 /* GMLMain.swift */,
+				4EC8875B1F6A202500840757 /* minizip */,
+				4EC887651F6A202500840757 /* scenes */,
+				4EC8876B1F6A202500840757 /* tools */,
+				4EC8876F1F6A202500840757 /* ZipArchive.h */,
+				4EC887701F6A202500840757 /* ZipArchive.mm */,
+			);
+			path = currentEngine;
+			sourceTree = "<group>";
+		};
+		4EC887311F6A202500840757 /* AsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				4EC887321F6A202500840757 /* AsyncSocket.h */,
+				4EC887331F6A202500840757 /* AsyncSocket.m */,
+				4EC887341F6A202500840757 /* AsyncUdpSocket.h */,
+				4EC887351F6A202500840757 /* AsyncUdpSocket.m */,
+			);
+			path = AsyncSocket;
+			sourceTree = "<group>";
+		};
+		4EC8873B1F6A202500840757 /* engineCore */ = {
+			isa = PBXGroup;
+			children = (
+				4EC8873C1F6A202500840757 /* GMLAniType.swift */,
+				4EC8873D1F6A202500840757 /* GMLContactTestBitMaskEnum.swift */,
+				4EC8873E1F6A202500840757 /* GMLDynamicScene.swift */,
+				4EC8873F1F6A202500840757 /* GMLDynamicSceneFactory.swift */,
+				4EC887401F6A202500840757 /* GMLExtensions.h */,
+				4EC887411F6A202500840757 /* GMLExtensions.m */,
+				4EC887421F6A202500840757 /* GMLGameConfig.h */,
+				4EC887431F6A202500840757 /* GMLGameConfig.m */,
+				4EC887441F6A202500840757 /* GMLLogCenter.swift */,
+				4EC887451F6A202500840757 /* GMLMonster.swift */,
+				4EC887461F6A202500840757 /* GMLMouseEvent.h */,
+				4EC887471F6A202500840757 /* GMLMouseEvent.m */,
+				4EC887481F6A202500840757 /* GMLResourceManager.swift */,
+				4EC887491F6A202500840757 /* GMLScene.swift */,
+				4EC8874A1F6A202500840757 /* MonsterAlignType.swift */,
+			);
+			path = engineCore;
+			sourceTree = "<group>";
+		};
+		4EC8875B1F6A202500840757 /* minizip */ = {
+			isa = PBXGroup;
+			children = (
+				4EC8875C1F6A202500840757 /* crypt.h */,
+				4EC8875D1F6A202500840757 /* ioapi.c */,
+				4EC8875E1F6A202500840757 /* ioapi.h */,
+				4EC8875F1F6A202500840757 /* mztools.c */,
+				4EC887601F6A202500840757 /* mztools.h */,
+				4EC887611F6A202500840757 /* unzip.c */,
+				4EC887621F6A202500840757 /* unzip.h */,
+				4EC887631F6A202500840757 /* zip.c */,
+				4EC887641F6A202500840757 /* zip.h */,
+			);
+			path = minizip;
+			sourceTree = "<group>";
+		};
+		4EC887651F6A202500840757 /* scenes */ = {
+			isa = PBXGroup;
+			children = (
+				4EC887661F6A202500840757 /* GuideScene.swift */,
+				4EC887671F6A202500840757 /* LoginScene.swift */,
+				4EC887681F6A202500840757 /* LogoScene.swift */,
+				4EC887691F6A202500840757 /* PreloadScene.swift */,
+				4EC8876A1F6A202500840757 /* SelectRoleScene.swift */,
+			);
+			path = scenes;
+			sourceTree = "<group>";
+		};
+		4EC8876B1F6A202500840757 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+				4EC8876C1F6A202500840757 /* GMLTool.h */,
+				4EC8876D1F6A202500840757 /* GMLTool.m */,
+				4EC8876E1F6A202500840757 /* HeartbeatManager.swift */,
+			);
+			path = tools;
+			sourceTree = "<group>";
+		};
+		4EC887B71F6A203E00840757 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4EC887BE1F6A20D900840757 /* SpriteKit.framework */,
+				4EC887BC1F6A20CF00840757 /* SpriteKit.framework */,
+				4EC887BA1F6A204800840757 /* libz.tbd */,
+				4EC887B81F6A203F00840757 /* libz.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4EC887C01F6A23B700840757 /* GMLKit */ = {
+			isa = PBXGroup;
+			children = (
+				4EC887C11F6A23B700840757 /* GMLCoreDispatcher.h */,
+				4EC887C21F6A23B700840757 /* GMLCoreDispatcher.m */,
+				4EC887C31F6A23B700840757 /* GMLEvent.h */,
+				4EC887C41F6A23B700840757 /* GMLEvent.m */,
+				4EC887C51F6A23B700840757 /* GMLExtension.h */,
+				4EC887C61F6A23B700840757 /* GMLExtension.m */,
+				4EC887C71F6A23B700840757 /* GMLKit.h */,
+				4EC887C81F6A23B700840757 /* GMLProxy.h */,
+				4EC887C91F6A23B700840757 /* GMLProxy.m */,
+				4EC887CA1F6A23B700840757 /* GMLProxyFactory.h */,
+				4EC887CB1F6A23B700840757 /* GMLProxyFactory.m */,
+				4EC887CC1F6A23B700840757 /* GMLViewProtocal.h */,
+			);
+			path = GMLKit;
+			sourceTree = "<group>";
+		};
+		4EC887FB1F6A2C7A00840757 /* GMLKit_IOS */ = {
+			isa = PBXGroup;
+			children = (
+				4EC887FC1F6A2C7A00840757 /* GMLCoreDispatcher_IOS.h */,
+				4EC887FD1F6A2C7A00840757 /* GMLCoreDispatcher_IOS.m */,
+				4EC887FE1F6A2C7A00840757 /* GMLEvent_IOS.h */,
+				4EC887FF1F6A2C7A00840757 /* GMLEvent_IOS.m */,
+				4EC888001F6A2C7A00840757 /* GMLExtension_IOS.h */,
+				4EC888011F6A2C7A00840757 /* GMLExtension_IOS.m */,
+				4EC888021F6A2C7A00840757 /* GMLKit_IOS.h */,
+				4EC888031F6A2C7A00840757 /* GMLProxy_IOS.h */,
+				4EC888041F6A2C7A00840757 /* GMLProxy_IOS.m */,
+				4EC888051F6A2C7A00840757 /* GMLProxyFactory_IOS.h */,
+				4EC888061F6A2C7A00840757 /* GMLProxyFactory_IOS.m */,
+				4EC888071F6A2C7A00840757 /* GMLViewProtocal_IOS.h */,
+			);
+			path = GMLKit_IOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4EC886FC1F6A1DD100840757 /* chacha_IOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EC8870C1F6A1DD200840757 /* Build configuration list for PBXNativeTarget "chacha_IOS" */;
+			buildPhases = (
+				4EC886F91F6A1DD100840757 /* Sources */,
+				4EC886FA1F6A1DD100840757 /* Frameworks */,
+				4EC886FB1F6A1DD100840757 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = chacha_IOS;
+			productName = chacha_IOS;
+			productReference = 4EC886FD1F6A1DD100840757 /* chacha_IOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4EC8871E1F6A1EEC00840757 /* chacha_Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EC8872B1F6A1EEC00840757 /* Build configuration list for PBXNativeTarget "chacha_Mac" */;
+			buildPhases = (
+				4EC8871B1F6A1EEC00840757 /* Sources */,
+				4EC8871C1F6A1EEC00840757 /* Frameworks */,
+				4EC8871D1F6A1EEC00840757 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = chacha_Mac;
+			productName = chacha_Mac;
+			productReference = 4EC8871F1F6A1EEC00840757 /* chacha_Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4EC886DF1F6A1D1D00840757 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = SSdk;
+				TargetAttributes = {
+					4EC886FC1F6A1DD100840757 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Manual;
+					};
+					4EC8871E1F6A1EEC00840757 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 4EC886E21F6A1D1D00840757 /* Build configuration list for PBXProject "chacha" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4EC886DE1F6A1D1D00840757;
+			productRefGroup = 4EC886E81F6A1D1D00840757 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4EC886FC1F6A1DD100840757 /* chacha_IOS */,
+				4EC8871E1F6A1EEC00840757 /* chacha_Mac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4EC886FB1F6A1DD100840757 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EC8870A1F6A1DD200840757 /* LaunchScreen.storyboard in Resources */,
+				4EC887071F6A1DD200840757 /* Assets.xcassets in Resources */,
+				4EC887051F6A1DD200840757 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EC8871D1F6A1EEC00840757 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EC887261F6A1EEC00840757 /* Assets.xcassets in Resources */,
+				4EC887291F6A1EEC00840757 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4EC886F91F6A1DD100840757 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EC887B11F6A202500840757 /* GMLTool.m in Sources */,
+				4EC887791F6A202500840757 /* GMLAniType.swift in Sources */,
+				4EC887711F6A202500840757 /* AsyncSocket.m in Sources */,
+				4EC887AD1F6A202500840757 /* PreloadScene.swift in Sources */,
+				4EC887021F6A1DD100840757 /* ViewController.swift in Sources */,
+				4EC887811F6A202500840757 /* GMLExtensions.m in Sources */,
+				4EC8880B1F6A2C7A00840757 /* GMLProxy_IOS.m in Sources */,
+				4EC887A91F6A202500840757 /* LoginScene.swift in Sources */,
+				4EC887A71F6A202500840757 /* GuideScene.swift in Sources */,
+				4EC8878F1F6A202500840757 /* MonsterAlignType.swift in Sources */,
+				4EC8878D1F6A202500840757 /* GMLScene.swift in Sources */,
+				4EC8877F1F6A202500840757 /* GMLDynamicSceneFactory.swift in Sources */,
+				4EC8878B1F6A202500840757 /* GMLResourceManager.swift in Sources */,
+				4EC887A11F6A202500840757 /* mztools.c in Sources */,
+				4EC8880C1F6A2C7A00840757 /* GMLProxyFactory_IOS.m in Sources */,
+				4EC8877D1F6A202500840757 /* GMLDynamicScene.swift in Sources */,
+				4EC887001F6A1DD100840757 /* AppDelegate.swift in Sources */,
+				4EC887851F6A202500840757 /* GMLLogCenter.swift in Sources */,
+				4EC887731F6A202500840757 /* AsyncUdpSocket.m in Sources */,
+				4EC8877B1F6A202500840757 /* GMLContactTestBitMaskEnum.swift in Sources */,
+				4EC887A31F6A202500840757 /* unzip.c in Sources */,
+				4EC887891F6A202500840757 /* GMLMouseEvent.m in Sources */,
+				4EC8880A1F6A2C7A00840757 /* GMLExtension_IOS.m in Sources */,
+				4EC887871F6A202500840757 /* GMLMonster.swift in Sources */,
+				4EC887831F6A202500840757 /* GMLGameConfig.m in Sources */,
+				4EC8879D1F6A202500840757 /* GMLMain.swift in Sources */,
+				4EC887AB1F6A202500840757 /* LogoScene.swift in Sources */,
+				4EC888081F6A2C7A00840757 /* GMLCoreDispatcher_IOS.m in Sources */,
+				4EC887A51F6A202500840757 /* zip.c in Sources */,
+				4EC888091F6A2C7A00840757 /* GMLEvent_IOS.m in Sources */,
+				4EC887B31F6A202500840757 /* HeartbeatManager.swift in Sources */,
+				4EC8879F1F6A202500840757 /* ioapi.c in Sources */,
+				4EC887B51F6A202500840757 /* ZipArchive.mm in Sources */,
+				4EC887AF1F6A202500840757 /* SelectRoleScene.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EC8871B1F6A1EEC00840757 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EC887B41F6A202500840757 /* HeartbeatManager.swift in Sources */,
+				4EC887D11F6A23B700840757 /* GMLProxyFactory.m in Sources */,
+				4EC887B01F6A202500840757 /* SelectRoleScene.swift in Sources */,
+				4EC887241F6A1EEC00840757 /* ViewController.swift in Sources */,
+				4EC887A81F6A202500840757 /* GuideScene.swift in Sources */,
+				4EC8878E1F6A202500840757 /* GMLScene.swift in Sources */,
+				4EC887A21F6A202500840757 /* mztools.c in Sources */,
+				4EC887AA1F6A202500840757 /* LoginScene.swift in Sources */,
+				4EC887D01F6A23B700840757 /* GMLProxy.m in Sources */,
+				4EC887CF1F6A23B700840757 /* GMLExtension.m in Sources */,
+				4EC887CE1F6A23B700840757 /* GMLEvent.m in Sources */,
+				4EC887741F6A202500840757 /* AsyncUdpSocket.m in Sources */,
+				4EC887801F6A202500840757 /* GMLDynamicSceneFactory.swift in Sources */,
+				4EC8872F1F6A1F2300840757 /* BaseWindow.swift in Sources */,
+				4EC887AC1F6A202500840757 /* LogoScene.swift in Sources */,
+				4EC887B61F6A202500840757 /* ZipArchive.mm in Sources */,
+				4EC887861F6A202500840757 /* GMLLogCenter.swift in Sources */,
+				4EC8878A1F6A202500840757 /* GMLMouseEvent.m in Sources */,
+				4EC887B21F6A202500840757 /* GMLTool.m in Sources */,
+				4EC887A61F6A202500840757 /* zip.c in Sources */,
+				4EC887221F6A1EEC00840757 /* AppDelegate.swift in Sources */,
+				4EC887881F6A202500840757 /* GMLMonster.swift in Sources */,
+				4EC8877E1F6A202500840757 /* GMLDynamicScene.swift in Sources */,
+				4EC887841F6A202500840757 /* GMLGameConfig.m in Sources */,
+				4EC887CD1F6A23B700840757 /* GMLCoreDispatcher.m in Sources */,
+				4EC887AE1F6A202500840757 /* PreloadScene.swift in Sources */,
+				4EC887A01F6A202500840757 /* ioapi.c in Sources */,
+				4EC8877A1F6A202500840757 /* GMLAniType.swift in Sources */,
+				4EC887901F6A202500840757 /* MonsterAlignType.swift in Sources */,
+				4EC8879E1F6A202500840757 /* GMLMain.swift in Sources */,
+				4EC887721F6A202500840757 /* AsyncSocket.m in Sources */,
+				4EC887A41F6A202500840757 /* unzip.c in Sources */,
+				4EC8878C1F6A202500840757 /* GMLResourceManager.swift in Sources */,
+				4EC8877C1F6A202500840757 /* GMLContactTestBitMaskEnum.swift in Sources */,
+				4EC887821F6A202500840757 /* GMLExtensions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4EC887031F6A1DD100840757 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4EC887041F6A1DD100840757 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4EC887081F6A1DD200840757 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4EC887091F6A1DD200840757 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4EC887271F6A1EEC00840757 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4EC887281F6A1EEC00840757 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4EC886F41F6A1D1D00840757 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4EC886F51F6A1D1D00840757 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		4EC8870D1F6A1DD200840757 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = chacha_IOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.51talkiosDeveloper.chacha-IOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = currentEngine/currentHeader.h;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4EC8870E1F6A1DD200840757 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = chacha_IOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.51talkiosDeveloper.chacha-IOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = currentEngine/currentHeader.h;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4EC8872C1F6A1EEC00840757 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = chacha_Mac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.51talkiosDeveloper.chacha-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = currentEngine/currentHeader.h;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		4EC8872D1F6A1EEC00840757 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = chacha_Mac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.51talkiosDeveloper.chacha-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = currentEngine/currentHeader.h;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4EC886E21F6A1D1D00840757 /* Build configuration list for PBXProject "chacha" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EC886F41F6A1D1D00840757 /* Debug */,
+				4EC886F51F6A1D1D00840757 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EC8870C1F6A1DD200840757 /* Build configuration list for PBXNativeTarget "chacha_IOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EC8870D1F6A1DD200840757 /* Debug */,
+				4EC8870E1F6A1DD200840757 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4EC8872B1F6A1EEC00840757 /* Build configuration list for PBXNativeTarget "chacha_Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EC8872C1F6A1EEC00840757 /* Debug */,
+				4EC8872D1F6A1EEC00840757 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4EC886DF1F6A1D1D00840757 /* Project object */;
+}
