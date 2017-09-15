@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E84AACC1F6BDE1700F9C065 /* DataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E84AACB1F6BDE1700F9C065 /* DataFactory.swift */; };
+		4E84AACD1F6BDE1700F9C065 /* DataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E84AACB1F6BDE1700F9C065 /* DataFactory.swift */; };
+		4EC5A0F81F6BC6CB008D1699 /* GMLSocketDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A0F71F6BC6CB008D1699 /* GMLSocketDataTool.swift */; };
+		4EC5A0F91F6BC6CB008D1699 /* GMLSocketDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A0F71F6BC6CB008D1699 /* GMLSocketDataTool.swift */; };
+		4EC5A0FC1F6BC89A008D1699 /* BaseSocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A0FB1F6BC89A008D1699 /* BaseSocketModel.swift */; };
+		4EC5A0FD1F6BC89A008D1699 /* BaseSocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A0FB1F6BC89A008D1699 /* BaseSocketModel.swift */; };
 		4EC887001F6A1DD100840757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC886FF1F6A1DD100840757 /* AppDelegate.swift */; };
 		4EC887021F6A1DD100840757 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887011F6A1DD100840757 /* ViewController.swift */; };
 		4EC887051F6A1DD200840757 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EC887031F6A1DD100840757 /* Main.storyboard */; };
@@ -90,6 +96,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E84AACB1F6BDE1700F9C065 /* DataFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFactory.swift; sourceTree = "<group>"; };
+		4EC5A0F71F6BC6CB008D1699 /* GMLSocketDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLSocketDataTool.swift; sourceTree = "<group>"; };
+		4EC5A0FB1F6BC89A008D1699 /* BaseSocketModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSocketModel.swift; sourceTree = "<group>"; };
 		4EC886FD1F6A1DD100840757 /* chacha_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chacha_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC886FF1F6A1DD100840757 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EC887011F6A1DD100840757 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +206,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EC5A0FA1F6BC86F008D1699 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				4EC5A0FB1F6BC89A008D1699 /* BaseSocketModel.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		4EC886DE1F6A1D1D00840757 = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +265,7 @@
 		4EC887301F6A202500840757 /* currentEngine */ = {
 			isa = PBXGroup;
 			children = (
+				4EC5A0FA1F6BC86F008D1699 /* models */,
 				4EC887311F6A202500840757 /* AsyncSocket */,
 				4EC8873A1F6A202500840757 /* currentHeader.h */,
 				4EC8873B1F6A202500840757 /* engineCore */,
@@ -269,6 +287,7 @@
 				4EC887341F6A202500840757 /* AsyncUdpSocket.h */,
 				4EC887351F6A202500840757 /* AsyncUdpSocket.m */,
 				4EC8880D1F6A345C00840757 /* GMLSocketManager.swift */,
+				4EC5A0F71F6BC6CB008D1699 /* GMLSocketDataTool.swift */,
 			);
 			path = AsyncSocket;
 			sourceTree = "<group>";
@@ -326,6 +345,7 @@
 		4EC8876B1F6A202500840757 /* tools */ = {
 			isa = PBXGroup;
 			children = (
+				4E84AACB1F6BDE1700F9C065 /* DataFactory.swift */,
 				4EC8876C1F6A202500840757 /* GMLTool.h */,
 				4EC8876D1F6A202500840757 /* GMLTool.m */,
 				4EC8876E1F6A202500840757 /* HeartbeatManager.swift */,
@@ -485,6 +505,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EC5A0FC1F6BC89A008D1699 /* BaseSocketModel.swift in Sources */,
 				4EC887B11F6A202500840757 /* GMLTool.m in Sources */,
 				4EC887791F6A202500840757 /* GMLAniType.swift in Sources */,
 				4EC887711F6A202500840757 /* AsyncSocket.m in Sources */,
@@ -500,10 +521,12 @@
 				4EC8878B1F6A202500840757 /* GMLResourceManager.swift in Sources */,
 				4EC887A11F6A202500840757 /* mztools.c in Sources */,
 				4EC8880C1F6A2C7A00840757 /* GMLProxyFactory_IOS.m in Sources */,
+				4E84AACC1F6BDE1700F9C065 /* DataFactory.swift in Sources */,
 				4EC8877D1F6A202500840757 /* GMLDynamicScene.swift in Sources */,
 				4EC887001F6A1DD100840757 /* AppDelegate.swift in Sources */,
 				4EC887851F6A202500840757 /* GMLLogCenter.swift in Sources */,
 				4EC887731F6A202500840757 /* AsyncUdpSocket.m in Sources */,
+				4EC5A0F81F6BC6CB008D1699 /* GMLSocketDataTool.swift in Sources */,
 				4EC8877B1F6A202500840757 /* GMLContactTestBitMaskEnum.swift in Sources */,
 				4EC887A31F6A202500840757 /* unzip.c in Sources */,
 				4EC887891F6A202500840757 /* GMLMouseEvent.m in Sources */,
@@ -542,6 +565,7 @@
 				4EC887801F6A202500840757 /* GMLDynamicSceneFactory.swift in Sources */,
 				4EC8872F1F6A1F2300840757 /* BaseWindow.swift in Sources */,
 				4EC887AC1F6A202500840757 /* LogoScene.swift in Sources */,
+				4EC5A0FD1F6BC89A008D1699 /* BaseSocketModel.swift in Sources */,
 				4EC887B61F6A202500840757 /* ZipArchive.mm in Sources */,
 				4EC887861F6A202500840757 /* GMLLogCenter.swift in Sources */,
 				4EC8878A1F6A202500840757 /* GMLMouseEvent.m in Sources */,
@@ -555,12 +579,14 @@
 				4EC887AE1F6A202500840757 /* PreloadScene.swift in Sources */,
 				4EC887A01F6A202500840757 /* ioapi.c in Sources */,
 				4EC8877A1F6A202500840757 /* GMLAniType.swift in Sources */,
+				4E84AACD1F6BDE1700F9C065 /* DataFactory.swift in Sources */,
 				4EC887901F6A202500840757 /* MonsterAlignType.swift in Sources */,
 				4EC8879E1F6A202500840757 /* GMLMain.swift in Sources */,
 				4EC887721F6A202500840757 /* AsyncSocket.m in Sources */,
 				4EC887A41F6A202500840757 /* unzip.c in Sources */,
 				4EC8878C1F6A202500840757 /* GMLResourceManager.swift in Sources */,
 				4EC8880F1F6A345C00840757 /* GMLSocketManager.swift in Sources */,
+				4EC5A0F91F6BC6CB008D1699 /* GMLSocketDataTool.swift in Sources */,
 				4EC8877C1F6A202500840757 /* GMLContactTestBitMaskEnum.swift in Sources */,
 				4EC887821F6A202500840757 /* GMLExtensions.m in Sources */,
 			);
@@ -770,6 +796,7 @@
 				4EC8870E1F6A1DD200840757 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4EC8872B1F6A1EEC00840757 /* Build configuration list for PBXNativeTarget "chacha_Mac" */ = {
 			isa = XCConfigurationList;
@@ -778,6 +805,7 @@
 				4EC8872D1F6A1EEC00840757 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

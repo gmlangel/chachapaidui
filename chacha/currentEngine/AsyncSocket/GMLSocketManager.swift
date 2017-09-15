@@ -73,12 +73,9 @@ class GMLSocketManager: NSObject,AsyncSocketDelegate {
      心跳具体操作函数
      */
     open func xintiao(){
-        do{
-            let data = try JSONSerialization.data(withJSONObject: ["cmd":0x00FF0001,"seq":0,"lt":Date().timeIntervalSince1970], options: JSONSerialization.WritingOptions.prettyPrinted);
-            self.sock.write(data, withTimeout: self.timeOutInterval, tag: 0);
-        }catch{
-            print("数据封装出错,error:\(error.localizedDescription)")
-        }
+        let model = Model_HeartBeat_c2s(["cmd":0x00FF0001,"seq":0,"lt":Date().timeIntervalSince1970]);
+        let data = GMLSocketDataTool.instance.packageConvertToData(model);
+        self.sock.write(data, withTimeout: self.timeOutInterval, tag: 0);
     }
     /**
      停止心跳
@@ -132,8 +129,9 @@ class GMLSocketManager: NSObject,AsyncSocketDelegate {
      接收到了socket数据
      */
     func onSocket(_ sock: AsyncSocket!, didRead data: Data!, withTag tag: Int) {
-        print(String(data:data,encoding:String.Encoding.utf8)!);
-        
+        if let model = GMLSocketDataTool.instance.dataConvertToPackage(data){
+            print("\(model.cmd)");
+        }
         //读下一个数据包，如果不这么写socket不会监听到断开
         sock.readData(withTimeout: timeOutInterval, tag: 0)
     }
