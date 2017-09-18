@@ -23,7 +23,7 @@ let SOCKET_CONNECTED:NSNotification.Name = NSNotification.Name.init("socket_conn
 let SOCKET_ERROR:NSNotification.Name = NSNotification.Name.init("socket_error");
 class GMLSocketManager: NSObject,AsyncSocketDelegate {
     
-    open var timeOutInterval:TimeInterval = 10;
+    open var timeOutInterval:TimeInterval = 50;
     open var sock:AsyncSocket!;
     fileprivate var heartTimer:Timer?;
     
@@ -54,7 +54,11 @@ class GMLSocketManager: NSObject,AsyncSocketDelegate {
         sock = AsyncSocket(delegate: self);
         sock.setRunLoopModes([RunLoopMode.commonModes]);
         
-        
+        let model = Model_HeartBeat_c2s();
+        model.cmd = GMLSocketCMD.c_req_s_heartbeat;
+        model.localTime = UInt32(Date().timeIntervalSince1970);
+        model.seq = 0;
+        self.sendMsgToServer(model: model);
     }
     
     /**
@@ -73,9 +77,11 @@ class GMLSocketManager: NSObject,AsyncSocketDelegate {
      心跳具体操作函数
      */
     open func xintiao(){
-        let model = Model_HeartBeat_c2s(["cmd":0x00FF0001,"seq":0,"lt":Date().timeIntervalSince1970]);
-        let data = GMLSocketDataTool.instance.packageConvertToData(model);
-        self.sock.write(data, withTimeout: self.timeOutInterval, tag: 0);
+        let model = Model_HeartBeat_c2s();
+        model.cmd = GMLSocketCMD.c_req_s_heartbeat;
+        model.localTime = UInt32(Date().timeIntervalSince1970);
+        model.seq = 0;
+        self.sendMsgToServer(model: model);
     }
     /**
      停止心跳
@@ -94,7 +100,7 @@ class GMLSocketManager: NSObject,AsyncSocketDelegate {
         do{
             try sock.connect(toHost: host, onPort: port, withTimeout: timeOutInterval);
         }catch{
-            print(error.localizedDescription)
+            NSLog(error.localizedDescription)
             NotificationCenter.default.post(name: SOCKET_ERROR, object: ["code":10,"err":error.localizedDescription]);
         }
         
@@ -104,7 +110,7 @@ class GMLSocketManager: NSObject,AsyncSocketDelegate {
      socket 断开连接
      */
     func onSocketDidDisconnect(_ sock: AsyncSocket!) {
-        print("socket链接断开");
+        NSLog("socket链接断开");
         //停止心跳
         stopHeart();
         NotificationCenter.default.post(name: SOCKET_DISCONNECT, object: "");
@@ -125,22 +131,34 @@ class GMLSocketManager: NSObject,AsyncSocketDelegate {
         sock.readData(withTimeout: timeOutInterval, tag: 0)
     }
     
+    
+    
+    func onSocket(_ sock: AsyncSocket!, willDisconnectWithError err: Error?) {
+        if err != nil{
+            NSLog("socket出错,error:\(err!.localizedDescription)")
+            NotificationCenter.default.post(name: SOCKET_ERROR, object: ["code":20,"err":err!.localizedDescription]);
+        }
+    }
+    
+    /**
+     向服务器发送数据
+     */
+    func sendMsgToServer(model:BaseSocketModel_c2s){
+        if let data = GMLSocketDataTool.instance.packageConvertToData(model),self.sock.isConnected(){
+            NSLog("发送数据:\(model.cmd)");
+            self.sock.write(data, withTimeout: self.timeOutInterval, tag: 0);
+        }
+    }
+    
     /**
      接收到了socket数据
      */
     func onSocket(_ sock: AsyncSocket!, didRead data: Data!, withTag tag: Int) {
         if let model = GMLSocketDataTool.instance.dataConvertToPackage(data){
-            print("\(model.cmd)");
+            NSLog("收到数据:\(model.cmd)");
         }
         //读下一个数据包，如果不这么写socket不会监听到断开
         sock.readData(withTimeout: timeOutInterval, tag: 0)
-    }
-    
-    func onSocket(_ sock: AsyncSocket!, willDisconnectWithError err: Error?) {
-        if err != nil{
-            print("socket出错,error:\(err!.localizedDescription)")
-            NotificationCenter.default.post(name: SOCKET_ERROR, object: ["code":20,"err":err!.localizedDescription]);
-        }
     }
     
 }

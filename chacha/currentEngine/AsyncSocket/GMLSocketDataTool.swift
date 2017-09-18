@@ -38,6 +38,30 @@ class GMLSocketDataTool{
             case GMLSocketCMD.s_res_c_heartbeat.rawValue:
                 model = Model_HeartBeat_s2c(dic);
                 break;
+            case GMLSocketCMD.s_res_c_logout.rawValue:
+                model = Model_logout_s2c(dic);
+                break;
+            case GMLSocketCMD.s_res_c_login.rawValue:
+                model = Model_login_s2c(dic);
+                break;
+            case GMLSocketCMD.s_res_c_delRoom.rawValue:
+                model = Model_deleteRoom_s2c(dic);
+                break;
+            case GMLSocketCMD.s_res_c_joinRoom.rawValue:
+                model = Model_joinRoom_s2c(dic);
+                break;
+            case GMLSocketCMD.s_res_c_createRoom.rawValue:
+                model = Model_createRoom_s2c(dic);
+                break;
+            case GMLSocketCMD.s_res_c_getUserInfo.rawValue:
+                model = Model_getUserInfo_s2c(dic);
+                break;
+            case GMLSocketCMD.s_res_c_updateUserInfo.rawValue:
+                model = Model_updateUserInfo_s2c(dic);
+                break;
+            case GMLSocketCMD.s_res_c_getRoomsInfoByUser.rawValue:
+                model = Model_getRoomsInfoByUser_s2c(dic);
+                break;
             default:
                 //
                 print("无法解析的数据包")
@@ -48,9 +72,9 @@ class GMLSocketDataTool{
     }
     
     /**
-     数据包转自己数据
+     数据包转字节数据
      */
-    open func packageConvertToData(_ model:BaseSocketModel) -> Data?{
+    open func packageConvertToData(_ model:BaseSocketModel_c2s) -> Data?{
         var data:Data? = nil;
         do{
             data = try JSONSerialization.data(withJSONObject: model.toDic(), options: JSONSerialization.WritingOptions.prettyPrinted)
@@ -93,11 +117,11 @@ enum GMLSocketCMD:UInt32{
     
     //获取用户创建的教室信息
     case c_req_s_getRoomsInfoByUser = 0x00FF000E;
-    case s_req_c_getRoomsInfoByUser = 0x00FF000F;
+    case s_res_c_getRoomsInfoByUser = 0x00FF000F;
     
     //删除教室
     case c_req_s_delRoom = 0x00FF0011;
-    case s_req_c_delRoom = 0x00FF0012;
+    case s_res_c_delRoom = 0x00FF0012;
     
     //教室状态变更通知
     case s_notify_c_roomStateChange = 0x00FF0013;
