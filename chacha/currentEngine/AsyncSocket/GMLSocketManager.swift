@@ -25,7 +25,7 @@ let SOCKET_ERROR:NSNotification.Name = NSNotification.Name.init("socket_error");
 /**
  socket收到Socket发来的数据
  */
-let SOCKET_DATA:NSNotification.Name = NSNotification.Name.init("socket_data");
+//let SOCKET_DATA:NSNotification.Name = NSNotification.Name.init("socket_data");
 class GMLSocketManager: NSObject,AsyncSocketDelegate {
     
     open var timeOutInterval:TimeInterval = 50;
