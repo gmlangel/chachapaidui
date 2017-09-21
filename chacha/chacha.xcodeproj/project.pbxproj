@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		4E84AACC1F6BDE1700F9C065 /* DataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E84AACB1F6BDE1700F9C065 /* DataFactory.swift */; };
 		4E84AACD1F6BDE1700F9C065 /* DataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E84AACB1F6BDE1700F9C065 /* DataFactory.swift */; };
+		4EA5117B1F73B042008A6192 /* pop.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4EA5117A1F73B042008A6192 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4EA5117C1F73B04E008A6192 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EA5117A1F73B042008A6192 /* pop.framework */; };
+		4EA5117E1F73B093008A6192 /* pop.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4EA5117D1F73B093008A6192 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4EA5117F1F73B09B008A6192 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EA5117D1F73B093008A6192 /* pop.framework */; };
 		4EC5A0F81F6BC6CB008D1699 /* GMLSocketDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A0F71F6BC6CB008D1699 /* GMLSocketDataTool.swift */; };
 		4EC5A0F91F6BC6CB008D1699 /* GMLSocketDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A0F71F6BC6CB008D1699 /* GMLSocketDataTool.swift */; };
 		4EC5A0FC1F6BC89A008D1699 /* BaseSocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A0FB1F6BC89A008D1699 /* BaseSocketModel.swift */; };
@@ -95,8 +99,34 @@
 		4EC8880F1F6A345C00840757 /* GMLSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8880D1F6A345C00840757 /* GMLSocketManager.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4EA511021F73AB20008A6192 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4EA5117E1F73B093008A6192 /* pop.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EA511061F73AC38008A6192 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4EA5117B1F73B042008A6192 /* pop.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		4E84AACB1F6BDE1700F9C065 /* DataFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFactory.swift; sourceTree = "<group>"; };
+		4EA511761F73AF3A008A6192 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = IOS_libs/pop.framework; sourceTree = "<group>"; };
+		4EA5117A1F73B042008A6192 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = IOS_libs/pop.framework; sourceTree = "<group>"; };
+		4EA5117D1F73B093008A6192 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = MacOS_libs/pop.framework; sourceTree = "<group>"; };
 		4EC5A0F71F6BC6CB008D1699 /* GMLSocketDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLSocketDataTool.swift; sourceTree = "<group>"; };
 		4EC5A0FB1F6BC89A008D1699 /* BaseSocketModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSocketModel.swift; sourceTree = "<group>"; };
 		4EC886FD1F6A1DD100840757 /* chacha_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chacha_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -189,6 +219,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EA5117C1F73B04E008A6192 /* pop.framework in Frameworks */,
 				4EC887BF1F6A20D900840757 /* SpriteKit.framework in Frameworks */,
 				4EC887B91F6A203F00840757 /* libz.tbd in Frameworks */,
 			);
@@ -198,6 +229,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EA5117F1F73B09B008A6192 /* pop.framework in Frameworks */,
 				4EC887BD1F6A20CF00840757 /* SpriteKit.framework in Frameworks */,
 				4EC887BB1F6A204800840757 /* libz.tbd in Frameworks */,
 			);
@@ -217,6 +249,8 @@
 		4EC886DE1F6A1D1D00840757 = {
 			isa = PBXGroup;
 			children = (
+				4EA5117D1F73B093008A6192 /* pop.framework */,
+				4EA5117A1F73B042008A6192 /* pop.framework */,
 				4EC887301F6A202500840757 /* currentEngine */,
 				4EC886FE1F6A1DD100840757 /* chacha_IOS */,
 				4EC887201F6A1EEC00840757 /* chacha_Mac */,
@@ -356,6 +390,7 @@
 		4EC887B71F6A203E00840757 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4EA511761F73AF3A008A6192 /* pop.framework */,
 				4EC887BE1F6A20D900840757 /* SpriteKit.framework */,
 				4EC887BC1F6A20CF00840757 /* SpriteKit.framework */,
 				4EC887BA1F6A204800840757 /* libz.tbd */,
@@ -412,6 +447,7 @@
 				4EC886F91F6A1DD100840757 /* Sources */,
 				4EC886FA1F6A1DD100840757 /* Frameworks */,
 				4EC886FB1F6A1DD100840757 /* Resources */,
+				4EA511061F73AC38008A6192 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -429,6 +465,7 @@
 				4EC8871B1F6A1EEC00840757 /* Sources */,
 				4EC8871C1F6A1EEC00840757 /* Frameworks */,
 				4EC8871D1F6A1EEC00840757 /* Resources */,
+				4EA511021F73AB20008A6192 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -718,8 +755,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/IOS_libs",
+				);
 				INFOPLIST_FILE = chacha_IOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.51talkiosDeveloper.chacha-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -736,8 +777,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/IOS_libs",
+				);
 				INFOPLIST_FILE = chacha_IOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.51talkiosDeveloper.chacha-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -754,6 +799,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MacOS_libs",
+				);
 				INFOPLIST_FILE = chacha_Mac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.51talkiosDeveloper.chacha-Mac";
@@ -768,6 +817,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/MacOS_libs",
+				);
 				INFOPLIST_FILE = chacha_Mac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.51talkiosDeveloper.chacha-Mac";
