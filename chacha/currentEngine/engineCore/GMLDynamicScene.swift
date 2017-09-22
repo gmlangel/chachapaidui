@@ -29,7 +29,7 @@ class GMLDynamicScene: GMLScene {
      */
     init(sceneConfig:NSDictionary) {
         //根据屏幕尺寸初始化场景
-        super.init(size: GMLMain.instance.mainGameView.frame.size);
+        super.init(size: GMLGameMain.instance.mainGameView.frame.size);
         
         //设置资源文件夹名称
         folderName = sceneConfig.value(forKey: "folderName") as! String;

@@ -27,7 +27,7 @@ class PreloadScene: GMLScene {
     static var instance:PreloadScene{
         get{
             struct PreloadSceneIns{
-                static var _ins:PreloadScene = PreloadScene(size: GMLMain.instance.mainGameView.frame.size);
+                static var _ins:PreloadScene = PreloadScene(size: GMLGameMain.instance.mainGameView.frame.size);
             }
             return PreloadSceneIns._ins;
         }

@@ -16,7 +16,7 @@ class LogoScene: GMLScene {
     static var instance:LogoScene{
         get{
             struct LogoSceneIns {
-                static var _ins:LogoScene = LogoScene(size: GMLMain.instance.mainGameView.frame.size);
+                static var _ins:LogoScene = LogoScene(size: GMLGameMain.instance.mainGameView.frame.size);
             }
             return LogoSceneIns._ins;
         }

@@ -1,0 +1,9 @@
+/* 
+  local.strings
+  chacha
+
+  Created by guominglong on 2017/9/22.
+  Copyright © 2017年 SSdk. All rights reserved.
+*/
+"loginPlaceHolder" = "Account";
+"loginPWDPlaceHolder" = "Password";

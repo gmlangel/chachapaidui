@@ -24,7 +24,7 @@ class GMLDynamicSceneFactory: NSObject {
      */
 //    func createDynamicScene(sceneConfig:NSDictionary)->GMLDynamicScene
 //    {
-//        let gmlDynaScene = GMLDynamicScene(size:GMLMain.instance.mainGameView.frame.size);
+//        let gmlDynaScene = GMLDynamicScene(size:GMLGameMain);
 //        return gmlDynaScene;
 //    }
 }

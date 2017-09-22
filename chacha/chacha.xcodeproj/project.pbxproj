@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E5262141F74BDA600EE1B87 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5262131F74BDA600EE1B87 /* MainViewController.swift */; };
+		4E5262161F74BEB700EE1B87 /* GMLSkinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5262151F74BEB700EE1B87 /* GMLSkinManager.swift */; };
+		4E5262171F74BEB700EE1B87 /* GMLSkinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5262151F74BEB700EE1B87 /* GMLSkinManager.swift */; };
+		4E52621A1F74E07300EE1B87 /* View_login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5262181F74E07300EE1B87 /* View_login.swift */; };
+		4E52621C1F74E21700EE1B87 /* GMLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E52621B1F74E21700EE1B87 /* GMLView.swift */; };
+		4E5262201F74F27F00EE1B87 /* local.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E5262231F74F27F00EE1B87 /* local.strings */; };
+		4E5262211F74F27F00EE1B87 /* local.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E5262231F74F27F00EE1B87 /* local.strings */; };
+		4E5262271F74F37500EE1B87 /* GMLLocalString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5262261F74F37500EE1B87 /* GMLLocalString.swift */; };
+		4E5262281F74F37500EE1B87 /* GMLLocalString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5262261F74F37500EE1B87 /* GMLLocalString.swift */; };
+		4E52622A1F74F74800EE1B87 /* FontEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5262291F74F74800EE1B87 /* FontEnum.swift */; };
 		4E84AACC1F6BDE1700F9C065 /* DataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E84AACB1F6BDE1700F9C065 /* DataFactory.swift */; };
 		4E84AACD1F6BDE1700F9C065 /* DataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E84AACB1F6BDE1700F9C065 /* DataFactory.swift */; };
 		4EA5117B1F73B042008A6192 /* pop.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4EA5117A1F73B042008A6192 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -55,8 +65,8 @@
 		4EC8878E1F6A202500840757 /* GMLScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887491F6A202500840757 /* GMLScene.swift */; };
 		4EC8878F1F6A202500840757 /* MonsterAlignType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8874A1F6A202500840757 /* MonsterAlignType.swift */; };
 		4EC887901F6A202500840757 /* MonsterAlignType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8874A1F6A202500840757 /* MonsterAlignType.swift */; };
-		4EC8879D1F6A202500840757 /* GMLMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8875A1F6A202500840757 /* GMLMain.swift */; };
-		4EC8879E1F6A202500840757 /* GMLMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8875A1F6A202500840757 /* GMLMain.swift */; };
+		4EC8879D1F6A202500840757 /* GMLGameMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8875A1F6A202500840757 /* GMLGameMain.swift */; };
+		4EC8879E1F6A202500840757 /* GMLGameMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8875A1F6A202500840757 /* GMLGameMain.swift */; };
 		4EC8879F1F6A202500840757 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8875D1F6A202500840757 /* ioapi.c */; };
 		4EC887A01F6A202500840757 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8875D1F6A202500840757 /* ioapi.c */; };
 		4EC887A11F6A202500840757 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8875F1F6A202500840757 /* mztools.c */; };
@@ -123,6 +133,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4E5262131F74BDA600EE1B87 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4E5262151F74BEB700EE1B87 /* GMLSkinManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLSkinManager.swift; sourceTree = "<group>"; };
+		4E5262181F74E07300EE1B87 /* View_login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_login.swift; sourceTree = "<group>"; };
+		4E52621B1F74E21700EE1B87 /* GMLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLView.swift; sourceTree = "<group>"; };
+		4E5262221F74F27F00EE1B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/local.strings; sourceTree = "<group>"; };
+		4E5262241F74F29B00EE1B87 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/local.strings"; sourceTree = "<group>"; };
+		4E5262251F74F2A700EE1B87 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/local.strings; sourceTree = "<group>"; };
+		4E5262261F74F37500EE1B87 /* GMLLocalString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLLocalString.swift; sourceTree = "<group>"; };
+		4E5262291F74F74800EE1B87 /* FontEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontEnum.swift; sourceTree = "<group>"; };
 		4E84AACB1F6BDE1700F9C065 /* DataFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFactory.swift; sourceTree = "<group>"; };
 		4EA511761F73AF3A008A6192 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = IOS_libs/pop.framework; sourceTree = "<group>"; };
 		4EA5117A1F73B042008A6192 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = IOS_libs/pop.framework; sourceTree = "<group>"; };
@@ -163,7 +182,7 @@
 		4EC887481F6A202500840757 /* GMLResourceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLResourceManager.swift; sourceTree = "<group>"; };
 		4EC887491F6A202500840757 /* GMLScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLScene.swift; sourceTree = "<group>"; };
 		4EC8874A1F6A202500840757 /* MonsterAlignType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterAlignType.swift; sourceTree = "<group>"; };
-		4EC8875A1F6A202500840757 /* GMLMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLMain.swift; sourceTree = "<group>"; };
+		4EC8875A1F6A202500840757 /* GMLGameMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLGameMain.swift; sourceTree = "<group>"; };
 		4EC8875C1F6A202500840757 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
 		4EC8875D1F6A202500840757 /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
 		4EC8875E1F6A202500840757 /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
@@ -285,6 +304,7 @@
 		4EC887201F6A1EEC00840757 /* chacha_Mac */ = {
 			isa = PBXGroup;
 			children = (
+				4E52621B1F74E21700EE1B87 /* GMLView.swift */,
 				4EC887C01F6A23B700840757 /* GMLKit */,
 				4EC887211F6A1EEC00840757 /* AppDelegate.swift */,
 				4EC887231F6A1EEC00840757 /* ViewController.swift */,
@@ -292,6 +312,9 @@
 				4EC887271F6A1EEC00840757 /* Main.storyboard */,
 				4EC8872A1F6A1EEC00840757 /* Info.plist */,
 				4EC8872E1F6A1F2300840757 /* BaseWindow.swift */,
+				4E5262131F74BDA600EE1B87 /* MainViewController.swift */,
+				4E5262181F74E07300EE1B87 /* View_login.swift */,
+				4E5262291F74F74800EE1B87 /* FontEnum.swift */,
 			);
 			path = chacha_Mac;
 			sourceTree = "<group>";
@@ -303,12 +326,14 @@
 				4EC887311F6A202500840757 /* AsyncSocket */,
 				4EC8873A1F6A202500840757 /* currentHeader.h */,
 				4EC8873B1F6A202500840757 /* engineCore */,
-				4EC8875A1F6A202500840757 /* GMLMain.swift */,
+				4EC8875A1F6A202500840757 /* GMLGameMain.swift */,
 				4EC8875B1F6A202500840757 /* minizip */,
 				4EC887651F6A202500840757 /* scenes */,
 				4EC8876B1F6A202500840757 /* tools */,
 				4EC8876F1F6A202500840757 /* ZipArchive.h */,
 				4EC887701F6A202500840757 /* ZipArchive.mm */,
+				4E5262151F74BEB700EE1B87 /* GMLSkinManager.swift */,
+				4E5262231F74F27F00EE1B87 /* local.strings */,
 			);
 			path = currentEngine;
 			sourceTree = "<group>";
@@ -383,6 +408,7 @@
 				4EC8876C1F6A202500840757 /* GMLTool.h */,
 				4EC8876D1F6A202500840757 /* GMLTool.m */,
 				4EC8876E1F6A202500840757 /* HeartbeatManager.swift */,
+				4E5262261F74F37500EE1B87 /* GMLLocalString.swift */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -503,6 +529,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 4EC886DE1F6A1D1D00840757;
 			productRefGroup = 4EC886E81F6A1D1D00840757 /* Products */;
@@ -520,6 +547,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E5262201F74F27F00EE1B87 /* local.strings in Resources */,
 				4EC8870A1F6A1DD200840757 /* LaunchScreen.storyboard in Resources */,
 				4EC887071F6A1DD200840757 /* Assets.xcassets in Resources */,
 				4EC887051F6A1DD200840757 /* Main.storyboard in Resources */,
@@ -530,6 +558,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E5262211F74F27F00EE1B87 /* local.strings in Resources */,
 				4EC887261F6A1EEC00840757 /* Assets.xcassets in Resources */,
 				4EC887291F6A1EEC00840757 /* Main.storyboard in Resources */,
 			);
@@ -543,8 +572,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EC5A0FC1F6BC89A008D1699 /* BaseSocketModel.swift in Sources */,
+				4E5262271F74F37500EE1B87 /* GMLLocalString.swift in Sources */,
 				4EC887B11F6A202500840757 /* GMLTool.m in Sources */,
 				4EC887791F6A202500840757 /* GMLAniType.swift in Sources */,
+				4E5262161F74BEB700EE1B87 /* GMLSkinManager.swift in Sources */,
 				4EC887711F6A202500840757 /* AsyncSocket.m in Sources */,
 				4EC887AD1F6A202500840757 /* PreloadScene.swift in Sources */,
 				4EC887021F6A1DD100840757 /* ViewController.swift in Sources */,
@@ -570,7 +601,7 @@
 				4EC8880A1F6A2C7A00840757 /* GMLExtension_IOS.m in Sources */,
 				4EC887871F6A202500840757 /* GMLMonster.swift in Sources */,
 				4EC887831F6A202500840757 /* GMLGameConfig.m in Sources */,
-				4EC8879D1F6A202500840757 /* GMLMain.swift in Sources */,
+				4EC8879D1F6A202500840757 /* GMLGameMain.swift in Sources */,
 				4EC887AB1F6A202500840757 /* LogoScene.swift in Sources */,
 				4EC888081F6A2C7A00840757 /* GMLCoreDispatcher_IOS.m in Sources */,
 				4EC887A51F6A202500840757 /* zip.c in Sources */,
@@ -589,6 +620,7 @@
 			files = (
 				4EC887B41F6A202500840757 /* HeartbeatManager.swift in Sources */,
 				4EC887D11F6A23B700840757 /* GMLProxyFactory.m in Sources */,
+				4E52621A1F74E07300EE1B87 /* View_login.swift in Sources */,
 				4EC887B01F6A202500840757 /* SelectRoleScene.swift in Sources */,
 				4EC887241F6A1EEC00840757 /* ViewController.swift in Sources */,
 				4EC887A81F6A202500840757 /* GuideScene.swift in Sources */,
@@ -596,6 +628,7 @@
 				4EC887A21F6A202500840757 /* mztools.c in Sources */,
 				4EC887AA1F6A202500840757 /* LoginScene.swift in Sources */,
 				4EC887D01F6A23B700840757 /* GMLProxy.m in Sources */,
+				4E52621C1F74E21700EE1B87 /* GMLView.swift in Sources */,
 				4EC887CF1F6A23B700840757 /* GMLExtension.m in Sources */,
 				4EC887CE1F6A23B700840757 /* GMLEvent.m in Sources */,
 				4EC887741F6A202500840757 /* AsyncUdpSocket.m in Sources */,
@@ -606,6 +639,7 @@
 				4EC887B61F6A202500840757 /* ZipArchive.mm in Sources */,
 				4EC887861F6A202500840757 /* GMLLogCenter.swift in Sources */,
 				4EC8878A1F6A202500840757 /* GMLMouseEvent.m in Sources */,
+				4E52622A1F74F74800EE1B87 /* FontEnum.swift in Sources */,
 				4EC887B21F6A202500840757 /* GMLTool.m in Sources */,
 				4EC887A61F6A202500840757 /* zip.c in Sources */,
 				4EC887221F6A1EEC00840757 /* AppDelegate.swift in Sources */,
@@ -615,23 +649,36 @@
 				4EC887CD1F6A23B700840757 /* GMLCoreDispatcher.m in Sources */,
 				4EC887AE1F6A202500840757 /* PreloadScene.swift in Sources */,
 				4EC887A01F6A202500840757 /* ioapi.c in Sources */,
+				4E5262171F74BEB700EE1B87 /* GMLSkinManager.swift in Sources */,
 				4EC8877A1F6A202500840757 /* GMLAniType.swift in Sources */,
 				4E84AACD1F6BDE1700F9C065 /* DataFactory.swift in Sources */,
 				4EC887901F6A202500840757 /* MonsterAlignType.swift in Sources */,
-				4EC8879E1F6A202500840757 /* GMLMain.swift in Sources */,
+				4EC8879E1F6A202500840757 /* GMLGameMain.swift in Sources */,
 				4EC887721F6A202500840757 /* AsyncSocket.m in Sources */,
 				4EC887A41F6A202500840757 /* unzip.c in Sources */,
+				4E5262281F74F37500EE1B87 /* GMLLocalString.swift in Sources */,
 				4EC8878C1F6A202500840757 /* GMLResourceManager.swift in Sources */,
 				4EC8880F1F6A345C00840757 /* GMLSocketManager.swift in Sources */,
 				4EC5A0F91F6BC6CB008D1699 /* GMLSocketDataTool.swift in Sources */,
 				4EC8877C1F6A202500840757 /* GMLContactTestBitMaskEnum.swift in Sources */,
 				4EC887821F6A202500840757 /* GMLExtensions.m in Sources */,
+				4E5262141F74BDA600EE1B87 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		4E5262231F74F27F00EE1B87 /* local.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E5262221F74F27F00EE1B87 /* Base */,
+				4E5262241F74F29B00EE1B87 /* zh-Hans */,
+				4E5262251F74F2A700EE1B87 /* en */,
+			);
+			name = local.strings;
+			sourceTree = "<group>";
+		};
 		4EC887031F6A1DD100840757 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -663,6 +710,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -712,6 +760,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class GMLMain:NSObject {
+class GMLGameMain:NSObject {
     /**
      主游戏视图,唯一
      */
@@ -19,10 +19,10 @@ class GMLMain:NSObject {
      */
     fileprivate(set) var chatView:SKView!;
     
-    static var instance:GMLMain{
+    static var instance:GMLGameMain{
         get{
             struct gmlMainIns {
-                static var _ins:GMLMain = GMLMain();
+                static var _ins:GMLGameMain = GMLGameMain();
             }
             return gmlMainIns._ins;
         }
