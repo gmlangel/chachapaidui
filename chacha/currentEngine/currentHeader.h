@@ -18,7 +18,6 @@
 #import <SpriteKit/SpriteKit.h>
 #import "GMLTool.h"
 #import "AsyncSocket.h"
-#import <pop/POP.h>
 
 
 #if TARGET_OS_IPHONE

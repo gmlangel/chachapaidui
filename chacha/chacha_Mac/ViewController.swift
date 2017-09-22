@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-
+import pop
 class ViewController: NSViewController,POPAnimationDelegate {
 
     fileprivate var myView:NSView!;

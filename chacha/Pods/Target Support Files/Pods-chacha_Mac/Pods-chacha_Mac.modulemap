@@ -1,0 +1,6 @@
+framework module Pods_chacha_Mac {
+  umbrella header "Pods-chacha_Mac-umbrella.h"
+
+  export *
+  module * { export * }
+}

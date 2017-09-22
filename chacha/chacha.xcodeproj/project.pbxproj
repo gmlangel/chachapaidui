@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4E5262141F74BDA600EE1B87 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5262131F74BDA600EE1B87 /* MainViewController.swift */; };
-		4E5262161F74BEB700EE1B87 /* GMLSkinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5262151F74BEB700EE1B87 /* GMLSkinManager.swift */; };
-		4E5262171F74BEB700EE1B87 /* GMLSkinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5262151F74BEB700EE1B87 /* GMLSkinManager.swift */; };
 		4E52621A1F74E07300EE1B87 /* View_login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5262181F74E07300EE1B87 /* View_login.swift */; };
 		4E52621C1F74E21700EE1B87 /* GMLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E52621B1F74E21700EE1B87 /* GMLView.swift */; };
 		4E5262201F74F27F00EE1B87 /* local.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E5262231F74F27F00EE1B87 /* local.strings */; };
@@ -19,10 +17,7 @@
 		4E52622A1F74F74800EE1B87 /* FontEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5262291F74F74800EE1B87 /* FontEnum.swift */; };
 		4E84AACC1F6BDE1700F9C065 /* DataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E84AACB1F6BDE1700F9C065 /* DataFactory.swift */; };
 		4E84AACD1F6BDE1700F9C065 /* DataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E84AACB1F6BDE1700F9C065 /* DataFactory.swift */; };
-		4EA5117B1F73B042008A6192 /* pop.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4EA5117A1F73B042008A6192 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4EA5117C1F73B04E008A6192 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EA5117A1F73B042008A6192 /* pop.framework */; };
-		4EA5117E1F73B093008A6192 /* pop.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4EA5117D1F73B093008A6192 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4EA5117F1F73B09B008A6192 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EA5117D1F73B093008A6192 /* pop.framework */; };
+		4E9105E71F751BCE00F1F0D0 /* GMLSkinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9105E61F751BCE00F1F0D0 /* GMLSkinManager.swift */; };
 		4EC5A0F81F6BC6CB008D1699 /* GMLSocketDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A0F71F6BC6CB008D1699 /* GMLSocketDataTool.swift */; };
 		4EC5A0F91F6BC6CB008D1699 /* GMLSocketDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A0F71F6BC6CB008D1699 /* GMLSocketDataTool.swift */; };
 		4EC5A0FC1F6BC89A008D1699 /* BaseSocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A0FB1F6BC89A008D1699 /* BaseSocketModel.swift */; };
@@ -107,6 +102,8 @@
 		4EC8880C1F6A2C7A00840757 /* GMLProxyFactory_IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC888061F6A2C7A00840757 /* GMLProxyFactory_IOS.m */; };
 		4EC8880E1F6A345C00840757 /* GMLSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8880D1F6A345C00840757 /* GMLSocketManager.swift */; };
 		4EC8880F1F6A345C00840757 /* GMLSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8880D1F6A345C00840757 /* GMLSocketManager.swift */; };
+		56A6AD7A373B1819D844BCAE /* Pods_chacha_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9DB49514FC8CF4CAF903A5 /* Pods_chacha_IOS.framework */; };
+		5B101480B6518AC49274A7EF /* Pods_chacha_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AD745029DAAF24C40E9EC3 /* Pods_chacha_Mac.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -116,7 +113,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4EA5117E1F73B093008A6192 /* pop.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,15 +122,16 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4EA5117B1F73B042008A6192 /* pop.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D9DB49514FC8CF4CAF903A5 /* Pods_chacha_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chacha_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32A07EEF248073456509B7C4 /* Pods-chacha_Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chacha_Mac.release.xcconfig"; path = "Pods/Target Support Files/Pods-chacha_Mac/Pods-chacha_Mac.release.xcconfig"; sourceTree = "<group>"; };
+		3A4EC5081406AFB913F4FF14 /* Pods-chacha_IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chacha_IOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-chacha_IOS/Pods-chacha_IOS.release.xcconfig"; sourceTree = "<group>"; };
 		4E5262131F74BDA600EE1B87 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		4E5262151F74BEB700EE1B87 /* GMLSkinManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLSkinManager.swift; sourceTree = "<group>"; };
 		4E5262181F74E07300EE1B87 /* View_login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_login.swift; sourceTree = "<group>"; };
 		4E52621B1F74E21700EE1B87 /* GMLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLView.swift; sourceTree = "<group>"; };
 		4E5262221F74F27F00EE1B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/local.strings; sourceTree = "<group>"; };
@@ -143,9 +140,8 @@
 		4E5262261F74F37500EE1B87 /* GMLLocalString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLLocalString.swift; sourceTree = "<group>"; };
 		4E5262291F74F74800EE1B87 /* FontEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontEnum.swift; sourceTree = "<group>"; };
 		4E84AACB1F6BDE1700F9C065 /* DataFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFactory.swift; sourceTree = "<group>"; };
+		4E9105E61F751BCE00F1F0D0 /* GMLSkinManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLSkinManager.swift; sourceTree = "<group>"; };
 		4EA511761F73AF3A008A6192 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = IOS_libs/pop.framework; sourceTree = "<group>"; };
-		4EA5117A1F73B042008A6192 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = IOS_libs/pop.framework; sourceTree = "<group>"; };
-		4EA5117D1F73B093008A6192 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = MacOS_libs/pop.framework; sourceTree = "<group>"; };
 		4EC5A0F71F6BC6CB008D1699 /* GMLSocketDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLSocketDataTool.swift; sourceTree = "<group>"; };
 		4EC5A0FB1F6BC89A008D1699 /* BaseSocketModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSocketModel.swift; sourceTree = "<group>"; };
 		4EC886FD1F6A1DD100840757 /* chacha_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chacha_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,6 +227,9 @@
 		4EC888061F6A2C7A00840757 /* GMLProxyFactory_IOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLProxyFactory_IOS.m; sourceTree = "<group>"; };
 		4EC888071F6A2C7A00840757 /* GMLViewProtocal_IOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLViewProtocal_IOS.h; sourceTree = "<group>"; };
 		4EC8880D1F6A345C00840757 /* GMLSocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLSocketManager.swift; sourceTree = "<group>"; };
+		52AD745029DAAF24C40E9EC3 /* Pods_chacha_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chacha_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		637C878364A5B93486C59E10 /* Pods-chacha_IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chacha_IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chacha_IOS/Pods-chacha_IOS.debug.xcconfig"; sourceTree = "<group>"; };
+		CFD17B03625823EBC122283B /* Pods-chacha_Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chacha_Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chacha_Mac/Pods-chacha_Mac.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,9 +237,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EA5117C1F73B04E008A6192 /* pop.framework in Frameworks */,
 				4EC887BF1F6A20D900840757 /* SpriteKit.framework in Frameworks */,
 				4EC887B91F6A203F00840757 /* libz.tbd in Frameworks */,
+				56A6AD7A373B1819D844BCAE /* Pods_chacha_IOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,9 +247,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EA5117F1F73B09B008A6192 /* pop.framework in Frameworks */,
 				4EC887BD1F6A20CF00840757 /* SpriteKit.framework in Frameworks */,
 				4EC887BB1F6A204800840757 /* libz.tbd in Frameworks */,
+				5B101480B6518AC49274A7EF /* Pods_chacha_Mac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,13 +267,12 @@
 		4EC886DE1F6A1D1D00840757 = {
 			isa = PBXGroup;
 			children = (
-				4EA5117D1F73B093008A6192 /* pop.framework */,
-				4EA5117A1F73B042008A6192 /* pop.framework */,
 				4EC887301F6A202500840757 /* currentEngine */,
 				4EC886FE1F6A1DD100840757 /* chacha_IOS */,
 				4EC887201F6A1EEC00840757 /* chacha_Mac */,
 				4EC886E81F6A1D1D00840757 /* Products */,
 				4EC887B71F6A203E00840757 /* Frameworks */,
+				A7218BBFA09BA56AC5DF43C8 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -304,6 +302,7 @@
 		4EC887201F6A1EEC00840757 /* chacha_Mac */ = {
 			isa = PBXGroup;
 			children = (
+				4E9105E61F751BCE00F1F0D0 /* GMLSkinManager.swift */,
 				4E52621B1F74E21700EE1B87 /* GMLView.swift */,
 				4EC887C01F6A23B700840757 /* GMLKit */,
 				4EC887211F6A1EEC00840757 /* AppDelegate.swift */,
@@ -332,7 +331,6 @@
 				4EC8876B1F6A202500840757 /* tools */,
 				4EC8876F1F6A202500840757 /* ZipArchive.h */,
 				4EC887701F6A202500840757 /* ZipArchive.mm */,
-				4E5262151F74BEB700EE1B87 /* GMLSkinManager.swift */,
 				4E5262231F74F27F00EE1B87 /* local.strings */,
 			);
 			path = currentEngine;
@@ -421,6 +419,8 @@
 				4EC887BC1F6A20CF00840757 /* SpriteKit.framework */,
 				4EC887BA1F6A204800840757 /* libz.tbd */,
 				4EC887B81F6A203F00840757 /* libz.tbd */,
+				1D9DB49514FC8CF4CAF903A5 /* Pods_chacha_IOS.framework */,
+				52AD745029DAAF24C40E9EC3 /* Pods_chacha_Mac.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -463,6 +463,17 @@
 			path = GMLKit_IOS;
 			sourceTree = "<group>";
 		};
+		A7218BBFA09BA56AC5DF43C8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				637C878364A5B93486C59E10 /* Pods-chacha_IOS.debug.xcconfig */,
+				3A4EC5081406AFB913F4FF14 /* Pods-chacha_IOS.release.xcconfig */,
+				CFD17B03625823EBC122283B /* Pods-chacha_Mac.debug.xcconfig */,
+				32A07EEF248073456509B7C4 /* Pods-chacha_Mac.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -470,10 +481,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4EC8870C1F6A1DD200840757 /* Build configuration list for PBXNativeTarget "chacha_IOS" */;
 			buildPhases = (
+				78AE0760BAAF07BBE16DA74E /* [CP] Check Pods Manifest.lock */,
 				4EC886F91F6A1DD100840757 /* Sources */,
 				4EC886FA1F6A1DD100840757 /* Frameworks */,
 				4EC886FB1F6A1DD100840757 /* Resources */,
 				4EA511061F73AC38008A6192 /* CopyFiles */,
+				41990F0930617FA208D532AE /* [CP] Embed Pods Frameworks */,
+				428EAD8C98E4667FAD78E862 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -488,10 +502,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4EC8872B1F6A1EEC00840757 /* Build configuration list for PBXNativeTarget "chacha_Mac" */;
 			buildPhases = (
+				778AEDE81EA7059CB17BEE5A /* [CP] Check Pods Manifest.lock */,
 				4EC8871B1F6A1EEC00840757 /* Sources */,
 				4EC8871C1F6A1EEC00840757 /* Frameworks */,
 				4EC8871D1F6A1EEC00840757 /* Resources */,
 				4EA511021F73AB20008A6192 /* CopyFiles */,
+				A30456B3AA8B04B8FF4839C0 /* [CP] Embed Pods Frameworks */,
+				44CC16782CEEFCA04C8A4F70 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -566,6 +583,115 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		41990F0930617FA208D532AE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-chacha_IOS/Pods-chacha_IOS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit-iOS/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/pop-iOS/pop.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-chacha_IOS/Pods-chacha_IOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		428EAD8C98E4667FAD78E862 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-chacha_IOS/Pods-chacha_IOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		44CC16782CEEFCA04C8A4F70 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-chacha_Mac/Pods-chacha_Mac-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		778AEDE81EA7059CB17BEE5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-chacha_Mac-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78AE0760BAAF07BBE16DA74E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-chacha_IOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A30456B3AA8B04B8FF4839C0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-chacha_Mac/Pods-chacha_Mac-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit-macOS/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/pop-macOS/pop.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-chacha_Mac/Pods-chacha_Mac-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4EC886F91F6A1DD100840757 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -575,7 +701,6 @@
 				4E5262271F74F37500EE1B87 /* GMLLocalString.swift in Sources */,
 				4EC887B11F6A202500840757 /* GMLTool.m in Sources */,
 				4EC887791F6A202500840757 /* GMLAniType.swift in Sources */,
-				4E5262161F74BEB700EE1B87 /* GMLSkinManager.swift in Sources */,
 				4EC887711F6A202500840757 /* AsyncSocket.m in Sources */,
 				4EC887AD1F6A202500840757 /* PreloadScene.swift in Sources */,
 				4EC887021F6A1DD100840757 /* ViewController.swift in Sources */,
@@ -649,12 +774,12 @@
 				4EC887CD1F6A23B700840757 /* GMLCoreDispatcher.m in Sources */,
 				4EC887AE1F6A202500840757 /* PreloadScene.swift in Sources */,
 				4EC887A01F6A202500840757 /* ioapi.c in Sources */,
-				4E5262171F74BEB700EE1B87 /* GMLSkinManager.swift in Sources */,
 				4EC8877A1F6A202500840757 /* GMLAniType.swift in Sources */,
 				4E84AACD1F6BDE1700F9C065 /* DataFactory.swift in Sources */,
 				4EC887901F6A202500840757 /* MonsterAlignType.swift in Sources */,
 				4EC8879E1F6A202500840757 /* GMLGameMain.swift in Sources */,
 				4EC887721F6A202500840757 /* AsyncSocket.m in Sources */,
+				4E9105E71F751BCE00F1F0D0 /* GMLSkinManager.swift in Sources */,
 				4EC887A41F6A202500840757 /* unzip.c in Sources */,
 				4E5262281F74F37500EE1B87 /* GMLLocalString.swift in Sources */,
 				4EC8878C1F6A202500840757 /* GMLResourceManager.swift in Sources */,
@@ -800,6 +925,7 @@
 		};
 		4EC8870D1F6A1DD200840757 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 637C878364A5B93486C59E10 /* Pods-chacha_IOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -822,6 +948,7 @@
 		};
 		4EC8870E1F6A1DD200840757 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A4EC5081406AFB913F4FF14 /* Pods-chacha_IOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -845,6 +972,7 @@
 		};
 		4EC8872C1F6A1EEC00840757 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFD17B03625823EBC122283B /* Pods-chacha_Mac.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -863,6 +991,7 @@
 		};
 		4EC8872D1F6A1EEC00840757 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32A07EEF248073456509B7C4 /* Pods-chacha_Mac.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
