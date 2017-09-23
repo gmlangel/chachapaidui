@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SnapKit
 class MainViewController: NSViewController {
     fileprivate var gmlv:View_login!;
     override func viewDidLoad() {
@@ -16,6 +17,9 @@ class MainViewController: NSViewController {
         
         gmlv = View_login(frame: NSRect(x: 0, y: 0, width: 200, height: self.view.frame.size.height));
         self.view.addSubview(gmlv);
+        gmlv.snp.makeConstraints { (make) in
+            make.height.equalTo(self.view);
+        }
     }
     
     override func viewDidAppear() {

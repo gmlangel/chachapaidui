@@ -18,6 +18,7 @@
 		4E84AACC1F6BDE1700F9C065 /* DataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E84AACB1F6BDE1700F9C065 /* DataFactory.swift */; };
 		4E84AACD1F6BDE1700F9C065 /* DataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E84AACB1F6BDE1700F9C065 /* DataFactory.swift */; };
 		4E9105E71F751BCE00F1F0D0 /* GMLSkinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9105E61F751BCE00F1F0D0 /* GMLSkinManager.swift */; };
+		4E9105E91F766FF400F1F0D0 /* CurrentBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9105E81F766FF400F1F0D0 /* CurrentBtn.swift */; };
 		4EC5A0F81F6BC6CB008D1699 /* GMLSocketDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A0F71F6BC6CB008D1699 /* GMLSocketDataTool.swift */; };
 		4EC5A0F91F6BC6CB008D1699 /* GMLSocketDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A0F71F6BC6CB008D1699 /* GMLSocketDataTool.swift */; };
 		4EC5A0FC1F6BC89A008D1699 /* BaseSocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A0FB1F6BC89A008D1699 /* BaseSocketModel.swift */; };
@@ -141,6 +142,7 @@
 		4E5262291F74F74800EE1B87 /* FontEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontEnum.swift; sourceTree = "<group>"; };
 		4E84AACB1F6BDE1700F9C065 /* DataFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFactory.swift; sourceTree = "<group>"; };
 		4E9105E61F751BCE00F1F0D0 /* GMLSkinManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLSkinManager.swift; sourceTree = "<group>"; };
+		4E9105E81F766FF400F1F0D0 /* CurrentBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentBtn.swift; sourceTree = "<group>"; };
 		4EA511761F73AF3A008A6192 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = IOS_libs/pop.framework; sourceTree = "<group>"; };
 		4EC5A0F71F6BC6CB008D1699 /* GMLSocketDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLSocketDataTool.swift; sourceTree = "<group>"; };
 		4EC5A0FB1F6BC89A008D1699 /* BaseSocketModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSocketModel.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				4EC8872A1F6A1EEC00840757 /* Info.plist */,
 				4EC8872E1F6A1F2300840757 /* BaseWindow.swift */,
 				4E5262131F74BDA600EE1B87 /* MainViewController.swift */,
+				4E9105E81F766FF400F1F0D0 /* CurrentBtn.swift */,
 				4E5262181F74E07300EE1B87 /* View_login.swift */,
 				4E5262291F74F74800EE1B87 /* FontEnum.swift */,
 			);
@@ -777,6 +780,7 @@
 				4EC8877A1F6A202500840757 /* GMLAniType.swift in Sources */,
 				4E84AACD1F6BDE1700F9C065 /* DataFactory.swift in Sources */,
 				4EC887901F6A202500840757 /* MonsterAlignType.swift in Sources */,
+				4E9105E91F766FF400F1F0D0 /* CurrentBtn.swift in Sources */,
 				4EC8879E1F6A202500840757 /* GMLGameMain.swift in Sources */,
 				4EC887721F6A202500840757 /* AsyncSocket.m in Sources */,
 				4E9105E71F751BCE00F1F0D0 /* GMLSkinManager.swift in Sources */,

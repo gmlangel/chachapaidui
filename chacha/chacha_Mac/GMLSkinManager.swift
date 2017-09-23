@@ -25,4 +25,15 @@ class GMLSkinManager {
      主界面前景色
      */
     open let mainForegroundColor:CGColor = CGColor(red: 0xdd / 255.0, green: 0xdd / 255.0, blue: 0xdd / 255.0, alpha: 1)
+    
+    /**
+     通用按钮1
+     */
+    class func getCurrentBtn(_ frame:NSRect) ->CurrentBtn{
+        let args = CurrentBtnArgs();
+        args.tbFont = FontEnum.btnTextFont;
+        args.colorStates = [CurrentBtnColorState.fillColor,CurrentBtnColorState.fillColor,CurrentBtnColorState.fillColor];
+        let btn:CurrentBtn = CurrentBtn(frame: frame, cba: args);
+        return btn;
+    }
 }
