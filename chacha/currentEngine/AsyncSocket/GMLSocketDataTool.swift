@@ -38,63 +38,63 @@ class GMLSocketDataTool{
             switch cmd {
             case GMLSocketCMD.s_res_c_heartbeat.rawValue:
                 model = Model_HeartBeat_s2c(dic);
-                self.delegate?.onS2C_HeartBeat(model as! Model_HeartBeat_s2c);
+                self.delegate?.onS2C_HeartBeat!(model as! Model_HeartBeat_s2c);
                 break;
             case GMLSocketCMD.s_res_c_logout.rawValue:
                 model = Model_logout_s2c(dic);
-                self.delegate?.onS2C_logout(model as! Model_logout_s2c);
+                self.delegate?.onS2C_logout!(model as! Model_logout_s2c);
                 break;
             case GMLSocketCMD.s_res_c_login.rawValue:
                 model = Model_login_s2c(dic);
-                self.delegate?.onS2C_login(model as! Model_login_s2c);
+                self.delegate?.onS2C_login!(model as! Model_login_s2c);
                 break;
             case GMLSocketCMD.s_res_c_delRoom.rawValue:
                 model = Model_deleteRoom_s2c(dic);
-                self.delegate?.onS2C_deleteRoom(model as! Model_deleteRoom_s2c)
+                self.delegate?.onS2C_deleteRoom!(model as! Model_deleteRoom_s2c)
                 break;
             case GMLSocketCMD.s_res_c_joinRoom.rawValue:
                 model = Model_joinRoom_s2c(dic);
-                self.delegate?.onS2C_joinRoom(model as! Model_joinRoom_s2c)
+                self.delegate?.onS2C_joinRoom!(model as! Model_joinRoom_s2c)
                 break;
             case GMLSocketCMD.s_res_c_createRoom.rawValue:
                 model = Model_createRoom_s2c(dic);
-                self.delegate?.onS2C_createRoom(model as! Model_createRoom_s2c)
+                self.delegate?.onS2C_createRoom!(model as! Model_createRoom_s2c)
                 break;
             case GMLSocketCMD.s_res_c_getUserInfo.rawValue:
                 model = Model_getUserInfo_s2c(dic);
-                self.delegate?.onS2C_getUserInfo(model as! Model_getUserInfo_s2c)
+                self.delegate?.onS2C_getUserInfo!(model as! Model_getUserInfo_s2c)
                 break;
             case GMLSocketCMD.s_res_c_updateUserInfo.rawValue:
                 model = Model_updateUserInfo_s2c(dic);
-                self.delegate?.onS2C_updateUserInfo(model as! Model_updateUserInfo_s2c)
+                self.delegate?.onS2C_updateUserInfo!(model as! Model_updateUserInfo_s2c)
                 break;
             case GMLSocketCMD.s_res_c_getRoomsInfoByUser.rawValue:
                 model = Model_getRoomsInfoByUser_s2c(dic);
-                self.delegate?.onS2C_getRoomsInfoByUser(model as! Model_getRoomsInfoByUser_s2c)
+                self.delegate?.onS2C_getRoomsInfoByUser!(model as! Model_getRoomsInfoByUser_s2c)
                 break;
             case GMLSocketCMD.s_notify_c_chat.rawValue:
                 model = Model_sendChat_notify(dic);
-                self.delegate?.onS2C_sendChat(model as! Model_sendChat_notify);
+                self.delegate?.onS2C_sendChat!(model as! Model_sendChat_notify);
                 break;
             case GMLSocketCMD.s_notify_c_offline.rawValue:
                 model = Model_offline_notify(dic);
-                self.delegate?.onS2C_offline(model as! Model_offline_notify)
+                self.delegate?.onS2C_offline!(model as! Model_offline_notify)
                 break;
             case GMLSocketCMD.s_notify_c_adminCMD.rawValue:
                 model = Model_adminCMD_notify(dic);
-                self.delegate?.onS2C_adminCMD(model as! Model_adminCMD_notify)
+                self.delegate?.onS2C_adminCMD!(model as! Model_adminCMD_notify)
                 break;
             case GMLSocketCMD.s_notify_c_currentCMD.rawValue:
                 model = Model_currentCMD_notify(dic);
-                self.delegate?.onS2C_currentCMD(model as! Model_currentCMD_notify)
+                self.delegate?.onS2C_currentCMD!(model as! Model_currentCMD_notify)
                 break;
             case GMLSocketCMD.s_notify_c_roomStateChange.rawValue:
                 model = Model_roomStateChange_notify(dic);
-                self.delegate?.onS2C_roomStateChange(model as! Model_roomStateChange_notify)
+                self.delegate?.onS2C_roomStateChange!(model as! Model_roomStateChange_notify)
                 break;
             case GMLSocketCMD.s_notify_c_otherUserStateChange.rawValue:
                 model = Model_otherUserStateChange_notify(dic);
-                self.delegate?.onS2C_otherUserStateChange(model as! Model_otherUserStateChange_notify)
+                self.delegate?.onS2C_otherUserStateChange!(model as! Model_otherUserStateChange_notify)
                 break;
             default:
                 //
@@ -193,81 +193,82 @@ enum GMLSocketCMD:UInt32{
 
 }
 
-protocol GMLSocketDataToolDelegate:NSObjectProtocol {
+
+@objc protocol GMLSocketDataToolDelegate:NSObjectProtocol {
     /**
      收到svc的心跳协议回调
      */
-    func onS2C_HeartBeat(_ model:Model_HeartBeat_s2c);
+    @objc optional func onS2C_HeartBeat(_ model:Model_HeartBeat_s2c);
     
     /**
      收到svc的登出协议回调
      */
-    func onS2C_logout(_ model:Model_logout_s2c);
+    @objc optional func onS2C_logout(_ model:Model_logout_s2c);
     
     /**
      收到svc的登录协议回调
      */
-    func onS2C_login(_ model:Model_login_s2c);
+    @objc optional func onS2C_login(_ model:Model_login_s2c);
     
     /**
      收到svc的删除教室协议回调
      */
-    func onS2C_deleteRoom(_ model:Model_deleteRoom_s2c);
+    @objc optional func onS2C_deleteRoom(_ model:Model_deleteRoom_s2c);
     
     /**
      收到svc的进入教室协议回调
      */
-    func onS2C_joinRoom(_ model:Model_joinRoom_s2c);
+    @objc optional func onS2C_joinRoom(_ model:Model_joinRoom_s2c);
     
     /**
      收到svc的创建教室协议回调
      */
-    func onS2C_createRoom(_ model:Model_createRoom_s2c);
+    @objc optional func onS2C_createRoom(_ model:Model_createRoom_s2c);
     
     /**
      收到svc的获取用户信息协议回调
      */
-    func onS2C_getUserInfo(_ model:Model_getUserInfo_s2c);
+    @objc optional func onS2C_getUserInfo(_ model:Model_getUserInfo_s2c);
     
     /**
      收到svc的更新用户信息协议回调
      */
-    func onS2C_updateUserInfo(_ model:Model_updateUserInfo_s2c);
+    @objc optional func onS2C_updateUserInfo(_ model:Model_updateUserInfo_s2c);
     
     /**
      收到svc的获取用户拥有的课程信息协议回调
      */
-    func onS2C_getRoomsInfoByUser(_ model:Model_getRoomsInfoByUser_s2c);
+    @objc optional func onS2C_getRoomsInfoByUser(_ model:Model_getRoomsInfoByUser_s2c);
     
     /**
      收到svc的文本消息通知
      */
-    func onS2C_sendChat(_ model:Model_sendChat_notify);
+    @objc optional func onS2C_sendChat(_ model:Model_sendChat_notify);
     
     /**
      收到svc的掉线通知
      */
-    func onS2C_offline(_ model:Model_offline_notify);
+    @objc optional func onS2C_offline(_ model:Model_offline_notify);
     
     /**
      收到svc的管理员通知
      */
-    func onS2C_adminCMD(_ model:Model_adminCMD_notify);
+    @objc optional func onS2C_adminCMD(_ model:Model_adminCMD_notify);
     
     /**
      收到svc的通用教学通知
      */
-    func onS2C_currentCMD(_ model:Model_currentCMD_notify);
+    @objc optional func onS2C_currentCMD(_ model:Model_currentCMD_notify);
     
     /**
      收到svc的教室状态变更通知
      */
-    func onS2C_roomStateChange(_ model:Model_roomStateChange_notify);
+    @objc optional func onS2C_roomStateChange(_ model:Model_roomStateChange_notify);
     
     /**
      收到svc的其它用户状态变更通知
      */
-    func onS2C_otherUserStateChange(_ model:Model_otherUserStateChange_notify);
+    @objc optional func onS2C_otherUserStateChange(_ model:Model_otherUserStateChange_notify);
 }
 
 

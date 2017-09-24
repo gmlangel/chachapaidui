@@ -10,5 +10,16 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "MainViewController.onviewResize(NSNotification) -&gt; ():MainViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "(notify.object as! BaseWindow).frame">
+            </PersistentString>
+            <PersistentString
+               value = "self.view.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

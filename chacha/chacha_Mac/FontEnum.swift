@@ -17,4 +17,9 @@ class FontEnum {
      按钮文本字体 12号 (程序内的按钮文本的字体)
      */
     static let btnTextFont:NSFont = NSFont.systemFont(ofSize: 12);
+    
+    /**
+     欢迎页面的title字体 40号
+     */
+    static let huanyingTextFont:NSFont = NSFont.systemFont(ofSize: 40);
 }

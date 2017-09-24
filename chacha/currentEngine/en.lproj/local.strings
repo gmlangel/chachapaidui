@@ -7,3 +7,5 @@
 */
 "loginPlaceHolder" = "Account";
 "loginPWDPlaceHolder" = "Password";
+"btn_login" = "login";
+"huanying_title" = "Hi,吃了吗?";

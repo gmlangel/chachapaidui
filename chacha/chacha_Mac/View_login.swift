@@ -10,7 +10,7 @@
 import Foundation
 import SnapKit
 
-class View_login: GMLView {
+class View_login: GMLView,GMLSocketDataToolDelegate {
     
     fileprivate var tb_loginName:NSTextField!;//登录框
     fileprivate var tb_pwd:NSSecureTextField!;//密码框
@@ -18,8 +18,8 @@ class View_login: GMLView {
     fileprivate var btn_login:CurrentBtn!;//登录按钮
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect);
-        self.wantsLayer = true;
-        self.layer?.backgroundColor = NSColor.red.cgColor;
+//        self.wantsLayer = true;
+//        self.layer?.backgroundColor = NSColor.red.cgColor;
     }
     
     required init?(coder: NSCoder) {
@@ -37,7 +37,7 @@ class View_login: GMLView {
         self.addSubview(tb_loginName);
         tb_loginName.snp.makeConstraints { (make) in
             make.height.equalTo(30);
-            make.centerY.equalTo(self.snp_centerYWithinMargins).offset(-50);//.offset(50);//.offset(50);
+            make.centerY.equalTo(self.snp_centerYWithinMargins).offset(0);//.offset(50);//.offset(50);
         }
         
         //密码框
@@ -54,8 +54,13 @@ class View_login: GMLView {
         }
         
         //头像
-        img_header = NSImageView(frame: NSRect(x: (self.bounds.size.width - 100)/2.0, y: 0, width: 100, height: 100));
+        img_header = NSImageView(frame: NSRect(x: tb_pwd.frame.midX - 52, y: 0, width: 100, height: 100));
+        img_header.imageScaling = .scaleNone
+        img_header.image = NSImage(named: "test");
         img_header.imageFrameStyle = .grayBezel;
+        img_header.wantsLayer = true;
+        img_header.layer?.cornerRadius = 5;
+        img_header.layer?.backgroundColor = CGColor(red: 1, green: 1, blue: 1, alpha: 0.3);
         self.addSubview(img_header);
         img_header.snp.makeConstraints { (make) in
             make.width.equalTo(100);
@@ -64,5 +69,28 @@ class View_login: GMLView {
         }
         
         //登录按钮
+        btn_login = GMLSkinManager.instance.getCurrentBtn(NSRect(x: tb_pwd.frame.midX - 35, y: 60, width: 70, height: 30))
+        self.addSubview(btn_login);
+        btn_login.stringValue = GMLLocalString.get("btn_login");
+        btn_login.snp.makeConstraints { (make) in
+            make.top.equalTo(tb_pwd.snp.bottom).offset(15);
+            make.height.equalTo(30);
+            make.width.equalTo(70);
+        }
+        btn_login.target = self;
+        btn_login.action = #selector(toLogin);
+    }
+    
+    open func toLogin(_ sender:Any){
+        if tb_loginName.stringValue == ""{
+            return;
+        }
+        let model = Model_login_c2s();
+        model.loginName = tb_loginName.stringValue
+        GMLSocketManager.instance.sendMsgToServer(model: model);
+    }
+    
+    func onS2C_login(_ model: Model_login_s2c) {
+        print("登录成功");
     }
 }

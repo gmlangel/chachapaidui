@@ -7,3 +7,5 @@
 */
 "loginPlaceHolder" = "登录名";
 "loginPWDPlaceHolder" = "密码";
+"btn_login" = "登录";
+"huanying_title" = "Hi,吃了吗?";
