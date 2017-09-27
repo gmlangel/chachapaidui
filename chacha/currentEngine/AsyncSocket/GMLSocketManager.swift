@@ -7,6 +7,82 @@
 //
 
 import Foundation
+
+/**
+ 其他用户状态变更通知
+ */
+let SOCKET_OTHERUSERSTATECHANGE:NSNotification.Name = NSNotification.Name.init("socket_otheruserstatechange");
+
+/**
+ 教室状态通知
+ */
+let SOCKET_ROOMSTATECHANGE:NSNotification.Name = NSNotification.Name.init("socket_roomstatechange");
+
+/**
+ 通用教学命令通知
+ */
+let SOCKET_CURRENTCMDNOTIFY:NSNotification.Name = NSNotification.Name.init("socket_currentcmdnotify");
+
+/**
+ 收到管理员命令通知
+ */
+let SOCKET_ADMINNOTIFY:NSNotification.Name = NSNotification.Name.init("socket_adminnotify");
+
+/**
+ 聊天消息回调
+ */
+let SOCKET_CHATMSGCALLBACK:NSNotification.Name = NSNotification.Name.init("socket_chatmsgcallback");
+
+/**
+ 更新用户拥有的教室信息
+ */
+let SOCKET_GETROOMSINFOBYUSER:NSNotification.Name = NSNotification.Name.init("socket_getroomsinfobyuser");
+
+/**
+ 更新用户信息回调
+ */
+let SOCKET_UPDATEUSERINFO:NSNotification.Name = NSNotification.Name.init("socket_updateuserinfo");
+
+/**
+ 获取用户信息回调
+ */
+let SOCKET_GETUSERINFO:NSNotification.Name = NSNotification.Name.init("socket_getuserinfo");
+
+/**
+ 创建教室回调
+ */
+let SOCKET_CREATEROOM:NSNotification.Name = NSNotification.Name.init("socket_createroom");
+
+/**
+ 进入教室回调
+ */
+let SOCKET_JOINROOM:NSNotification.Name = NSNotification.Name.init("socket_joinroom");
+
+/**
+ 删除教室回调
+ */
+let SOCKET_DELETEROOM:NSNotification.Name = NSNotification.Name.init("socket_deleteroom");
+
+/**
+ 登出回调
+ */
+let SOCKET_LOGOUTED:NSNotification.Name = NSNotification.Name.init("socket_logouted");
+
+/**
+ 收到心跳回调
+ */
+let SOCKET_HEARTBEAT:NSNotification.Name = NSNotification.Name.init("socket_heartbeat");
+
+/**
+ 登录掉线
+ */
+let SOCKET_OFFLINE:NSNotification.Name = NSNotification.Name.init("socket_offline");
+
+/**
+ 登录完毕
+ */
+let SOCKET_LOGINCOMPLETE:NSNotification.Name = NSNotification.Name.init("socket_logincomplete");
+
 /**
  socket断开连接
  */

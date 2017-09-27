@@ -27,6 +27,11 @@ class GMLSkinManager {
     open let mainForegroundColor:CGColor = CGColor(red: 0xe6 / 255.0, green: 0xed / 255.0, blue: 0xeb / 255.0, alpha: 1)
     
     /**
+     错误警告颜色
+     */
+    open let worringColor:CGColor = CGColor(red: 1, green: 0, blue: 0, alpha: 1)
+    
+    /**
      通用按钮1
      */
     open func getCurrentBtn(_ frame:NSRect) ->CurrentBtn{

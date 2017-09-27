@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4E5262141F74BDA600EE1B87 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5262131F74BDA600EE1B87 /* MainViewController.swift */; };
-		4E52621A1F74E07300EE1B87 /* View_login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E5262181F74E07300EE1B87 /* View_login.swift */; };
 		4E52621C1F74E21700EE1B87 /* GMLView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E52621B1F74E21700EE1B87 /* GMLView.swift */; };
 		4E5262201F74F27F00EE1B87 /* local.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E5262231F74F27F00EE1B87 /* local.strings */; };
 		4E5262211F74F27F00EE1B87 /* local.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E5262231F74F27F00EE1B87 /* local.strings */; };
@@ -19,7 +18,14 @@
 		4E84AACD1F6BDE1700F9C065 /* DataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E84AACB1F6BDE1700F9C065 /* DataFactory.swift */; };
 		4E9105E71F751BCE00F1F0D0 /* GMLSkinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9105E61F751BCE00F1F0D0 /* GMLSkinManager.swift */; };
 		4E9105E91F766FF400F1F0D0 /* CurrentBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9105E81F766FF400F1F0D0 /* CurrentBtn.swift */; };
-		4E9105EB1F77AE0300F1F0D0 /* View_huanying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9105EA1F77AE0300F1F0D0 /* View_huanying.swift */; };
+		4E9105ED1F7BA58B00F1F0D0 /* GlobelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9105EC1F7BA58B00F1F0D0 /* GlobelInfo.swift */; };
+		4E9105F71F7BAAEC00F1F0D0 /* View_ClassList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9105F31F7BAAEC00F1F0D0 /* View_ClassList.swift */; };
+		4E9105F81F7BAAEC00F1F0D0 /* View_huanying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9105F41F7BAAEC00F1F0D0 /* View_huanying.swift */; };
+		4E9105F91F7BAAEC00F1F0D0 /* View_login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9105F51F7BAAEC00F1F0D0 /* View_login.swift */; };
+		4E9105FA1F7BAAEC00F1F0D0 /* View_UserInfoAndTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9105F61F7BAAEC00F1F0D0 /* View_UserInfoAndTool.swift */; };
+		4E9105FC1F7BBF6900F1F0D0 /* View_TeachingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9105FB1F7BBF6900F1F0D0 /* View_TeachingContainer.swift */; };
+		4E9105FE1F7BC35400F1F0D0 /* View_MediaContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9105FD1F7BC35400F1F0D0 /* View_MediaContainer.swift */; };
+		4E9106001F7BC39D00F1F0D0 /* View_ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9105FF1F7BC39D00F1F0D0 /* View_ChatView.swift */; };
 		4EC5A0F81F6BC6CB008D1699 /* GMLSocketDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A0F71F6BC6CB008D1699 /* GMLSocketDataTool.swift */; };
 		4EC5A0F91F6BC6CB008D1699 /* GMLSocketDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A0F71F6BC6CB008D1699 /* GMLSocketDataTool.swift */; };
 		4EC5A0FC1F6BC89A008D1699 /* BaseSocketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC5A0FB1F6BC89A008D1699 /* BaseSocketModel.swift */; };
@@ -134,7 +140,6 @@
 		32A07EEF248073456509B7C4 /* Pods-chacha_Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chacha_Mac.release.xcconfig"; path = "Pods/Target Support Files/Pods-chacha_Mac/Pods-chacha_Mac.release.xcconfig"; sourceTree = "<group>"; };
 		3A4EC5081406AFB913F4FF14 /* Pods-chacha_IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chacha_IOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-chacha_IOS/Pods-chacha_IOS.release.xcconfig"; sourceTree = "<group>"; };
 		4E5262131F74BDA600EE1B87 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		4E5262181F74E07300EE1B87 /* View_login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_login.swift; sourceTree = "<group>"; };
 		4E52621B1F74E21700EE1B87 /* GMLView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLView.swift; sourceTree = "<group>"; };
 		4E5262221F74F27F00EE1B87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/local.strings; sourceTree = "<group>"; };
 		4E5262241F74F29B00EE1B87 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/local.strings"; sourceTree = "<group>"; };
@@ -144,7 +149,14 @@
 		4E84AACB1F6BDE1700F9C065 /* DataFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFactory.swift; sourceTree = "<group>"; };
 		4E9105E61F751BCE00F1F0D0 /* GMLSkinManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLSkinManager.swift; sourceTree = "<group>"; };
 		4E9105E81F766FF400F1F0D0 /* CurrentBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentBtn.swift; sourceTree = "<group>"; };
-		4E9105EA1F77AE0300F1F0D0 /* View_huanying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_huanying.swift; sourceTree = "<group>"; };
+		4E9105EC1F7BA58B00F1F0D0 /* GlobelInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobelInfo.swift; sourceTree = "<group>"; };
+		4E9105F31F7BAAEC00F1F0D0 /* View_ClassList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_ClassList.swift; sourceTree = "<group>"; };
+		4E9105F41F7BAAEC00F1F0D0 /* View_huanying.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_huanying.swift; sourceTree = "<group>"; };
+		4E9105F51F7BAAEC00F1F0D0 /* View_login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_login.swift; sourceTree = "<group>"; };
+		4E9105F61F7BAAEC00F1F0D0 /* View_UserInfoAndTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_UserInfoAndTool.swift; sourceTree = "<group>"; };
+		4E9105FB1F7BBF6900F1F0D0 /* View_TeachingContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_TeachingContainer.swift; sourceTree = "<group>"; };
+		4E9105FD1F7BC35400F1F0D0 /* View_MediaContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_MediaContainer.swift; sourceTree = "<group>"; };
+		4E9105FF1F7BC39D00F1F0D0 /* View_ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_ChatView.swift; sourceTree = "<group>"; };
 		4EA511761F73AF3A008A6192 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = IOS_libs/pop.framework; sourceTree = "<group>"; };
 		4EC5A0F71F6BC6CB008D1699 /* GMLSocketDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLSocketDataTool.swift; sourceTree = "<group>"; };
 		4EC5A0FB1F6BC89A008D1699 /* BaseSocketModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseSocketModel.swift; sourceTree = "<group>"; };
@@ -260,6 +272,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E9105F21F7BAAEC00F1F0D0 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				4E9105F31F7BAAEC00F1F0D0 /* View_ClassList.swift */,
+				4E9105F41F7BAAEC00F1F0D0 /* View_huanying.swift */,
+				4E9105F51F7BAAEC00F1F0D0 /* View_login.swift */,
+				4E9105F61F7BAAEC00F1F0D0 /* View_UserInfoAndTool.swift */,
+				4E9105FB1F7BBF6900F1F0D0 /* View_TeachingContainer.swift */,
+				4E9105FF1F7BC39D00F1F0D0 /* View_ChatView.swift */,
+				4E9105FD1F7BC35400F1F0D0 /* View_MediaContainer.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		4EC5A0FA1F6BC86F008D1699 /* models */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +332,7 @@
 		4EC887201F6A1EEC00840757 /* chacha_Mac */ = {
 			isa = PBXGroup;
 			children = (
+				4E9105F21F7BAAEC00F1F0D0 /* views */,
 				4E9105E61F751BCE00F1F0D0 /* GMLSkinManager.swift */,
 				4E52621B1F74E21700EE1B87 /* GMLView.swift */,
 				4EC887C01F6A23B700840757 /* GMLKit */,
@@ -317,9 +344,8 @@
 				4EC8872E1F6A1F2300840757 /* BaseWindow.swift */,
 				4E5262131F74BDA600EE1B87 /* MainViewController.swift */,
 				4E9105E81F766FF400F1F0D0 /* CurrentBtn.swift */,
-				4E5262181F74E07300EE1B87 /* View_login.swift */,
 				4E5262291F74F74800EE1B87 /* FontEnum.swift */,
-				4E9105EA1F77AE0300F1F0D0 /* View_huanying.swift */,
+				4E9105EC1F7BA58B00F1F0D0 /* GlobelInfo.swift */,
 			);
 			path = chacha_Mac;
 			sourceTree = "<group>";
@@ -749,9 +775,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E9105FC1F7BBF6900F1F0D0 /* View_TeachingContainer.swift in Sources */,
 				4EC887B41F6A202500840757 /* HeartbeatManager.swift in Sources */,
 				4EC887D11F6A23B700840757 /* GMLProxyFactory.m in Sources */,
-				4E52621A1F74E07300EE1B87 /* View_login.swift in Sources */,
+				4E9105F91F7BAAEC00F1F0D0 /* View_login.swift in Sources */,
 				4EC887B01F6A202500840757 /* SelectRoleScene.swift in Sources */,
 				4EC887241F6A1EEC00840757 /* ViewController.swift in Sources */,
 				4EC887A81F6A202500840757 /* GuideScene.swift in Sources */,
@@ -761,8 +788,10 @@
 				4EC887D01F6A23B700840757 /* GMLProxy.m in Sources */,
 				4E52621C1F74E21700EE1B87 /* GMLView.swift in Sources */,
 				4EC887CF1F6A23B700840757 /* GMLExtension.m in Sources */,
+				4E9105F81F7BAAEC00F1F0D0 /* View_huanying.swift in Sources */,
 				4EC887CE1F6A23B700840757 /* GMLEvent.m in Sources */,
 				4EC887741F6A202500840757 /* AsyncUdpSocket.m in Sources */,
+				4E9105F71F7BAAEC00F1F0D0 /* View_ClassList.swift in Sources */,
 				4EC887801F6A202500840757 /* GMLDynamicSceneFactory.swift in Sources */,
 				4EC8872F1F6A1F2300840757 /* BaseWindow.swift in Sources */,
 				4EC887AC1F6A202500840757 /* LogoScene.swift in Sources */,
@@ -776,8 +805,9 @@
 				4EC887221F6A1EEC00840757 /* AppDelegate.swift in Sources */,
 				4EC887881F6A202500840757 /* GMLMonster.swift in Sources */,
 				4EC8877E1F6A202500840757 /* GMLDynamicScene.swift in Sources */,
+				4E9106001F7BC39D00F1F0D0 /* View_ChatView.swift in Sources */,
 				4EC887841F6A202500840757 /* GMLGameConfig.m in Sources */,
-				4E9105EB1F77AE0300F1F0D0 /* View_huanying.swift in Sources */,
+				4E9105ED1F7BA58B00F1F0D0 /* GlobelInfo.swift in Sources */,
 				4EC887CD1F6A23B700840757 /* GMLCoreDispatcher.m in Sources */,
 				4EC887AE1F6A202500840757 /* PreloadScene.swift in Sources */,
 				4EC887A01F6A202500840757 /* ioapi.c in Sources */,
@@ -792,8 +822,10 @@
 				4E5262281F74F37500EE1B87 /* GMLLocalString.swift in Sources */,
 				4EC8878C1F6A202500840757 /* GMLResourceManager.swift in Sources */,
 				4EC8880F1F6A345C00840757 /* GMLSocketManager.swift in Sources */,
+				4E9105FA1F7BAAEC00F1F0D0 /* View_UserInfoAndTool.swift in Sources */,
 				4EC5A0F91F6BC6CB008D1699 /* GMLSocketDataTool.swift in Sources */,
 				4EC8877C1F6A202500840757 /* GMLContactTestBitMaskEnum.swift in Sources */,
+				4E9105FE1F7BC35400F1F0D0 /* View_MediaContainer.swift in Sources */,
 				4EC887821F6A202500840757 /* GMLExtensions.m in Sources */,
 				4E5262141F74BDA600EE1B87 /* MainViewController.swift in Sources */,
 			);
