@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BaseSocketModel:NSObject{
+class BaseSocketModel{
     open var cmd:GMLSocketCMD = .normal;
     open var seq:UInt32 = 0;
 }

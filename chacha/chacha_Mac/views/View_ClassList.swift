@@ -8,5 +8,15 @@
 
 import Foundation
 class View_ClassList: GMLView {
+    override func gml_initialUI() {
+        gml_addEvents();
+    }
     
+    override func gml_addEvents() {
+        //NotificationCenter.default.addObserver(self, selector: <#T##Selector#>, name: <#T##NSNotification.Name?#>, object: <#T##Any?#>)
+    }
+    
+    override func gml_removeEvents() {
+        
+    }
 }

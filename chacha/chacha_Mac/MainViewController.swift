@@ -152,17 +152,13 @@ class MainViewController: NSViewController,POPAnimationDelegate {
             containerV.pop_add(changeSizeAni, forKey: "containerVChangeSize");
             //显示
             userInfoV.alphaValue = 0;
-            userInfoV.wantsLayer = true;
-            userInfoV.layer?.backgroundColor = NSColor.red.cgColor;
             classlistV.alphaValue = 0;
-            classlistV.wantsLayer = true;
-            classlistV.layer?.backgroundColor = NSColor.blue.cgColor;
             containerV.addSubview(userInfoV);
 //            //添加监听
 //            loginV.addEventListener(GMLEvent_Logined,execFunc: onlogined);
             //添加约束
             userInfoV.snp.makeConstraints { (make) in
-                make.height.equalTo(200);
+                make.height.equalTo(180);
                 make.width.equalTo(containerV);
                 make.top.equalTo(containerV.snp.topMargin)
             }

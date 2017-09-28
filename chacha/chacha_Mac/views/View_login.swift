@@ -31,7 +31,8 @@ class View_login: GMLView {
         //账号框
         tb_loginName = NSTextField(frame: NSRect(x: (self.bounds.size.width - 150)/2.0, y: 20, width: 150, height: 30));
         tb_loginName.bezelStyle = .roundedBezel;
-        tb_loginName.usesSingleLineMode = true;
+        tb_loginName.cell?.wraps = false;
+        tb_loginName.cell?.isScrollable = true;
         tb_loginName.font = FontEnum.commonFont;
         tb_loginName.placeholderString = GMLLocalString.get("loginPlaceHolder");
         tb_loginName.focusRingType = .none;//隐藏选中时的高亮框
@@ -89,7 +90,7 @@ class View_login: GMLView {
         tb_errorInfo.backgroundColor = NSColor.clear;
         tb_errorInfo.isBordered = false;
         tb_errorInfo.isEnabled = false;
-        tb_errorInfo.font = FontEnum.btnTextFont;
+        tb_errorInfo.font = FontEnum.errorTipFont;
         tb_errorInfo.textColor = NSColor.init(cgColor: GMLSkinManager.instance.worringColor);
         tb_errorInfo.focusRingType = .none;//隐藏选中时的高亮框
         tb_errorInfo.alignment = .center;
@@ -115,6 +116,13 @@ class View_login: GMLView {
     }
     open func toLogin(_ sender:Any){
         if tb_loginName.stringValue == ""{
+            tb_errorInfo.isHidden = false;
+            tb_errorInfo.stringValue = GMLLocalString.get("error_login_empty_info");
+            return;
+        }
+        if GMLSocketManager.instance.sock.isConnected() == false{
+            tb_errorInfo.isHidden = false;
+            tb_errorInfo.stringValue = GMLLocalString.get("error_socket_not_connected");
             return;
         }
         tb_errorInfo.isHidden = true;

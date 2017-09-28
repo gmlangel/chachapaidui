@@ -32,7 +32,7 @@ class GMLSkinManager {
     open let worringColor:CGColor = CGColor(red: 1, green: 0, blue: 0, alpha: 1)
     
     /**
-     通用按钮1
+     通用按钮1  绿色
      */
     open func getCurrentBtn(_ frame:NSRect) ->CurrentBtn{
         let args = CurrentBtnArgs();
@@ -45,5 +45,38 @@ class GMLSkinManager {
         return btn;
     }
     
+    /**
+     通用按钮2  系统蓝
+     */
+    open func getCurrentBtn2(_ frame:NSRect) ->CurrentBtn{
+        let args = CurrentBtnArgs();
+        args.tbFont = FontEnum.btnTextFont;
+        args.colorStates = [CurrentBtnColorState.strokeBorder,CurrentBtnColorState.strokeBorder,CurrentBtnColorState.fillColor];
+        args.tbColorArr = [currentFontColor2,currentFontColor3,NSColor.white];
+        args.bgColorArr = [currentFontColor2,currentFontColor3,currentFontColor2]
+        args.bgUnEnabledColorArr = [NSColor.clear,NSColor.clear,NSColor.clear];
+        let btn:CurrentBtn = CurrentBtn(frame: frame, cba: args);
+        return btn;
+    }
+    
+    
+    /**
+     #333333
+     */
     open let currentFontColor = NSColor(red: 0x33 / 255.0, green: 0x33 / 255.0, blue: 0x33 / 255.0, alpha: 1)
+    
+    /***
+     系统蓝
+     */
+    open let currentFontColor2 = NSColor(red: 0x0e / 255.0, green: 0x80 / 255.0, blue: 0xff / 255.0, alpha: 1)
+    
+    /***
+     系统蓝 高亮
+     */
+    open let currentFontColor3 = NSColor(red: 0x0e / 255.0, green: 0x80 / 255.0, blue: 0xf0 / 255.0, alpha: 1)
+    
+    /**
+     分割线颜色
+     */
+    open let fengexianColor = CGColor(red: 0xd2 / 255.0, green: 0xd2 / 255.0, blue: 0xd2 / 255.0, alpha: 1)
 }

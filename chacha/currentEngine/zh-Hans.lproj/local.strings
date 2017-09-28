@@ -9,3 +9,8 @@
 "loginPWDPlaceHolder" = "密码";
 "btn_login" = "登录";
 "huanying_title" = "Hi,吃了吗?";
+"error_login_empty_info" = "账号不能为空";
+"error_socket_not_connected" = "服务器连接中，请稍后";
+"classlist_title" = "茶茶派对";
+"btn_edit" = "编 辑";
+"btn_edit_complete" = "完 成";

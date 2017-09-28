@@ -19,6 +19,8 @@ class View_huanying: GMLView {
         tb_huanying.isEditable = false;
         tb_huanying.isSelectable = false;
         tb_huanying.usesSingleLineMode = true;
+        tb_huanying.cell?.wraps = false;
+        tb_huanying.cell?.isScrollable = true;
         tb_huanying.backgroundColor = NSColor.clear;
         tb_huanying.isBordered = false;
         tb_huanying.textColor = GMLSkinManager.instance.currentFontColor;

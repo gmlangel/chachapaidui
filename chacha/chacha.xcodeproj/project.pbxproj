@@ -36,7 +36,6 @@
 		4EC887071F6A1DD200840757 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC887061F6A1DD200840757 /* Assets.xcassets */; };
 		4EC8870A1F6A1DD200840757 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EC887081F6A1DD200840757 /* LaunchScreen.storyboard */; };
 		4EC887221F6A1EEC00840757 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887211F6A1EEC00840757 /* AppDelegate.swift */; };
-		4EC887241F6A1EEC00840757 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC887231F6A1EEC00840757 /* ViewController.swift */; };
 		4EC887261F6A1EEC00840757 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EC887251F6A1EEC00840757 /* Assets.xcassets */; };
 		4EC887291F6A1EEC00840757 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EC887271F6A1EEC00840757 /* Main.storyboard */; };
 		4EC8872F1F6A1F2300840757 /* BaseWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8872E1F6A1F2300840757 /* BaseWindow.swift */; };
@@ -169,7 +168,6 @@
 		4EC8870B1F6A1DD200840757 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EC8871F1F6A1EEC00840757 /* chacha_Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chacha_Mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EC887211F6A1EEC00840757 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4EC887231F6A1EEC00840757 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4EC887251F6A1EEC00840757 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EC887281F6A1EEC00840757 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4EC8872A1F6A1EEC00840757 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -337,7 +335,6 @@
 				4E52621B1F74E21700EE1B87 /* GMLView.swift */,
 				4EC887C01F6A23B700840757 /* GMLKit */,
 				4EC887211F6A1EEC00840757 /* AppDelegate.swift */,
-				4EC887231F6A1EEC00840757 /* ViewController.swift */,
 				4EC887251F6A1EEC00840757 /* Assets.xcassets */,
 				4EC887271F6A1EEC00840757 /* Main.storyboard */,
 				4EC8872A1F6A1EEC00840757 /* Info.plist */,
@@ -780,7 +777,6 @@
 				4EC887D11F6A23B700840757 /* GMLProxyFactory.m in Sources */,
 				4E9105F91F7BAAEC00F1F0D0 /* View_login.swift in Sources */,
 				4EC887B01F6A202500840757 /* SelectRoleScene.swift in Sources */,
-				4EC887241F6A1EEC00840757 /* ViewController.swift in Sources */,
 				4EC887A81F6A202500840757 /* GuideScene.swift in Sources */,
 				4EC8878E1F6A202500840757 /* GMLScene.swift in Sources */,
 				4EC887A21F6A202500840757 /* mztools.c in Sources */,
