@@ -14,3 +14,6 @@
 "classlist_title" = "茶茶派对";
 "btn_edit" = "编 辑";
 "btn_edit_complete" = "完 成";
+"tb_joinRoomTitle" = "输入邀请码，快速进入教室";
+"btn_joinroom" = "进入教室";
+"tb_classListTitle" = "您创建的课程";

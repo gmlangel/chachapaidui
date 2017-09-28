@@ -176,13 +176,6 @@ class MainViewController: NSViewController,POPAnimationDelegate {
             ani2.beginTime = CACurrentMediaTime() + 1;
             userInfoV.pop_add(ani1, forKey: "userInfoVAni");
             classlistV.pop_add(ani2, forKey: "classlistVAni");
-            
-            //测试用
-            let btn = GMLSkinManager.instance.getCurrentBtn(NSRect(x: 20, y: 20, width: 150, height: 30));
-            btn.stringValue = "进入教室"
-            btn.target = self;
-            btn.action = #selector(joinRoom);
-            classlistV.addSubview(btn);
         }else{
             //隐藏
             userInfoV.snp.removeConstraints();

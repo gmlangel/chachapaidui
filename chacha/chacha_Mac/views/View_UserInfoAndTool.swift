@@ -31,7 +31,7 @@ class View_UserInfoAndTool: GMLView {
             make.width.equalTo(100);
             make.height.equalTo(100);
             make.centerY.equalTo(self);
-            make.leading.equalTo(self.snp.leftMargin).offset(20);
+            make.leading.equalTo(self.snp.leftMargin).offset(40);
         }
         let sha = NSShadow();
         sha.shadowBlurRadius = 20;
@@ -51,7 +51,7 @@ class View_UserInfoAndTool: GMLView {
             make.width.equalTo(100);
             make.height.equalTo(100);
             make.centerY.equalTo(self);
-            make.leading.equalTo(self.snp.leftMargin).offset(20);
+            make.leading.equalTo(self.snp.leftMargin).offset(40);
         }
         
         if let headerStr = GlobelInfo.instance.userInfo?.headerImage{
@@ -117,7 +117,7 @@ class View_UserInfoAndTool: GMLView {
         self.addSubview(v_right_line);
         v_right_line.snp.makeConstraints { (make) in
             make.width.equalTo(1);
-            make.right.equalTo(self).offset(-100);
+            make.right.equalTo(self).offset(-125);
             make.top.equalTo(self).offset(20);
             make.bottom.equalTo(self).offset(-20);
         }
