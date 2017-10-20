@@ -109,6 +109,7 @@
 		4EC8880C1F6A2C7A00840757 /* GMLProxyFactory_IOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC888061F6A2C7A00840757 /* GMLProxyFactory_IOS.m */; };
 		4EC8880E1F6A345C00840757 /* GMLSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8880D1F6A345C00840757 /* GMLSocketManager.swift */; };
 		4EC8880F1F6A345C00840757 /* GMLSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8880D1F6A345C00840757 /* GMLSocketManager.swift */; };
+		4EC9DBEA1F98552100F2B3EF /* View_ClassListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC9DBE91F98552100F2B3EF /* View_ClassListItem.swift */; };
 		56A6AD7A373B1819D844BCAE /* Pods_chacha_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9DB49514FC8CF4CAF903A5 /* Pods_chacha_IOS.framework */; };
 		5B101480B6518AC49274A7EF /* Pods_chacha_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AD745029DAAF24C40E9EC3 /* Pods_chacha_Mac.framework */; };
 /* End PBXBuildFile section */
@@ -241,6 +242,7 @@
 		4EC888061F6A2C7A00840757 /* GMLProxyFactory_IOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMLProxyFactory_IOS.m; sourceTree = "<group>"; };
 		4EC888071F6A2C7A00840757 /* GMLViewProtocal_IOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLViewProtocal_IOS.h; sourceTree = "<group>"; };
 		4EC8880D1F6A345C00840757 /* GMLSocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLSocketManager.swift; sourceTree = "<group>"; };
+		4EC9DBE91F98552100F2B3EF /* View_ClassListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_ClassListItem.swift; sourceTree = "<group>"; };
 		52AD745029DAAF24C40E9EC3 /* Pods_chacha_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chacha_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		637C878364A5B93486C59E10 /* Pods-chacha_IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chacha_IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chacha_IOS/Pods-chacha_IOS.debug.xcconfig"; sourceTree = "<group>"; };
 		CFD17B03625823EBC122283B /* Pods-chacha_Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chacha_Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chacha_Mac/Pods-chacha_Mac.debug.xcconfig"; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				4E9105FB1F7BBF6900F1F0D0 /* View_TeachingContainer.swift */,
 				4E9105FF1F7BC39D00F1F0D0 /* View_ChatView.swift */,
 				4E9105FD1F7BC35400F1F0D0 /* View_MediaContainer.swift */,
+				4EC9DBE91F98552100F2B3EF /* View_ClassListItem.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -784,6 +787,7 @@
 				4EC887D01F6A23B700840757 /* GMLProxy.m in Sources */,
 				4E52621C1F74E21700EE1B87 /* GMLView.swift in Sources */,
 				4EC887CF1F6A23B700840757 /* GMLExtension.m in Sources */,
+				4EC9DBEA1F98552100F2B3EF /* View_ClassListItem.swift in Sources */,
 				4E9105F81F7BAAEC00F1F0D0 /* View_huanying.swift in Sources */,
 				4EC887CE1F6A23B700840757 /* GMLEvent.m in Sources */,
 				4EC887741F6A202500840757 /* AsyncUdpSocket.m in Sources */,

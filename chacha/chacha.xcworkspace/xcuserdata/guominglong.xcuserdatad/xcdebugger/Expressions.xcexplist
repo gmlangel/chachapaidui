@@ -3,10 +3,27 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "View_ClassList.getClassListCallback(NSNotification) -&gt; ():View_ClassList.swift">
+      </ContextState>
+      <ContextState
          contextName = "MainViewController.viewDidLoad() -&gt; ():MainViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "self.view.frame.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "View_ClassListItem.gml_fillUserInfo([AnyHashable : Any]?) -&gt; ():View_ClassListItem.swift">
+      </ContextState>
+      <ContextState
+         contextName = "View_ClassList.fillClassList() -&gt; ():View_ClassList.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "item.id * 150">
+            </PersistentString>
+            <PersistentString
+               value = "v_classScrollDocument.subviews">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -18,6 +35,14 @@
             </PersistentString>
             <PersistentString
                value = "self.view.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "View_ClassListItem.joinroom(AnyObject) -&gt; ():View_ClassListItem.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "dataModel">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

@@ -17,3 +17,6 @@
 "tb_joinRoomTitle" = "输入邀请码，快速进入教室";
 "btn_joinroom" = "进入教室";
 "tb_classListTitle" = "您创建的课程";
+"btn_copyRoomCode" = "复制邀请码";
+"tb_classNameInputHolder" = "课程名称";
+"btn_createRoom" = "创建教室";

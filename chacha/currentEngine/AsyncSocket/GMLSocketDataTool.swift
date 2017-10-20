@@ -23,7 +23,7 @@ class GMLSocketDataTool{
             let result = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableLeaves) as? NSDictionary;
             return result;
         }catch{
-            print("data转换Dictionary失败,error:\(error.localizedDescription)");
+            Swift.print("data转换Dictionary失败,error:\(error.localizedDescription)");
         }
         return nil;
     }
@@ -98,7 +98,7 @@ class GMLSocketDataTool{
                 break;
             default:
                 //
-                print("无法解析的数据包")
+                Swift.print("无法解析的数据包")
                 break;
             }
         }
@@ -113,7 +113,7 @@ class GMLSocketDataTool{
         do{
             data = try JSONSerialization.data(withJSONObject: model.toDic(), options: JSONSerialization.WritingOptions.prettyPrinted)
         }catch{
-            print("JSON转换失败")
+            Swift.print("JSON转换失败")
         }
         return data;
     }

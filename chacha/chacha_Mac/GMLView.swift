@@ -39,7 +39,7 @@ class GMLView: NSView,GMLViewProtocal {
     
     deinit{
         
-        print("======>" + self.className + "被释放");
+        Swift.print("======>" + self.className + "被释放");
     }
     
     override func viewDidMoveToWindow() {

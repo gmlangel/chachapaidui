@@ -154,8 +154,8 @@ class MainViewController: NSViewController,POPAnimationDelegate {
             userInfoV.alphaValue = 0;
             classlistV.alphaValue = 0;
             containerV.addSubview(userInfoV);
-//            //添加监听
-//            loginV.addEventListener(GMLEvent_Logined,execFunc: onlogined);
+            //添加监听
+            classlistV.addEventListener(GMLEvent_JoinRoom,execFunc: onJoinRoom);
             //添加约束
             userInfoV.snp.makeConstraints { (make) in
                 make.height.equalTo(180);
@@ -223,8 +223,8 @@ class MainViewController: NSViewController,POPAnimationDelegate {
             //测试用
             let btn = GMLSkinManager.instance.getCurrentBtn(NSRect(x: 20, y: 20, width: 150, height: 30));
             btn.stringValue = "离开教室"
-            btn.target = self;
-            btn.action = #selector(leaveRoom);
+            //btn.target = self;
+            //btn.action = #selector(leaveRoom);
             teachV.addSubview(btn);
         }else{
             //隐藏
@@ -289,6 +289,7 @@ class MainViewController: NSViewController,POPAnimationDelegate {
         }
     }
     
+    
 
     override func updateViewConstraints() {
         super.updateViewConstraints();
@@ -322,7 +323,7 @@ class MainViewController: NSViewController,POPAnimationDelegate {
     /**
      进入教室
      */
-    func joinRoom(_ sender:Any){
+    func onJoinRoom(e:GMLEvent){
         //切换到 课中模式
         swapDisplayMode(.classroom);
     }
@@ -330,7 +331,7 @@ class MainViewController: NSViewController,POPAnimationDelegate {
     /**
      离开教室
      */
-    func leaveRoom(_ sender:Any){
+    func onLeaveRoom(e:GMLEvent){
         //切换到 课表模式
         swapDisplayMode(.classlist);
     }
