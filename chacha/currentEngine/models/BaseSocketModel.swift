@@ -343,7 +343,7 @@ class Model_roomStateChange_notify:BaseSocketModel_s2c{
  客户端请求服务器的 进入room服务模型
  */
 class Model_joinRoom_c2s:BaseSocketModel_c2s{
-    open var rid:UInt32 = 0;
+    //open var rid:UInt32 = 0;
     open var uid:UInt32 = 0;
     open var roomCode:String = "";
     open var nickName:String = "";
@@ -353,7 +353,7 @@ class Model_joinRoom_c2s:BaseSocketModel_c2s{
     override func toDic() -> [String:Any] {
         self.cmd = GMLSocketCMD.c_req_s_joinRoom;
         var dic = super.toDic();
-        dic["rid"] = self.rid;
+        //dic["rid"] = self.rid;
         dic["uid"] = self.uid;
         dic["rc"] = self.roomCode;
         dic["nn"] = self.nickName;

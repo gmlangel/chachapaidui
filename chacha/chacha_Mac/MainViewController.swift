@@ -196,44 +196,21 @@ class MainViewController: NSViewController,POPAnimationDelegate {
             teachV.alphaValue = 0;
             teachV.wantsLayer = true;
             teachV.layer?.backgroundColor = NSColor.brown.cgColor;
-//            classlistV.alphaValue = 0;
-//            classlistV.wantsLayer = true;
-//            classlistV.layer?.backgroundColor = NSColor.blue.cgColor;
             containerV.addSubview(teachV);
             //添加约束
             teachV.snp.makeConstraints { (make) in
                 make.height.equalTo(containerV);
                 make.width.equalTo(containerV);
             }
-//            containerV.addSubview(classlistV);
-//            classlistV.snp.makeConstraints { (make) in
-//                make.width.equalTo(containerV);
-//                make.top.equalTo(userInfoV.snp.bottom);
-//                make.bottom.equalTo(0);
-//            }
             let ani1 = createShowAni();
             ani1.name = "teachVAni";
             ani1.beginTime = CACurrentMediaTime() + 0.5;
-//            let ani2 = createShowAni();
-//            ani2.name = "classlistVAni";
-//            ani2.beginTime = CACurrentMediaTime() + 1;
             teachV.pop_add(ani1, forKey: "teachVAni");
-            //classlistV.pop_add(ani2, forKey: "classlistVAni");
-            
-            //测试用
-            let btn = GMLSkinManager.instance.getCurrentBtn(NSRect(x: 20, y: 20, width: 150, height: 30));
-            btn.stringValue = "离开教室"
-            //btn.target = self;
-            //btn.action = #selector(leaveRoom);
-            teachV.addSubview(btn);
         }else{
             //隐藏
             teachV.snp.removeConstraints();
-           // classlistV.snp.removeConstraints();
             teachV.removeFromSuperview();
-            //classlistV.removeFromSuperview();
             teachV.pop_removeAllAnimations();
-            //classlistV.pop_removeAllAnimations();
         }
     }
     
@@ -324,8 +301,20 @@ class MainViewController: NSViewController,POPAnimationDelegate {
      进入教室
      */
     func onJoinRoom(e:GMLEvent){
-        //切换到 课中模式
-        swapDisplayMode(.classroom);
+        
+        if let roomCode = e.data as? String{
+            //切换到 课中模式
+            swapDisplayMode(.classroom);
+            //请求进入教室接口
+            let req = Model_joinRoom_c2s();
+            let userModel = GlobelInfo.instance.userInfo!;
+            req.headerImage = userModel.headerImage;
+            req.nickName = userModel.nickName;
+            req.roomCode = roomCode;
+            req.sex = userModel.sex;
+            req.uid = userModel.uid;
+            GMLSocketManager.instance.sendMsgToServer(model: req);
+        }
     }
     
     /**
