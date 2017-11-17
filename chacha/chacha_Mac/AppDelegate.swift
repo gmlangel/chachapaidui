@@ -53,7 +53,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     open func toConnectSocket(){
-        GMLSocketManager.instance.connect(host: "127.0.0.1", port: 49999);
+        GMLSocketManager.instance.connect(host: "172.16.220.80", port: 49999);
     }
 
     //掉线通知

@@ -78,6 +78,8 @@ class MainViewController: NSViewController,POPAnimationDelegate {
         swapDisplayMode(.huanying);
     }
     
+    
+    
     open func ongWindowResize(_ notify:NSNotification){
         if let win = self.view.window{
             self.view.needsUpdateConstraints = true;
@@ -192,7 +194,10 @@ class MainViewController: NSViewController,POPAnimationDelegate {
      */
     fileprivate func showOrHideClassroomMode(b:Bool){
         if b == true{
-            //显示
+            let changeSizeAni = createChangeFrameAni(NSRect(x: 0, y: 0, width: self.view.bounds.size.width - 400, height: self.view.bounds.size.height));
+            changeSizeAni.name = "containerVChangeSize";
+            containerV.pop_add(changeSizeAni, forKey: "containerVChangeSize");
+            //显示 教学区域
             teachV.alphaValue = 0;
             teachV.wantsLayer = true;
             teachV.layer?.backgroundColor = NSColor.brown.cgColor;
@@ -206,11 +211,34 @@ class MainViewController: NSViewController,POPAnimationDelegate {
             ani1.name = "teachVAni";
             ani1.beginTime = CACurrentMediaTime() + 0.5;
             teachV.pop_add(ani1, forKey: "teachVAni");
+            
+            //添加视频区域
+            mediaV.alphaValue = 0;
+            mediaV.wantsLayer = true;
+            mediaV.layer?.backgroundColor = NSColor.red.cgColor;
+            self.view.addSubview(mediaV);
+            mediaV.snp.makeConstraints({ (make) in
+                make.width.equalTo(400);
+                make.height.equalTo(self.view.snp.height);
+                make.right.equalTo(self.view.snp_rightMargin);
+                make.bottom.equalTo(self.view.snp_bottomMargin);
+            })
+            let ani2 = createShowAni();
+            ani2.name = "mediaVAni";
+            ani2.beginTime = CACurrentMediaTime() + 1;
+            mediaV.pop_add(ani2, forKey: "mediaVAni");
+            //添加聊天区域
         }else{
+            
             //隐藏
             teachV.snp.removeConstraints();
             teachV.removeFromSuperview();
             teachV.pop_removeAllAnimations();
+            
+            mediaV.snp.removeConstraints();
+            mediaV.removeFromSuperview();
+            mediaV.pop_removeAllAnimations();
+            
         }
     }
     
@@ -263,6 +291,8 @@ class MainViewController: NSViewController,POPAnimationDelegate {
             containerV.pop_removeAllAnimations();
         }else if anim.name == "teachVAni"{
             teachV.pop_removeAllAnimations();
+        }else if anim.name == "mediaVAni"{
+            mediaV.pop_removeAllAnimations();
         }
     }
     
@@ -276,9 +306,12 @@ class MainViewController: NSViewController,POPAnimationDelegate {
         if dispalyMode == .huanying,let win = self.view.window{
             //欢迎页面模式
             containerV.frame = NSRect(x: loginV.frame.maxX, y: 0, width: win.frame.size.width - loginV.frame.maxX, height: win.frame.size.height);
-        }else if dispalyMode == .classlist || dispalyMode == .classroom,let win = self.view.window{
+        }else if dispalyMode == .classlist,let win = self.view.window{
             //课表页面模式
             containerV.frame = NSRect(x: 0, y: 0, width: win.frame.size.width, height: win.frame.size.height);
+        }else if dispalyMode == .classroom,let win = self.view.window{
+            //课中模式
+            containerV.frame = NSRect(x: 0, y: 0, width: win.frame.size.width - 400, height: win.frame.size.height);
         }
     }
     override func viewDidAppear() {
@@ -305,6 +338,12 @@ class MainViewController: NSViewController,POPAnimationDelegate {
         if let roomCode = e.data as? String{
             //切换到 课中模式
             swapDisplayMode(.classroom);
+            //添加教室内的相关监听
+            NotificationCenter.default.addObserver(self, selector: #selector(onJoinRoomComplete), name: SOCKET_JOINROOM, object: nil);//进入教室完毕
+            NotificationCenter.default.addObserver(self, selector: #selector(onReceiveMsg), name: SOCKET_CHATMSGCALLBACK, object: nil);//收到文本消息
+            NotificationCenter.default.addObserver(self, selector: #selector(onAdminCMD), name: SOCKET_ADMINNOTIFY, object: nil);//收到管理员命令
+            NotificationCenter.default.addObserver(self, selector: #selector(onTongyongTeachCMD), name: SOCKET_CURRENTCMDNOTIFY, object: nil);//收到通用教学命令
+            NotificationCenter.default.addObserver(self, selector: #selector(onUserChange), name: SOCKET_OTHERUSERSTATECHANGE, object: nil);//用户列表变更
             //请求进入教室接口
             let req = Model_joinRoom_c2s();
             let userModel = GlobelInfo.instance.userInfo!;
@@ -318,11 +357,72 @@ class MainViewController: NSViewController,POPAnimationDelegate {
     }
     
     /**
+     进入教室完毕
+     */
+    func onJoinRoomComplete(_ notify:NSNotification){
+        if let obj = notify.object as? Model_joinRoom_s2c{
+            //记录教室信息
+            let classInfo = ClassRoomInfo();
+            classInfo.rid = obj.rid;
+            classInfo.roomImage = obj.roomImage;
+            classInfo.roomName = obj.roomName;
+            GlobelInfo.instance.classInfo = classInfo;
+            //启动媒体引擎
+            let sdkChannelName = "gmlChannel_\(obj.rid)";//channel不可以用中文，这是个坑,否则启动媒体引擎sdk会失败
+            MediaProxy.instance.start(mediaV.remoteView, mediaV.localView, sdkChannelName,UInt(GlobelInfo.instance.userInfo!.uid));
+        }
+    }
+    
+    /**
      离开教室
      */
     func onLeaveRoom(e:GMLEvent){
         //切换到 课表模式
         swapDisplayMode(.classlist);
+        //删除通知监听
+        NotificationCenter.default.removeObserver(self, name: SOCKET_CHATMSGCALLBACK, object: nil);
+        NotificationCenter.default.removeObserver(self, name: SOCKET_ADMINNOTIFY, object: nil);
+        NotificationCenter.default.removeObserver(self, name: SOCKET_CURRENTCMDNOTIFY, object: nil);
+        NotificationCenter.default.removeObserver(self, name: SOCKET_OTHERUSERSTATECHANGE, object: nil);
+        //停止媒体引擎
+        MediaProxy.instance.stop();
+        
+    }
+    
+    /**
+     收到文本消息
+     */
+    func onReceiveMsg(_ notify:NSNotification){
+        if let obj = notify.object as? Model_sendChat_notify{
+            NSLog("1")
+        }
+    }
+    
+    /**
+     收到管理员命令
+     */
+    func onAdminCMD(_ notify:NSNotification){
+        if let obj = notify.object as? Model_adminCMD_notify{
+            NSLog("1")
+        }
+    }
+    
+    /**
+     收到通用教学命令
+     */
+    func onTongyongTeachCMD(_ notify:NSNotification){
+        if let obj = notify.object as? Model_currentCMD_notify{
+            NSLog("1")
+        }
+    }
+    
+    /**
+     收到用户列表变更
+     */
+    func onUserChange(_ notify:NSNotification){
+        if let obj = notify.object as? Model_otherUserStateChange_notify{
+            NSLog("1")
+        }
     }
 }
 

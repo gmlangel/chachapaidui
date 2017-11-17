@@ -110,6 +110,20 @@
 		4EC8880E1F6A345C00840757 /* GMLSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8880D1F6A345C00840757 /* GMLSocketManager.swift */; };
 		4EC8880F1F6A345C00840757 /* GMLSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC8880D1F6A345C00840757 /* GMLSocketManager.swift */; };
 		4EC9DBEA1F98552100F2B3EF /* View_ClassListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC9DBE91F98552100F2B3EF /* View_ClassListItem.swift */; };
+		4ECF37551FBC53200045D766 /* AgoraRtcEngineKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF37541FBC53200045D766 /* AgoraRtcEngineKit.framework */; };
+		4ECF37571FBC55B10045D766 /* MediaProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF37561FBC55B10045D766 /* MediaProxy.swift */; };
+		4ECF37591FBC5A380045D766 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF37581FBC5A380045D766 /* SystemConfiguration.framework */; };
+		4ECF375B1FBC5A540045D766 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF375A1FBC5A540045D766 /* CoreAudio.framework */; };
+		4ECF375D1FBC5A5B0045D766 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF375C1FBC5A5B0045D766 /* CoreMedia.framework */; };
+		4ECF375F1FBC5A610045D766 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF375E1FBC5A610045D766 /* AVFoundation.framework */; };
+		4ECF37611FBC5A770045D766 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF37601FBC5A770045D766 /* VideoToolbox.framework */; };
+		4ECF37631FBC5A7D0045D766 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF37621FBC5A7D0045D766 /* AudioToolbox.framework */; };
+		4ECF37651FBC5AA60045D766 /* CoreWLAN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF37641FBC5AA60045D766 /* CoreWLAN.framework */; };
+		4ECF37691FBC5B130045D766 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF37681FBC5B130045D766 /* libc++.1.tbd */; };
+		4ECF376D1FBC5B8C0045D766 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ECF376C1FBC5B8C0045D766 /* libresolv.tbd */; };
+		4ECF376F1FBD7C7F0045D766 /* View_PDF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF376E1FBD7C7F0045D766 /* View_PDF.swift */; };
+		4ECF37711FBD92AE0045D766 /* ClassRoomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF37701FBD92AE0045D766 /* ClassRoomInfo.swift */; };
+		4ECF37721FBD92AE0045D766 /* ClassRoomInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECF37701FBD92AE0045D766 /* ClassRoomInfo.swift */; };
 		56A6AD7A373B1819D844BCAE /* Pods_chacha_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D9DB49514FC8CF4CAF903A5 /* Pods_chacha_IOS.framework */; };
 		5B101480B6518AC49274A7EF /* Pods_chacha_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52AD745029DAAF24C40E9EC3 /* Pods_chacha_Mac.framework */; };
 /* End PBXBuildFile section */
@@ -243,6 +257,20 @@
 		4EC888071F6A2C7A00840757 /* GMLViewProtocal_IOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMLViewProtocal_IOS.h; sourceTree = "<group>"; };
 		4EC8880D1F6A345C00840757 /* GMLSocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMLSocketManager.swift; sourceTree = "<group>"; };
 		4EC9DBE91F98552100F2B3EF /* View_ClassListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_ClassListItem.swift; sourceTree = "<group>"; };
+		4ECF37541FBC53200045D766 /* AgoraRtcEngineKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AgoraRtcEngineKit.framework; path = MacOS_libs/AgoraRtcEngineKit.framework; sourceTree = "<group>"; };
+		4ECF37561FBC55B10045D766 /* MediaProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaProxy.swift; sourceTree = "<group>"; };
+		4ECF37581FBC5A380045D766 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4ECF375A1FBC5A540045D766 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		4ECF375C1FBC5A5B0045D766 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		4ECF375E1FBC5A610045D766 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		4ECF37601FBC5A770045D766 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
+		4ECF37621FBC5A7D0045D766 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		4ECF37641FBC5AA60045D766 /* CoreWLAN.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreWLAN.framework; path = System/Library/Frameworks/CoreWLAN.framework; sourceTree = SDKROOT; };
+		4ECF37661FBC5AB00045D766 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = System/Library/Frameworks/QTKit.framework; sourceTree = SDKROOT; };
+		4ECF37681FBC5B130045D766 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		4ECF376C1FBC5B8C0045D766 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		4ECF376E1FBD7C7F0045D766 /* View_PDF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View_PDF.swift; sourceTree = "<group>"; };
+		4ECF37701FBD92AE0045D766 /* ClassRoomInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassRoomInfo.swift; sourceTree = "<group>"; };
 		52AD745029DAAF24C40E9EC3 /* Pods_chacha_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chacha_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		637C878364A5B93486C59E10 /* Pods-chacha_IOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chacha_IOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chacha_IOS/Pods-chacha_IOS.debug.xcconfig"; sourceTree = "<group>"; };
 		CFD17B03625823EBC122283B /* Pods-chacha_Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chacha_Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chacha_Mac/Pods-chacha_Mac.debug.xcconfig"; sourceTree = "<group>"; };
@@ -263,6 +291,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ECF376D1FBC5B8C0045D766 /* libresolv.tbd in Frameworks */,
+				4ECF37691FBC5B130045D766 /* libc++.1.tbd in Frameworks */,
+				4ECF37651FBC5AA60045D766 /* CoreWLAN.framework in Frameworks */,
+				4ECF37631FBC5A7D0045D766 /* AudioToolbox.framework in Frameworks */,
+				4ECF37611FBC5A770045D766 /* VideoToolbox.framework in Frameworks */,
+				4ECF375F1FBC5A610045D766 /* AVFoundation.framework in Frameworks */,
+				4ECF375D1FBC5A5B0045D766 /* CoreMedia.framework in Frameworks */,
+				4ECF375B1FBC5A540045D766 /* CoreAudio.framework in Frameworks */,
+				4ECF37591FBC5A380045D766 /* SystemConfiguration.framework in Frameworks */,
+				4ECF37551FBC53200045D766 /* AgoraRtcEngineKit.framework in Frameworks */,
 				4EC887BD1F6A20CF00840757 /* SpriteKit.framework in Frameworks */,
 				4EC887BB1F6A204800840757 /* libz.tbd in Frameworks */,
 				5B101480B6518AC49274A7EF /* Pods_chacha_Mac.framework in Frameworks */,
@@ -283,6 +321,7 @@
 				4E9105FF1F7BC39D00F1F0D0 /* View_ChatView.swift */,
 				4E9105FD1F7BC35400F1F0D0 /* View_MediaContainer.swift */,
 				4EC9DBE91F98552100F2B3EF /* View_ClassListItem.swift */,
+				4ECF376E1FBD7C7F0045D766 /* View_PDF.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -291,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				4EC5A0FB1F6BC89A008D1699 /* BaseSocketModel.swift */,
+				4ECF37701FBD92AE0045D766 /* ClassRoomInfo.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -346,6 +386,7 @@
 				4E9105E81F766FF400F1F0D0 /* CurrentBtn.swift */,
 				4E5262291F74F74800EE1B87 /* FontEnum.swift */,
 				4E9105EC1F7BA58B00F1F0D0 /* GlobelInfo.swift */,
+				4ECF37561FBC55B10045D766 /* MediaProxy.swift */,
 			);
 			path = chacha_Mac;
 			sourceTree = "<group>";
@@ -446,6 +487,17 @@
 		4EC887B71F6A203E00840757 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4ECF376C1FBC5B8C0045D766 /* libresolv.tbd */,
+				4ECF37681FBC5B130045D766 /* libc++.1.tbd */,
+				4ECF37661FBC5AB00045D766 /* QTKit.framework */,
+				4ECF37641FBC5AA60045D766 /* CoreWLAN.framework */,
+				4ECF37621FBC5A7D0045D766 /* AudioToolbox.framework */,
+				4ECF37601FBC5A770045D766 /* VideoToolbox.framework */,
+				4ECF375E1FBC5A610045D766 /* AVFoundation.framework */,
+				4ECF375C1FBC5A5B0045D766 /* CoreMedia.framework */,
+				4ECF375A1FBC5A540045D766 /* CoreAudio.framework */,
+				4ECF37581FBC5A380045D766 /* SystemConfiguration.framework */,
+				4ECF37541FBC53200045D766 /* AgoraRtcEngineKit.framework */,
 				4EA511761F73AF3A008A6192 /* pop.framework */,
 				4EC887BE1F6A20D900840757 /* SpriteKit.framework */,
 				4EC887BC1F6A20CF00840757 /* SpriteKit.framework */,
@@ -758,6 +810,7 @@
 				4EC8880A1F6A2C7A00840757 /* GMLExtension_IOS.m in Sources */,
 				4EC887871F6A202500840757 /* GMLMonster.swift in Sources */,
 				4EC887831F6A202500840757 /* GMLGameConfig.m in Sources */,
+				4ECF37711FBD92AE0045D766 /* ClassRoomInfo.swift in Sources */,
 				4EC8879D1F6A202500840757 /* GMLGameMain.swift in Sources */,
 				4EC887AB1F6A202500840757 /* LogoScene.swift in Sources */,
 				4EC888081F6A2C7A00840757 /* GMLCoreDispatcher_IOS.m in Sources */,
@@ -791,10 +844,12 @@
 				4E9105F81F7BAAEC00F1F0D0 /* View_huanying.swift in Sources */,
 				4EC887CE1F6A23B700840757 /* GMLEvent.m in Sources */,
 				4EC887741F6A202500840757 /* AsyncUdpSocket.m in Sources */,
+				4ECF376F1FBD7C7F0045D766 /* View_PDF.swift in Sources */,
 				4E9105F71F7BAAEC00F1F0D0 /* View_ClassList.swift in Sources */,
 				4EC887801F6A202500840757 /* GMLDynamicSceneFactory.swift in Sources */,
 				4EC8872F1F6A1F2300840757 /* BaseWindow.swift in Sources */,
 				4EC887AC1F6A202500840757 /* LogoScene.swift in Sources */,
+				4ECF37721FBD92AE0045D766 /* ClassRoomInfo.swift in Sources */,
 				4EC5A0FD1F6BC89A008D1699 /* BaseSocketModel.swift in Sources */,
 				4EC887B61F6A202500840757 /* ZipArchive.mm in Sources */,
 				4EC887861F6A202500840757 /* GMLLogCenter.swift in Sources */,
@@ -804,6 +859,7 @@
 				4EC887A61F6A202500840757 /* zip.c in Sources */,
 				4EC887221F6A1EEC00840757 /* AppDelegate.swift in Sources */,
 				4EC887881F6A202500840757 /* GMLMonster.swift in Sources */,
+				4ECF37571FBC55B10045D766 /* MediaProxy.swift in Sources */,
 				4EC8877E1F6A202500840757 /* GMLDynamicScene.swift in Sources */,
 				4E9106001F7BC39D00F1F0D0 /* View_ChatView.swift in Sources */,
 				4EC887841F6A202500840757 /* GMLGameConfig.m in Sources */,

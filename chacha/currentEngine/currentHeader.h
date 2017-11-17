@@ -18,6 +18,7 @@
 #import <SpriteKit/SpriteKit.h>
 #import "GMLTool.h"
 #import "AsyncSocket.h"
+#import <AgoraRtcEngineKit/AgoraRtcEngineKit.h>
 
 
 #if TARGET_OS_IPHONE

@@ -21,4 +21,9 @@ class GlobelInfo: NSObject {
      用户信息
      */
     open var userInfo:Model_login_s2c?;
+    
+    /**
+     教室数据
+     */
+    open var classInfo:ClassRoomInfo?;
 }
