@@ -11,7 +11,8 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
+    fileprivate let serverHost:String = "39.106.135.11";
+    fileprivate let serverPort:UInt16 = 46666;
     fileprivate let reconnectMaxCount:Int = 5;//最大重连次数
     fileprivate var reconnectCurrent:Int = 0;//当前重连次数
     fileprivate var isBeKick:Bool  = false;//是否是被远端提出socket
@@ -53,7 +54,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     open func toConnectSocket(){
-        GMLSocketManager.instance.connect(host: "172.16.220.80", port: 49999);
+        GMLSocketManager.instance.connect(host: serverHost, port: serverPort);
     }
 
     //掉线通知
