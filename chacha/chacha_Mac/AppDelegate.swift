@@ -12,7 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     fileprivate let serverHost:String = "39.106.135.11";
-    fileprivate let serverPort:UInt16 = 46666;
+    fileprivate let serverPort:UInt16 = 48888;
     fileprivate let reconnectMaxCount:Int = 5;//最大重连次数
     fileprivate var reconnectCurrent:Int = 0;//当前重连次数
     fileprivate var isBeKick:Bool  = false;//是否是被远端提出socket
