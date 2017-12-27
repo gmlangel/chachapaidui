@@ -60,7 +60,7 @@ class View_UserInfoAndTool: GMLView {
             }
         }
         if img_header.image == nil{
-            img_header.image = NSImage(named: "test");
+            img_header.image = NSImage(named: NSImage.Name(rawValue: "test"));
         }
         
         //title文本框
@@ -97,8 +97,8 @@ class View_UserInfoAndTool: GMLView {
         v_bottom_line = NSView(frame: NSRect(x: 0, y: 0, width: 100, height: 1));
         v_bottom_line.wantsLayer = true;
         v_bottom_line.layer?.backgroundColor = GMLSkinManager.instance.fengexianColor;
-        if NSScreen.main() != nil{
-            v_bottom_line.layer?.contentsScale = NSScreen.main()!.backingScaleFactor
+        if NSScreen.main != nil{
+            v_bottom_line.layer?.contentsScale = NSScreen.main!.backingScaleFactor
         }
         self.addSubview(v_bottom_line);
         v_bottom_line.snp.makeConstraints { (make) in
@@ -111,8 +111,8 @@ class View_UserInfoAndTool: GMLView {
         v_right_line = NSView(frame: NSRect(x: 0, y: 0, width: 1, height: 100));
         v_right_line.wantsLayer = true;
         v_right_line.layer?.backgroundColor = GMLSkinManager.instance.fengexianColor;
-        if NSScreen.main() != nil{
-            v_right_line.layer?.contentsScale = NSScreen.main()!.backingScaleFactor
+        if NSScreen.main != nil{
+            v_right_line.layer?.contentsScale = NSScreen.main!.backingScaleFactor
         }
         self.addSubview(v_right_line);
         v_right_line.snp.makeConstraints { (make) in
@@ -144,7 +144,7 @@ class View_UserInfoAndTool: GMLView {
     }
     
     
-    open func onbtn_editCLICK(_ sender:Any){
+    @objc open func onbtn_editCLICK(_ sender:Any){
         isEditMode = !isEditMode;
         swapEditMode(isEditMode);
         if isEditMode == false{
@@ -174,7 +174,7 @@ class View_UserInfoAndTool: GMLView {
     /**
      更新用户信息回调
      */
-    func onUpdateUserInfoCallBack(_ notify:NSNotification){
+    @objc func onUpdateUserInfoCallBack(_ notify:NSNotification){
         if let s2cModel = notify.object as? Model_updateUserInfo_s2c{
             if s2cModel.code == 0{
                 Swift.print("更新成功");
@@ -195,7 +195,7 @@ class View_UserInfoAndTool: GMLView {
     /**
      获取用户信息回调
      */
-    func ongetUserInfoCallBack(_ notify:NSNotification){
+    @objc func ongetUserInfoCallBack(_ notify:NSNotification){
         if let s2cModel = notify.object as? Model_getUserInfo_s2c{
             if s2cModel.code == 0{
                 Swift.print("获取用户信息成功");

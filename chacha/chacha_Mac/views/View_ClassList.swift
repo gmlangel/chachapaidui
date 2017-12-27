@@ -64,8 +64,8 @@ class View_ClassList: GMLView {
         v_fenge = NSView(frame: NSRect(x: 0, y: 0, width: 100, height: 1));
         v_fenge.wantsLayer = true;
         v_fenge.layer?.backgroundColor = GMLSkinManager.instance.fengexianColor;
-        if NSScreen.main() != nil{
-            v_fenge.layer?.contentsScale = NSScreen.main()!.backingScaleFactor
+        if NSScreen.main != nil{
+            v_fenge.layer?.contentsScale = NSScreen.main!.backingScaleFactor
         }
         self.addSubview(v_fenge);
         v_fenge.snp.makeConstraints { (make) in
@@ -85,7 +85,7 @@ class View_ClassList: GMLView {
         }
         
         v_loading = NSProgressIndicator(frame: NSRect(x: 0, y: 0, width: 40, height: 40));
-        v_loading.style = .spinningStyle;
+        v_loading.style = .spinning;
         self.addSubview(v_loading);
         v_loading.snp.makeConstraints { (make) in
             make.width.height.equalTo(40);
@@ -183,7 +183,7 @@ class View_ClassList: GMLView {
     /**
      获取课程列表信息回调
      */
-    func getClassListCallback(_ notify:NSNotification){
+    @objc func getClassListCallback(_ notify:NSNotification){
         //隐藏loading
         v_loading.stopAnimation(nil);
         v_loading.isHidden = true;
@@ -210,7 +210,7 @@ class View_ClassList: GMLView {
     /**
      响应classlistItem的创建教室请求
      */
-    func onCreateRoomNotification(_ notify:NSNotification){
+    @objc func onCreateRoomNotification(_ notify:NSNotification){
         if let mode = notify.object as? Model_createRoom_c2s{
             GMLSocketManager.instance.sendMsgToServer(model: mode);
         }
@@ -219,7 +219,7 @@ class View_ClassList: GMLView {
     /**
      创建教室回调
      */
-    func createRoomCallback(_ notify:NSNotification){
+    @objc func createRoomCallback(_ notify:NSNotification){
         if let s2cModel = notify.object as? Model_createRoom_s2c{
             if s2cModel.code == 0{
                 Swift.print("创建教室成功");
@@ -234,7 +234,7 @@ class View_ClassList: GMLView {
     /**
      创建教室回调
      */
-    func deleteRoomCallback(_ notify:NSNotification){
+    @objc func deleteRoomCallback(_ notify:NSNotification){
         if let s2cModel = notify.object as? Model_deleteRoom_s2c{
             if s2cModel.code == 0{
                 Swift.print("删除教室成功");
@@ -249,7 +249,7 @@ class View_ClassList: GMLView {
     /**
      进入教室
      */
-    func joinRoom(_ sender:Any){
+    @objc func joinRoom(_ sender:Any){
         execJoinRoom(tb_joinRoom.stringValue);
     }
     
@@ -262,7 +262,7 @@ class View_ClassList: GMLView {
     /**
      响应classlistItem发来的进入教室请求
      */
-    func onJoinNotification(_ notify:Notification){
+    @objc func onJoinNotification(_ notify:Notification){
         if let roomCode = notify.object as? String{
             execJoinRoom(roomCode);
         }

@@ -88,7 +88,7 @@ class GMLGameMain:NSObject {
             //显示预加载
             mainGameView.presentScene(PreloadScene.instance, transition: SKTransition.fade(withDuration: 1));
             //开启一个异步线程，构建即将呈现的场景
-            DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async(execute: { 
+            DispatchQueue.global().async {
                 if let config = GMLResourceManager.instance.configByName(sceneName){
                     let goScene = GMLDynamicScene(sceneConfig:config);
                     goScene.name = sceneName;
@@ -99,7 +99,7 @@ class GMLGameMain:NSObject {
                         NotificationCenter.default.post(name: Notification.Name(rawValue: "showOrHideChatView"), object: true);
                     })
                 }
-            })
+            }
             
         }
     }

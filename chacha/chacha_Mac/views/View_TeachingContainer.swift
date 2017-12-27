@@ -35,7 +35,7 @@ class View_TeachingContainer: GMLView {
         
         //添加loading
         loading = NSProgressIndicator(frame: NSZeroRect);
-        loading.style = .spinningStyle;
+        loading.style = .spinning;
         loading.isHidden = true;
         self.addSubview(loading)
         loading.snp.makeConstraints { (make) in
@@ -49,7 +49,7 @@ class View_TeachingContainer: GMLView {
     /**
      加载pdf教材，测试用
      */
-    func toLoadPdf(_ sender:Any){
+    @objc func toLoadPdf(_ sender:Any){
         //let urlStr = "/Users/guominglong/Documents/51TalkAbout/51talkPDFS/0de809088645c56e0801b980f55e0cd7.pdf";
         let urlStr = "http://172.16.220.80:3000/15de3096cf8aa923f59c20d473c69c1d.pdf";
         

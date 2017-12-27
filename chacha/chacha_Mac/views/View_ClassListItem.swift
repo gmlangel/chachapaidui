@@ -55,7 +55,7 @@ class View_ClassListItem: GMLView {
             make.centerY.equalTo(self);
             make.left.equalTo(20);
         }
-        img_ClassIcon.image = NSImage(named: "classItemIcon");
+        img_ClassIcon.image = NSImage(named: NSImage.Name(rawValue: "classItemIcon"));
         
         tb_classNameLabel = NSTextField(frame: NSRect(x: 0, y: 0, width: 100, height: 20));
         tb_classNameLabel.textColor = GMLSkinManager.instance.currentFontColor2;
@@ -120,19 +120,19 @@ class View_ClassListItem: GMLView {
         btn_createRoom.target = self;
         btn_createRoom.action = #selector(createRoom);
     }
-    func joinroom(_ sender:AnyObject){
+    @objc func joinroom(_ sender:AnyObject){
         NotificationCenter.default.post(name: Notify_JoinRoom, object: dataModel!.roomCode);
     }
     
-    func copyRoomCode(_ sender:AnyObject){
+    @objc func copyRoomCode(_ sender:AnyObject){
         let roomCode = dataModel!.roomCode;
-        let board = NSPasteboard.general()
+        let board = NSPasteboard.general
         board.clearContents();
-        board.declareTypes([NSStringPboardType], owner: self);
-        board.setString(roomCode, forType: NSStringPboardType);
+        board.declareTypes([NSPasteboard.PasteboardType.string], owner: self);
+        board.setString(roomCode, forType: NSPasteboard.PasteboardType.string);
     }
     
-    func createRoom(_ sender:AnyObject){
+    @objc func createRoom(_ sender:AnyObject){
         let reqMode = Model_createRoom_c2s();
         reqMode.roomImage = "";
         reqMode.roomName = tb_classNameInput.stringValue;

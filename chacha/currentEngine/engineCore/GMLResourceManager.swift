@@ -77,7 +77,7 @@ class GMLResourceManager:NSObject,ZipArchiveDelegate {
         zipTool.closeZipFile2();
         resourceTable[currentResourceKey] = [];
         
-        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async { 
+        DispatchQueue.global().async {
             //解析resourceDic
             var keyStrNS:NSString;//key的NSString形式
             var extenName:String;//扩展名
@@ -123,20 +123,20 @@ class GMLResourceManager:NSObject,ZipArchiveDelegate {
                 {
                     //texture资源,存储到资源名称对照表和资源集合中
                     self.resourceTable[self.currentResourceKey]!.append(keyStr);
-                    self.resourceDataDic[keyStr] = reusltDic.value(forKey: key as! String) as! Data;
+                    self.resourceDataDic[keyStr] = reusltDic.value(forKey: key as! String) as? Data;
                 }else{
                     //媒体资源,存储到资源名称对照表和资源集合中
                     self.resourceTable[self.currentResourceKey]!.append(keyStr);
-                    self.resourceDataDic[keyStr] = reusltDic.value(forKey: key as! String) as! Data;
+                    self.resourceDataDic[keyStr] = reusltDic.value(forKey: key as! String) as? Data;
                 }
             }
-            
-            DispatchQueue.main.async(execute: {
+            DispatchQueue.global().async {
                 GMLLogCenter.instance.trace("[UnzipFileAsyncComplete]资源解压完毕:" + self.currentResourceKey);
                 self.waitLoad.remove(at: 0);
                 self.loadResource();//判断是否还有 没被加载的资源包，并加载
-            })
+            }
         }
+        
         
         
         
@@ -173,7 +173,7 @@ class GMLResourceManager:NSObject,ZipArchiveDelegate {
             {
                 if(completeSelectorTarget!.responds(to: completeSelector!))
                 {
-                    completeSelectorTarget!.perform(completeSelector!);
+                    _ = completeSelectorTarget!.perform(completeSelector!);
                 }
             }
             return;

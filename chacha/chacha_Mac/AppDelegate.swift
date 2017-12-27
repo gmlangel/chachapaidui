@@ -34,7 +34,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     //当socket断开
-    open func onsocketclose(_ notify:NSNotification){
+    @objc open func onsocketclose(_ notify:NSNotification){
         
         if isBeKick {
             //被socket服务器主动提出，不需要尝试重连
@@ -53,18 +53,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    open func toConnectSocket(){
+    @objc open func toConnectSocket(){
         GMLSocketManager.instance.connect(host: serverHost, port: serverPort);
     }
 
     //掉线通知
-    open func onBeKickOffline(_ notify:NSNotification){
+    @objc open func onBeKickOffline(_ notify:NSNotification){
         isBeKick = true;
         reconnectCurrent = 0;
     }
     
     //socket连接成功
-    open func onSocketConnected(_ notify:NSNotification){
+    @objc open func onSocketConnected(_ notify:NSNotification){
         reconnectCurrent = 0;
     }
 }

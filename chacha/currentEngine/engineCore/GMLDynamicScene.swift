@@ -35,7 +35,7 @@ class GMLDynamicScene: GMLScene {
         folderName = sceneConfig.value(forKey: "folderName") as! String;
         //将图像位移到指定的入口坐标
         var dic = sceneConfig.value(forKey: "enterPoint") as! NSDictionary;
-        currentScenePosition = CGPoint(x: autoScreen(CGFloat(dic.value(forKey: "x") as! NSNumber)), y: autoScreen(CGFloat(dic.value(forKey: "y") as! NSNumber)))
+        currentScenePosition = CGPoint(x: autoScreen(CGFloat(truncating: dic.value(forKey: "x") as! NSNumber)), y: autoScreen(CGFloat(truncating: dic.value(forKey: "y") as! NSNumber)))
         self.anchorPoint = CGPoint(x: -currentScenePosition.x/self.size.width, y: -currentScenePosition.y/self.size.height);
         
         
@@ -43,12 +43,12 @@ class GMLDynamicScene: GMLScene {
         dic = sceneConfig.value(forKey: "contextSize") as! NSDictionary;
         
         //设置scene中呈现的内容尺寸
-        contextSize = CGSize(width: autoScreen(CGFloat(dic.value(forKey: "width") as! NSNumber)), height: autoScreen(CGFloat(dic.value(forKey: "height") as! NSNumber)));
+        contextSize = CGSize(width: autoScreen(CGFloat(truncating: dic.value(forKey: "width") as! NSNumber)), height: autoScreen(CGFloat(truncating: dic.value(forKey: "height") as! NSNumber)));
         
         if let bginfo = sceneConfig.value(forKey: "bg") as? NSArray{
             let j = bginfo.count;
             var textureName:String;
-            var obj:NSDictionary;
+            var _:NSDictionary;
             bgs = [];
             for i:Int in 0..<j
             {
@@ -85,12 +85,12 @@ class GMLDynamicScene: GMLScene {
         let monsterConfigName = obj.value(forKey: "monsterKey") as! String;
         if let dic = GMLResourceManager.instance.configByName(monsterConfigName){
             let monster:GMLMonster = GMLMonster(monsterConfig: dic);
-            let centerPos:CGPoint = CGPoint(x: CGFloat(obj.value(forKey: "x") as! NSNumber), y: CGFloat(obj.value(forKey: "y") as! NSNumber));
-            let radius:CGFloat = CGFloat(obj.value(forKey: "radius") as! NSNumber);
+            let centerPos:CGPoint = CGPoint(x: CGFloat(truncating: obj.value(forKey: "x") as! NSNumber), y: CGFloat(truncating: obj.value(forKey: "y") as! NSNumber));
+            let radius:CGFloat = CGFloat(truncating: obj.value(forKey: "radius") as! NSNumber);
             mounsters!.append(monster);
             monster.position = GMLTool.randomPosition(inRect: centerPos,radius:radius);
-            let j:Int = Int(obj.value(forKey: "count") as! NSNumber);//读取要创建的个数
-            for  i:Int in 1..<j {
+            let j:Int = Int(truncating: obj.value(forKey: "count") as! NSNumber);//读取要创建的个数
+            for  _:Int in 1..<j {
                 let mo = monster.gClone();
                 mounsters!.append(mo);
                 mo.position = GMLTool.randomPosition(inRect: centerPos,radius:radius);

@@ -60,7 +60,7 @@ class View_login: GMLView {
         //头像
         img_header = NSImageView(frame: NSRect(x: tb_loginName.frame.midX - 52, y: 0, width: 100, height: 100));
         img_header.imageScaling = .scaleNone
-        img_header.image = NSImage(named: "test");
+        img_header.image = NSImage(named: NSImage.Name(rawValue: "test"));
         img_header.imageFrameStyle = .grayBezel;
         img_header.wantsLayer = true;
         img_header.layer?.cornerRadius = 5;
@@ -114,7 +114,7 @@ class View_login: GMLView {
         self.removeAllEventListener();
         NotificationCenter.default.removeObserver(self);
     }
-    open func toLogin(_ sender:Any){
+    @objc open func toLogin(_ sender:Any){
         if tb_loginName.stringValue == ""{
             tb_errorInfo.isHidden = false;
             tb_errorInfo.stringValue = GMLLocalString.get("error_login_empty_info");
@@ -134,7 +134,7 @@ class View_login: GMLView {
     /**
      登录回调处理
      */
-    func onloginedComplete(_ notify:NSNotification){
+    @objc func onloginedComplete(_ notify:NSNotification){
         if let obj = notify.object as? Model_login_s2c{
             if obj.code == 0{
                 //登录成功，存储用户信息

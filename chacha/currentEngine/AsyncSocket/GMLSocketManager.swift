@@ -157,7 +157,7 @@ class GMLSocketManager: NSObject,AsyncSocketDelegate {
     /**
      心跳具体操作函数
      */
-    open func xintiao(){
+    @objc open func xintiao(){
         let model = Model_HeartBeat_c2s();
         model.cmd = GMLSocketCMD.c_req_s_heartbeat;
         model.localTime = UInt32(Date().timeIntervalSince1970);

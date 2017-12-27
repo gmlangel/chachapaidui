@@ -64,7 +64,7 @@ class MainViewController: NSViewController,POPAnimationDelegate {
         self.view.wantsLayer = true;
         self.view.layer?.backgroundColor = GMLSkinManager.instance.mainBackgroundColor;
         //添加窗口resize处理
-        NotificationCenter.default.addObserver(self, selector: #selector(ongWindowResize), name: NSNotification.Name.NSWindowDidResize, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(ongWindowResize), name: NSWindow.didResizeNotification, object: nil);
         //内容容器窗口
         containerV = NSView();
         containerV.wantsLayer = true;
@@ -80,8 +80,8 @@ class MainViewController: NSViewController,POPAnimationDelegate {
     
     
     
-    open func ongWindowResize(_ notify:NSNotification){
-        if let win = self.view.window{
+    @objc open func ongWindowResize(_ notify:NSNotification){
+        if let _ = self.view.window{
             self.view.needsUpdateConstraints = true;
         }
     }
@@ -359,7 +359,7 @@ class MainViewController: NSViewController,POPAnimationDelegate {
     /**
      进入教室完毕
      */
-    func onJoinRoomComplete(_ notify:NSNotification){
+    @objc func onJoinRoomComplete(_ notify:NSNotification){
         if let obj = notify.object as? Model_joinRoom_s2c{
             //记录教室信息
             let classInfo = ClassRoomInfo();
@@ -392,7 +392,7 @@ class MainViewController: NSViewController,POPAnimationDelegate {
     /**
      收到文本消息
      */
-    func onReceiveMsg(_ notify:NSNotification){
+    @objc func onReceiveMsg(_ notify:NSNotification){
         if let obj = notify.object as? Model_sendChat_notify{
             NSLog("1")
         }
@@ -401,7 +401,7 @@ class MainViewController: NSViewController,POPAnimationDelegate {
     /**
      收到管理员命令
      */
-    func onAdminCMD(_ notify:NSNotification){
+    @objc func onAdminCMD(_ notify:NSNotification){
         if let obj = notify.object as? Model_adminCMD_notify{
             NSLog("1")
         }
@@ -410,7 +410,7 @@ class MainViewController: NSViewController,POPAnimationDelegate {
     /**
      收到通用教学命令
      */
-    func onTongyongTeachCMD(_ notify:NSNotification){
+    @objc func onTongyongTeachCMD(_ notify:NSNotification){
         if let obj = notify.object as? Model_currentCMD_notify{
             NSLog("1")
         }
@@ -419,7 +419,7 @@ class MainViewController: NSViewController,POPAnimationDelegate {
     /**
      收到用户列表变更
      */
-    func onUserChange(_ notify:NSNotification){
+    @objc func onUserChange(_ notify:NSNotification){
         if let obj = notify.object as? Model_otherUserStateChange_notify{
             NSLog("1")
         }
