@@ -6,14 +6,6 @@
          contextName = "View_ClassList.getClassListCallback(NSNotification) -&gt; ():View_ClassList.swift">
       </ContextState>
       <ContextState
-         contextName = "MainViewController.viewDidLoad() -&gt; ():MainViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.view.frame.size.height">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "View_ClassListItem.gml_fillUserInfo([AnyHashable : Any]?) -&gt; ():View_ClassListItem.swift">
       </ContextState>
       <ContextState
@@ -35,6 +27,22 @@
             </PersistentString>
             <PersistentString
                value = "self.view.frame">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MainViewController.viewDidLoad() -&gt; ():MainViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.view.frame.size.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.applicationDidFinishLaunching(_:):AppDelegate.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "d &gt;&gt; 16">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
