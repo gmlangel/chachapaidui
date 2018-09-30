@@ -1,0 +1,322 @@
+﻿@charset "utf-8";
+/**
+ * 默认样式
+ * @file：   base.less
+ * @author:  xyyjk（maxingguo@51talk.com）
+ * @update:  2014-11-05
+ * @note:    重置样式、通用变量、基础样式、功能样式、混合样式
+ */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/**
+ * goodjob
+ * @file：   index.less
+ * @author:  zhangtian（zhangtian@51talk.com）
+ * @update:  2015-07-21
+ * @note:    AC页面
+ */
+.head {
+  width: 680px;
+  height: 50px;
+  position: relative;
+  background: url("../../images/share/bg.png") no-repeat #ffb400;
+}
+.head a {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  background: url("../../images/share/close.png") no-repeat;
+}
+.m_file {
+  width: 680px;
+  height: 550px;
+  background: url("../../images/share/bg.png") 0 -50px no-repeat #ffb400;
+  /*margin:30px auto;*/
+  font-family: 'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial, Verdana, Tahoma;
+}
+.m_file .top {
+  width: 100%;
+  height: 110px;
+  overflow: hidden;
+}
+.m_file .top img {
+  width: 680px;
+  height: 550px;
+  margin-top: -50px;
+  display: block;
+}
+.m_file .text {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  font-size: 24px;
+  color: #a64200;
+  font-weight: bold;
+}
+.m_file .cont {
+  margin: 0 auto;
+  width: 630px;
+  height: 190px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding-top: 128px;
+  position: relative;
+  margin-bottom: 16px;
+}
+.m_file .cont .list {
+  height: 126px;
+  width: 100%;
+  padding-left: 18px;
+  margin-bottom: 7px;
+}
+.m_file .cont .list li {
+  width: 50px;
+  height: 70px;
+  float: left;
+  margin-right: 6px;
+}
+.m_file .cont .list li.pass {
+  background-image: url("../../images/share/cont.gif");
+  background-repeat: no-repeat;
+  margin-top: 56px;
+  background-position: 0 -218px;
+}
+.m_file .cont .list li.soon {
+  background-image: url("../../images/share/cont.gif");
+  background-repeat: no-repeat;
+  margin-top: 56px;
+  background-position: -50px -217px;
+}
+.m_file .cont .list li.active {
+  width: 90px;
+  height: 100%;
+  background: url("../../images/share/pp.gif") no-repeat -327px -345px;
+  position: relative;
+}
+.m_file .cont .list li.active .star {
+  width: 44px;
+  height: 40px;
+  position: absolute;
+  background-image: url("../../images/share/cont.gif");
+  background-repeat: no-repeat;
+  margin-top: 56px;
+  margin-top: 0;
+  background-position: -107px -254px;
+  left: 70px ;
+  top: -14px;
+}
+.m_file .cont .list li.active .transcend {
+  position: absolute;
+  width: 240px;
+  height: 80px;
+  font-size: 16px;
+  color: #ffffff;
+  padding-top: 24px;
+  text-align: center;
+  background-image: url("../../images/share/cont.gif");
+  background-repeat: no-repeat;
+  margin-top: 56px;
+  background-position: 0 -103px;
+  left: -50px;
+  top: -164px;
+}
+.m_file .cont .list li.active .transcend span {
+  font-size: 34px;
+  margin: 0 5px;
+  font-weight: bold;
+}
+.m_file .cont .list li.active .right {
+  background-image: url("../../images/share/cont.gif");
+  background-repeat: no-repeat;
+  margin-top: 56px;
+  background-position: 0 -294px;
+  left: -138px;
+  top: -160px;
+}
+.m_file .cont .list li.active .left {
+  background-image: url("../../images/share/cont.gif");
+  background-repeat: no-repeat;
+  margin-top: 56px;
+  background-position: 0 -399px;
+  left: -12px;
+  top: -160px;
+}
+.m_file .cont .line {
+  width: 547px;
+  height: 17px;
+  margin: 0 auto;
+  background: url("../../images/share/line.png") no-repeat 0 0;
+}
+.m_file .cont .total {
+  width: 630px;
+  text-align: center;
+  font-size: 16px;
+  height: 30px;
+  line-height: 30px;
+  color: #75c256;
+  font-weight: bold;
+}
+.m_file .share_b {
+  height: 32px;
+  line-height: 32px;
+}
+.m_file .share_b .share {
+  float: right;
+  padding-right: 17px;
+}
+.m_file .share_b .share .s_t {
+  font-size: 16px;
+  font-weight: bold;
+  float: left;
+  margin-right: 8px;
+  color: #333333;
+}
+.m_file .share_b .share a {
+  float: left;
+  margin-right: 8px;
+  width: 15px;
+  height: 32px;
+  margin-top: 0;
+}
+.m_file .share_b .share a.qq,
+.m_file .share_b .share a.microblog,
+.m_file .share_b .share a.share_p,
+.m_file .share_b .share a.WeChat {
+  background-image: url("../../images/share/cont1.gif");
+  background-repeat: no-repeat;
+}
+.m_file .share_b .share a.qq {
+  background-position: -96px 0;
+}
+.m_file .share_b .share a.microblog {
+  background-position: -64px 0;
+}
+.m_file .share_b .share a.share_p {
+  background-position: -32px 0;
+}
+.m_file .share_b .share a.WeChat {
+  background-position: 0 0;
+}

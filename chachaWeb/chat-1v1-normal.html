@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>chat 1v1 normal</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="./css/chatCss/ini_t.min.css"/>
+    <link rel="stylesheet" href="./css/chatCss/chat/comm.min.css"/>
+    <link rel="stylesheet" href="./css/chatCss/chat/main.min.css"/>
+    <script type="text/javascript" src="./js/jq.js"></script>
+    <script type="text/javascript" src="./js/chatJs/chat/main.min.js"></script>
+</head>
+<body onload="scrollHandle.handle_scroll(0,'#scroll_record')">
+<div class="chatContainer">
+    <div id="scroll_record">
+        <div class="viewport">
+            <div class="overview">
+                <div class="tem_record_init" id="tem_record">
+                    <ul class="chat-list" id="c-list"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="scrollbar">
+            <div class="track">
+                <div class="thumb">
+                    <div class="end"></div>
+                </div>
+            </div>
+        </div>
+        <div id="recordTip">
+            <div id="conTip">
+                <div class="tip_data"></div>
+                <div class="tip_but"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="myMenu" id="myMenu">
+        <div class="copy"><p class="copyMH"><span>Copy</span></p></div>
+        <div class="save"><p class="saveMH"><span>SaveAs</span></p></div>
+        <div class="allSelect"><p class="allSelectMH"><span>All</span></p></div>
+        <div class="clearAll"><p class="clearAllMH"><span>Clear All</span></p></div>
+        <div class="kickUser"><p class="kickUserMH"><span>Kick user</span></p></div>
+        <div class="block"><p class="blockMH"><span>Block user's chat</span></p></div>
+        <div class="unblock"><p class="unblockMH"><span>Unblock user's chat</span></p></div>
+        <div class="blockAll"><p class="blockAllMH"><span>Block all user's chat</span></p></div>
+        <div class="unblockAll"><p class="unblockAllMH"><span>Unblock all user's chat</span></p></div>
+    </div>
+    <div class="trans_select">
+        <div style="width: 100%;height: 100%;margin: 0 0 0 0;">
+            <div class="close"></div>
+            <ul class="tranConCopy">
+                <li><p><span class="src_selected" id="src_selected"></span></p></li>
+                <li><p><hr size="1"  style="border:1px #a1aaa8 dotted;width: 100%"/></p></li>
+                <li><p><span class="res_selected" id="res_selected"></span></p></li>
+                <li><p class="info">
+                    <span class="youdao">
+                        The results provided by <a href="">youdao</a>
+                    </span>
+                    <span class="toolCon">
+                        <span class="copy"><img src="./images/chat/ctrlc.gif" />Copy</span>
+                        <span class="send"><img src="./images/chat/send.png" />Send</span>
+                    </span>
+                </p></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>

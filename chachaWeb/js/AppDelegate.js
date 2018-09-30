@@ -10,7 +10,7 @@ class AppDelegate{
     }
 
     constructor(){
-
+        this.welcomePanel = document.getElementById("welcome");
     }
 
     /**
@@ -31,7 +31,10 @@ class AppDelegate{
         //this.bgAudio.src = "./gameResource/bg.mp4"
 
         //初始化白板区域
-        //this.whiteBoard = document.getElementById("")
+        this.whiteBoard = document.getElementById("classRoom");
+        this.whiteBoard.style.display = "none";
+
+
     }
 
     /**
@@ -136,7 +139,90 @@ class AppDelegate{
      *
      * 正式开始*/
     _trueBegin(){
+        AppDelegate.app.whiteBoard.style.display = "block";
+        AppDelegate.app.welcomePanel.style.display = "none";
 
+        //初始化白板数据
+        AppDelegate.app.h5Init();
+    }
+
+    h5Init(){
+        //测试代码
+        let course_H5Entity = new H5Entity_course_simple();
+        course_H5Entity.data["courserole"] = 1;
+        course_H5Entity.data["coursestyle"] = 0;
+        course_H5Entity.data["metrialtype"] = 0;//1比1的教材比例
+        course_H5Entity.data["startedTime"] = parseInt(new Date().valueOf() / 1000);
+        course_H5Entity.data["CanTurnPage"] = 1;//可以翻页
+
+        let user_H5Entity = new H5Entity_user_simple();
+        user_H5Entity.data["usergroup"] = 1;
+        user_H5Entity.data["userid"] = 799547;
+        user_H5Entity.data["userrole"] = 1;
+        user_H5Entity.data["usertype"] = 1;//self.teacherRole() ? 1 : 2;//gmlok
+
+        //构建pdf下载地址
+        let urlInfo = new H5Entity_url_simple();
+        //加载网络pdf资源
+        //        var pdfPath = currentCourse!.teaCourseSource;
+        //        pdfPath = pdfPath == "" ? currentCourse!.courseSource : pdfPath;
+        //        var path:NSString=NSString(string: pdfPath)
+        //        // 去空格处理和URI处理
+        //        if(pdfPath.contains("%") == false)
+        //        {
+        //            // 需要URI处理
+        //            path = path.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)! as NSString
+        //        }
+        //        path = path.replacingOccurrences(of: " ", with: "%20") as NSString;
+        //
+        //        var headUrlBeforeBase64 = path as String;//path as String;//本地加载本地pdf必须在同一个目录才可以，本地加载网上资源可以，网上JS加载本地pdf不可以，网上JS只能加载同域下的资源。
+        //        //"http://localhost:8080/1b26189c48018d410c8a78fb89f6a3d6.pdf";//"http://172.16.0.98/web/1.pdf";//"file://" + ACDataCachePresenter.sharedinstance.documentPath() + "/51TalkAbout/51talkPDFS/1b26189c48018d410c8a78fb89f6a3d6.pdf";//"http://localhost:8080/1b26189c48018d410c8a78fb89f6a3d6.pdf"; ////"http://172.16.0.98/web/1.pdf";//"file://" + Bundle.main.path(forResource: "pdfloaderByH5/1b26189c48018d410c8a78fb89f6a3d6", ofType: "pdf")!
+        //        var headUrl:String? = headUrlBeforeBase64.data(using: String.Encoding.utf8)?.base64EncodedString();
+        //        headUrl = headUrl == nil ? "" : headUrl;
+
+        //加载本地pdf资源
+        let headUrlBeforeBase64 = "../../4b7598199953ffe850ed9d672991ccc6.pdf";//"file://" + PDFCacheProxy.instance._localPdfPath;
+        var headUrl = window.MyBase64.encode(headUrlBeforeBase64);
+        headUrl = headUrl || "";
+        urlInfo.data["pdf"] = headUrl;
+
+        let hostInfo = new H5Entity_host_simple();
+        hostInfo.data["language"] = "cn";
+        hostInfo.data["showtype"] = "normal"//成人还是青少
+        let whiteConfigDic = this.createWhiteConfigDic();
+        hostInfo.data["toolsconf"] = whiteConfigDic;
+
+        let courseAll = new H5Entity_courseAll();
+        courseAll.data["courseTypeEx"] = 0;
+
+        //开始初始化H5PdfLoader
+        this.callH5(courseAll.key,courseAll.toJSStr());
+        this.callH5(course_H5Entity.key,course_H5Entity.toJSStr());
+        this.callH5(user_H5Entity.key,user_H5Entity.toJSStr());
+        this.callH5(urlInfo.key,urlInfo.toJSStr());
+        this.callH5(hostInfo.key,hostInfo.toJSStr());
+
+    }
+
+    /**
+     * 调用 白板的各种协议接口
+     * */
+    callH5(type,JSONStrValue){
+        window.comm_type_get(type,JSONStrValue);
+    }
+
+    createWhiteConfigDic(){
+        return {
+            "back":true,/*回退*/
+            "clear":true,/*清空*/
+            "draft":true,/*拖拽*/
+            "newrub":true,/*新橡皮擦*/
+            "pen":true,/*画笔*/
+            "rec":true,/*矩形*/
+            "rub":true,/*旧版橡皮擦*/
+            "signpen":true,/*荧光笔*/
+            "text":true/*文本*/
+        }
     }
 
     /**
