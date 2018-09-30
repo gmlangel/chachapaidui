@@ -39,35 +39,35 @@
         <entry file="file://$PROJECT_DIR$/js/AppDelegate.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-10.703704">
-              <caret line="194" column="49" selection-start-line="194" selection-start-column="49" selection-end-line="194" selection-end-column="49" />
+              <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="viewer.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/courseLoad/pdf/web/viewer.min.js">
+      <file leaf-file-name="main.min.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/pdfLoaderCss/main.min.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="15.62963">
-              <caret line="0" column="5177" selection-start-line="0" selection-start-column="5093" selection-end-line="0" selection-end-column="5177" />
+            <state vertical-scroll-proportion="0.4921739">
+              <caret line="0" column="9694" selection-start-line="0" selection-start-column="9694" selection-end-line="0" selection-end-column="9694" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/pdfLoaderJs/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43238732">
-              <caret line="3620" column="21" selection-start-line="3620" selection-start-column="21" selection-end-line="3620" selection-end-column="21" />
+            <state vertical-scroll-proportion="-13.481482">
+              <caret line="3635" column="68" selection-start-line="3635" selection-start-column="68" selection-end-line="3635" selection-end-column="68" />
               <folding>
-                <marker date="1538304784000" expanded="false" signature="120300:120310" placeholder="..." />
-                <marker date="1538304784000" expanded="false" signature="120388:120399" placeholder="..." />
-                <marker date="1538304784000" expanded="true" signature="120478:120490" placeholder="..." />
-                <marker date="1538304784000" expanded="true" signature="122065:122078" placeholder="..." />
-                <marker date="1538304784000" expanded="true" signature="123125:123138" placeholder="..." />
-                <marker date="1538304784000" expanded="true" signature="129149:129193" placeholder="..." />
-                <marker date="1538304784000" expanded="true" signature="131658:131701" placeholder="..." />
+                <marker date="1538314686000" expanded="false" signature="120300:120310" placeholder="..." />
+                <marker date="1538314686000" expanded="false" signature="120388:120399" placeholder="..." />
+                <marker date="1538314686000" expanded="true" signature="120478:120490" placeholder="..." />
+                <marker date="1538314686000" expanded="true" signature="122065:122078" placeholder="..." />
+                <marker date="1538314686000" expanded="true" signature="123125:123138" placeholder="..." />
+                <marker date="1538314686000" expanded="true" signature="129149:129193" placeholder="..." />
+                <marker date="1538314686000" expanded="true" signature="131658:131701" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -76,7 +76,7 @@
       <file leaf-file-name="pdf.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/courseLoad/pdf/pdf.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.875">
+            <state vertical-scroll-proportion="-5.5882354">
               <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
               <folding />
             </state>
@@ -113,6 +113,7 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/PdfLoaderModel.js" />
         <option value="$PROJECT_DIR$/js/AppDelegate.js" />
+        <option value="$PROJECT_DIR$/courseLoad/pdf/pdf.html" />
         <option value="$PROJECT_DIR$/js/pdfLoaderJs/main.js" />
       </list>
     </option>
@@ -218,6 +219,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pdf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chachaWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chachaWeb" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="courseLoad" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pdf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -328,7 +351,9 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -443,14 +468,6 @@
     <entry file="file://$PROJECT_DIR$/images/motion.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/pdfLoaderCss/main.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/chatCss/chat/comm.min.css">
@@ -578,15 +595,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/courseLoad/pdf/web/viewer.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5416667">
-          <caret line="57" column="13" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="15.62963">
+          <caret line="0" column="5884" selection-start-line="0" selection-start-column="5884" selection-end-line="0" selection-end-column="5884" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -600,25 +613,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/AppDelegate.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.703704">
-          <caret line="194" column="49" selection-start-line="194" selection-start-column="49" selection-end-line="194" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/courseLoad/pdf/web/viewer.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="15.62963">
-          <caret line="0" column="5177" selection-start-line="0" selection-start-column="5093" selection-end-line="0" selection-end-column="5177" />
-          <folding />
+        <state vertical-scroll-proportion="0.5416667">
+          <caret line="57" column="13" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/courseLoad/pdf/pdf.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.875">
+        <state vertical-scroll-proportion="-5.5882354">
           <caret line="19" column="47" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
           <folding />
         </state>
@@ -626,17 +635,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/pdfLoaderJs/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43238732">
-          <caret line="3620" column="21" selection-start-line="3620" selection-start-column="21" selection-end-line="3620" selection-end-column="21" />
+        <state vertical-scroll-proportion="-13.481482">
+          <caret line="3635" column="68" selection-start-line="3635" selection-start-column="68" selection-end-line="3635" selection-end-column="68" />
           <folding>
-            <marker date="1538304784000" expanded="false" signature="120300:120310" placeholder="..." />
-            <marker date="1538304784000" expanded="false" signature="120388:120399" placeholder="..." />
-            <marker date="1538304784000" expanded="true" signature="120478:120490" placeholder="..." />
-            <marker date="1538304784000" expanded="true" signature="122065:122078" placeholder="..." />
-            <marker date="1538304784000" expanded="true" signature="123125:123138" placeholder="..." />
-            <marker date="1538304784000" expanded="true" signature="129149:129193" placeholder="..." />
-            <marker date="1538304784000" expanded="true" signature="131658:131701" placeholder="..." />
+            <marker date="1538314686000" expanded="false" signature="120300:120310" placeholder="..." />
+            <marker date="1538314686000" expanded="false" signature="120388:120399" placeholder="..." />
+            <marker date="1538314686000" expanded="true" signature="120478:120490" placeholder="..." />
+            <marker date="1538314686000" expanded="true" signature="122065:122078" placeholder="..." />
+            <marker date="1538314686000" expanded="true" signature="123125:123138" placeholder="..." />
+            <marker date="1538314686000" expanded="true" signature="129149:129193" placeholder="..." />
+            <marker date="1538314686000" expanded="true" signature="131658:131701" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/AppDelegate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.703704">
+          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/pdfLoaderCss/main.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4921739">
+          <caret line="0" column="9694" selection-start-line="0" selection-start-column="9694" selection-end-line="0" selection-end-column="9694" />
+          <folding />
         </state>
       </provider>
     </entry>

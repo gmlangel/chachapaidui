@@ -3614,14 +3614,16 @@ define('logicUnpack',['boardConf','loadHtmlModule','moduleTools','enDataSend','a
         //统一管理pdf的通知
         'pdfCourse': {
             resize: function () {
-                window.iFrameParIO.parentCon.handleChlIO.resize();需要临时屏蔽,需要做处理
+                if(window.iFrameParIO.parentCon.handleChlIO)
+                    window.iFrameParIO.parentCon.handleChlIO.resize();
                 //处理当缩放时产生的当前教材的错位
                 setTimeout(function () {
                     window.iFrameParIO.pdfCourse.setPage(seaConf.classInfo.textInfo.curPage);
                 },10)
             },
             setPage: function (num) {
-                window.iFrameParIO.parentCon.handleChlIO.setPage(num);//初始化页数
+                if(window.iFrameParIO.parentCon.handleChlIO)
+                    window.iFrameParIO.parentCon.handleChlIO.setPage(num);//初始化页数
             }
         },
         'changeCourse': function (obj) {
