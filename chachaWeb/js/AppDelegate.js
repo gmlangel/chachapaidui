@@ -17,8 +17,8 @@ class AppDelegate{
      * 启动
      * */
     init(){
-        //设置清晰度为2倍屏
-        ScreenManager.main.quilaty = 2;
+        //设置清晰度为1倍屏,不要设置2倍白板会有问题
+        ScreenManager.main.quilaty = 1;
 
         //初始化音频播放器
         this.bgAudio = new GMLAudio();
