@@ -10,36 +10,6 @@ class AppDelegate{
     }
 
     constructor(){
-        //测试用
-        this.master = null;//队长
-        this.mastertimeinterval = 0;//
-        this.masterTaskId = -1;
-        //初始化背景音
-        this.bgAudio = new GMLAudio();
-        this.bgAudio.preload = true;
-        this.bgAudio.src = "./gameResource/bg.mp3"
-        console.log(this.bgAudio);
-        //初始化场景
-        this.scene = BaseScene.main;
-        this.container = new GMLSprite();//地图和monster的容器
-        this.scene.addChild(this.container);
-        this.bg = null;//背景
-        this.allMonster = []
-        this.monsterArr = ["./gameResource/girl1/","./gameResource/girl2/","./gameResource/boy1/","./gameResource/boy2/"];
-        this.monsterConfigYingShe = {};//资源路径和key的映射
-        this.keyMoveX = 0;
-        this.keyMoveY = 0;
-        this.fangxiangDic={
-            "0,0":AniTypeEnum.default,
-            "0,-1":AniTypeEnum.top,
-            "1,-1":AniTypeEnum.rightTop,
-            "1,0":AniTypeEnum.right,
-            "1,1":AniTypeEnum.rightBottom,
-            "0,1":AniTypeEnum.bottom,
-            "-1,1":AniTypeEnum.leftBottom,
-            "-1,0":AniTypeEnum.left,
-            "-1,-1":AniTypeEnum.leftTop
-        }
 
     }
 
@@ -50,71 +20,28 @@ class AppDelegate{
         //设置清晰度为2倍屏
         ScreenManager.main.quilaty = 2;
 
+        //初始化音频播放器
+        this.bgAudio = new GMLAudio();
+        this.bgAudio.preload = true;
+        //this.bgAudio.src = "./gameResource/bg.mp3"
 
+        //初始化视频播放器
+        this.bgVideo = new GMLVideo();
+        this.bgVideo.preload = true;
+        //this.bgAudio.src = "./gameResource/bg.mp4"
+
+        //初始化白板区域
+        //this.whiteBoard = document.getElementById("")
     }
 
     /**
      * 开始游戏
      * */
-    beginGame(_nickName){
+    startClass(_nickName){
         if(OSManager.OS == "IOS" || OSManager.OS == "Android")
         {
             window.addEventListener("touchstart",function(evt){
-                if(evt.targetTouches.length >0 && AppDelegate.app.selfMonster){
-                    ////方向盘方式
-                    //let globelx = AppDelegate.app.selfMonster.x + AppDelegate.app.container.x
-                    //let globely = AppDelegate.app.selfMonster.y + AppDelegate.app.container.y
-                    //let t = evt.targetTouches[0];
-                    //globelx = t.pageX - globelx;
-                    //globely = t.pageY - globely;
-                    //let jiaodu = Math.atan2(globely,globelx);
-                    //jiaodu = jiaodu / Math.PI * 180;
-                    //jiaodu = jiaodu < 0 ? 360 + jiaodu : jiaodu;
-                    //console.log(jiaodu);
-                    //if(jiaodu > 22.5 && jiaodu <= 67.5)
-                    //{
-                    //    //右下
-                    //    AppDelegate.app.keyMoveX = 1;
-                    //    AppDelegate.app.keyMoveY = 1;
-                    //    AppDelegate.app.updateSelfMonster();
-                    //}else if(jiaodu > 67.5 && jiaodu <= 112.5){
-                    //    //下
-                    //    AppDelegate.app.keyMoveX = 0;
-                    //    AppDelegate.app.keyMoveY = 1;
-                    //    AppDelegate.app.updateSelfMonster();
-                    //}else if(jiaodu > 112.5 && jiaodu < 157.5){
-                    //    //左下
-                    //    AppDelegate.app.keyMoveX = -1;
-                    //    AppDelegate.app.keyMoveY = 1;
-                    //    AppDelegate.app.updateSelfMonster();
-                    //}
-                    //else if(jiaodu > 157.5 && jiaodu < 202.5){
-                    //    //左
-                    //    AppDelegate.app.keyMoveX = -1;
-                    //    AppDelegate.app.keyMoveY = 0;
-                    //    AppDelegate.app.updateSelfMonster();
-                    //}else if(jiaodu > 202.5 && jiaodu < 247.5){
-                    //    //左上
-                    //    AppDelegate.app.keyMoveX = -1;
-                    //    AppDelegate.app.keyMoveY = -1;
-                    //    AppDelegate.app.updateSelfMonster();
-                    //}else if(jiaodu > 247.5 && jiaodu < 292.5){
-                    //    //上
-                    //    AppDelegate.app.keyMoveX = 0;
-                    //    AppDelegate.app.keyMoveY = -1;
-                    //    AppDelegate.app.updateSelfMonster();
-                    //}else if(jiaodu > 292.5 && jiaodu < 337.5){
-                    //    //右上
-                    //    AppDelegate.app.keyMoveX = 1;
-                    //    AppDelegate.app.keyMoveY = -1;
-                    //    AppDelegate.app.updateSelfMonster();
-                    //}else{
-                    //    //右
-                    //    AppDelegate.app.keyMoveX = 1;
-                    //    AppDelegate.app.keyMoveY = 0;
-                    //    AppDelegate.app.updateSelfMonster();
-                    //}
-
+                if(evt.targetTouches.length >0){
                     //点击位移方式
                     let t = evt.targetTouches[0];
                     let me = new GMLMouseEvent()
@@ -123,73 +50,71 @@ class AppDelegate{
                 }
             })
             window.addEventListener("touchend",function(evt){
-                ////方向盘方式
-                //AppDelegate.app.keyMoveX = 0;
-                //AppDelegate.app.keyMoveY = 0;
-                //AppDelegate.app.updateSelfMonster();
-
+                if(evt.targetTouches.length >0){
+                    //点击位移方式
+                    let t = evt.targetTouches[0];
+                    let me = new GMLMouseEvent()
+                    me.data = {"globelX":t.pageX,"globelY": t.pageY}
+                    AppDelegate.app.ongMouseUp(me)
+                }
+            })
+            window.addEventListener("touchmove",function(evt){
+                if(evt.targetTouches.length >0){
+                    //点击位移方式
+                    let t = evt.targetTouches[0];
+                    let me = new GMLMouseEvent()
+                    me.data = {"globelX":t.pageX,"globelY": t.pageY}
+                    AppDelegate.app.ongMouseMove(me)
+                }
             })
         }else{
-            this.scene._rootSprite.addEventListener(GMLMouseEvent.Down,this.ongMouseDown,this)
+            window.addEventListener("mousedown",function(evt){
+                let me = new GMLMouseEvent()
+                me.data = {"globelX": evt.target.x,"globelY": evt.target.y};
+                AppDelegate.app.ongMouseDown(me)
+            })
         }
 
-        this.nickName = _nickName.length > 7 ? _nickName.substr(0,7) : _nickName;
-        //启动场景
-        this.scene.start();
+        this.nickName = _nickName.length > 17 ? _nickName.substr(0,17) : _nickName;
         this.bgAudio.play();
         this.bgAudio.loop = true;
-        //添加背景
-        this.bg = new GMLImage("./gameResource/aaa.png",[0,0,this.scene.width,this.scene.height]);
-        //this.tempBg = new GMLImage("./gameResource/aaaPath.png");
-        ResourceManager.main.getImgByURL("./gameResource/aaaPath.png",this,this.onPathMapLoadend)
-        this.scene.addChildAt(this.bg,0);
-        //this.scene.addChildAt(this.tempBg,1);
+        this.bgVideo.play();
+        this.bgVideo.loop = true;
+
         //链接socket
-        this.ws = new WebSocketHandler("ws://39.106.135.11:31111",[]);;//localhost:31111
+        this.ws = new WebSocketHandler("ws://39.106.135.11:31111",[]);//localhost:31111
         this.ws.addEventListener(WebSocketEvent.SOCKET_CLOSE,this.onSocketClose,this)
         this.ws.addEventListener(WebSocketEvent.SOCKET_DATA,this.onSocketData,this);
         this.ws.addEventListener(WebSocketEvent.SOCKET_ERROR,this.onSocketError,this)
         this.ws.addEventListener(WebSocketEvent.SOCKET_CONNECTED,this.onSocketConnected,this)
 
+        //长连接心跳 30秒发一次
         setInterval(function(){
-            if(AppDelegate.app.selfMonster && AppDelegate.app.ws.isOpen){
-                let req = {"cmd":0x00FF101E,"seq":0,"uid":AppDelegate.app.selfMonster.uid,"ca":{x:AppDelegate.app.selfMonster.x,y:AppDelegate.app.selfMonster.y}}
+            if(AppDelegate.app.ws.isOpen){
+                let req = {"cmd":0x00FF0001,"seq":0,"lt":0};
                 AppDelegate.app.ws.sendData(JSON.stringify(req))
             }
-        },30)
+        },30000)
     }
 
     ongMouseDown(evt){
-        if(this.mastertimeinterval < 12)
-            return;
-        if(this.master)
-            return;//如果有队长,存在,则需要跟随队长移动,自己不能控制移动
         let wX = evt.data.globelX;//全局坐标
         let wY = evt.data.globelY;
-        let lX = wX - this.container.x;//相对于container的局部坐标
-        let lY = wY - this.container.y;
-        if(this.userinfo.nn == "chacha"){
-            //如果自己是队长,则上报自己的位置给其他人
-            let req = {"cmd":0x00FF102E,"seq":0,"uid":AppDelegate.app.selfMonster.uid,"ca":{x:lX,y:lY}}
-            AppDelegate.app.ws.sendData(JSON.stringify(req))
-        }
-        if(this.pathBG && this.selfMonster)
-        {
-            //如果路径图像信息存在,则进行,寻路
-            let arr = AStar.main.searchRoadByImgData(this.selfMonster.x,this.selfMonster.y,lX,lY,this.pathBG);
-            this.mastertimeinterval = 0;
-            if(arr.length > 0){
-                arr.push({"x":lX,"y":lY})//添加最终的终点
-                //让自身的角色移动
-                this.selfMonster.toMoveByPath(arr);
-            }
-        }
-
+        console.log("mouseDown,wX="+wX + ",wY=" + wY);
     }
 
-    onPathMapLoadend(img){
-        this.pathBG = img;
+    ongMouseUp(evt){
+        let wX = evt.data.globelX;//全局坐标
+        let wY = evt.data.globelY;
+        console.log("mouseUp,wX="+wX + ",wY=" + wY);
     }
+
+    ongMouseMove(evt){
+        let wX = evt.data.globelX;//全局坐标
+        let wY = evt.data.globelY;
+        //console.log("mouseMove,wX="+wX + ",wY=" + wY);
+    }
+
     onSocketClose(e){
         console.log("socket断开")
     }
@@ -211,119 +136,6 @@ class AppDelegate{
      *
      * 正式开始*/
     _trueBegin(){
-        //加载所有的资源配置文件
-        let j = this.monsterArr.length;
-        let offset = 0;
-        if(j <= 0){
-            return;
-        }
-        this.monsterArr.forEach(function(item,idx){
-            let conPath = item + "con.json";
-            $.ajax({
-                "pathKey":item,
-                "url":conPath,
-                "type":"GET",
-                "timeout":60000,
-                "success":function(data){
-                    ConfigManager.main.configDic[data.name] = data
-                    //批量加载资源
-                    AppDelegate.app.loadAllResource(this.pathKey,data);
-                    AppDelegate.app.monsterConfigYingShe[this.pathKey] = data.name;
-                    offset++;
-                    if(offset == j){
-                        //生成小怪物
-                        //开始游戏的正常流程
-                        AppDelegate.app.startSelf();
-                    }
-                },
-                "error":function(evt){
-                    console.log(evt)
-                    offset++;
-                    if(offset == j){
-                        //生成小怪物
-                        //并开始游戏的正常流程
-                        AppDelegate.app.startSelf();
-                    }
-                }
-            })
-        })
-
-        //添加时间监听
-        //BaseNotificationCenter.main.addObserver(this,GMLKeyBoardEvent.KeyDown,this.ongKeyDown);
-        //BaseNotificationCenter.main.addObserver(this,GMLKeyBoardEvent.KeyUp,this.ongKeyUp);
-        BaseNotificationCenter.main.addObserver(this,GMLEvent.EnterFrame,this.onenterFrame)
-    }
-
-    /**
-     * 批量加载资源,这个流程在真实生产环境中还需要细分或逻辑调整
-     * */
-    loadAllResource(dirPath,data){
-        let arr = [];
-        arr.push(...data[AniTypeEnum.default])
-        arr.push(...data[AniTypeEnum.left])
-        arr.push(...data[AniTypeEnum.right])
-        arr.push(...data[AniTypeEnum.top])
-        arr.push(...data[AniTypeEnum.bottom])
-        arr.push(...data[AniTypeEnum.leftBottom])
-        arr.push(...data[AniTypeEnum.leftTop])
-        arr.push(...data[AniTypeEnum.rightBottom])
-        arr.push(...data[AniTypeEnum.rightTop])
-        let selfins = AppDelegate.app;
-        arr.forEach(function(item,idx){
-            //console.log(dirPath + item)
-            ResourceManager.main.getImgByURL(dirPath + item,selfins,t);
-        })
-        function t(){}
-
-    }
-
-    /**
-     * 帧频事件
-     * */
-    onenterFrame(e){
-        if(this.mastertimeinterval < 12)
-        {
-            this.mastertimeinterval++;
-        }
-        let arr = this.allMonster;
-        let j = arr.length;
-        for(var i = 0;i<j;i++){
-            for(var z = i+1;z<j;z++){
-                if(this.allMonster[i].y > this.allMonster[z].y){
-                    let item = this.allMonster[z];
-                    this.allMonster[z] = this.allMonster[i];
-                    this.allMonster[i] = item;
-                    this.container.swapChild(i,z);
-                }
-            }
-        }
-
-        //移动背景的位置
-        if(this.bg && this.bg.width > 0 && this.bg.height > 0 && this.selfMonster){
-
-            let tx = this.scene.width / 2;
-            let offsetX = tx - this.selfMonster.x - this.container.x;
-            tx = -(this.bg.img.width - this.scene.width)
-            if(this.container.x + offsetX <= tx){
-                this.container.x = tx;
-            }else if(this.container.x + offsetX > 0){
-                this.container.x = 0;
-            }else{
-                this.container.x += offsetX;
-            }
-
-            let ty = this.scene.height / 2;
-            let offsetY = ty - this.selfMonster.y - this.container.y;
-            ty = -(this.bg.img.height - this.scene.height)
-            if(this.container.y + offsetY <= ty){
-                this.container.y = ty;
-            }else if(this.container.y + offsetY > 0){
-                this.container.y = 0;
-            }else{
-                this.container.y += offsetY;
-            }
-            this.bg.zhuaquRect = [-this.container.x,-this.container.y,this.scene.width,this.scene.height]
-        }
 
     }
 
@@ -364,7 +176,6 @@ class AppDelegate{
                     //进入教室回调
                     if(jsonObj.code == 0){
                         console.log("进入教室成功");
-                        this.allUserArr = jsonObj.ua;
                         this._trueBegin();
                     }else{
                         console.log("进入教室失败");
@@ -383,51 +194,6 @@ class AppDelegate{
                         }
                     })
                     break;
-                case 0x00FF111E:
-                    //更新所有monster的坐标,除了自己
-                    let dic = jsonObj.datas;
-                    let j = this.allMonster.length;
-                    if(j == 0)
-                        return;
-                    let temparr = this.allMonster;
-                    let tx=0,ty=0;
-                    for(var key in dic){
-                        if(key==this.selfMonster.uid)
-                        {
-                            //不更新自己
-                            continue;
-                        }
-
-                        for(let i=0;i<j;i++){
-                            if(key == temparr[i].uid){
-                                //更新其它所有的monster的位置
-                                tx = dic[key].x
-                                ty = dic[key].y;
-                                temparr[i].toEndPoint(tx,ty);
-                            }
-                        }
-                    }
-                    break;
-                case 0x00FF102F:
-                    //收到了master队长的位置信息
-                    console.log("收到队长数据,uid=",jsonObj.data.uid,"  x=",jsonObj.data.x,"  y=",jsonObj.data.y);
-                    let lX = jsonObj.data.x || this.selfMonster.x;
-                    let lY = jsonObj.data.y || this.selfMonster.y;
-                    if(this.pathBG && this.selfMonster)
-                    {
-                        if(this.masterTaskId > -1)
-                            clearTimeout(this.masterTaskId)
-                        //让自身的角色移动
-                        this.masterTaskId = setTimeout(function(){
-                            //如果路径图像信息存在,则进行,寻路
-                            let arr = AStar.main.searchRoadByImgData(AppDelegate.app.selfMonster.x,AppDelegate.app.selfMonster.y,lX,lY,AppDelegate.app.pathBG);
-                            if(arr.length > 0){
-                                arr.push({"x":lX,"y":lY})//添加最终的终点
-                            }
-                            AppDelegate.app.selfMonster.toMoveByPath(arr);
-                        },250);
-                    }
-                    break;
             }
         }catch(err){
             console.log("数据不是json",data)
@@ -436,88 +202,26 @@ class AppDelegate{
 
     //其它用户进入
     userIn(item){
-        let nn = item.nn;
-        let sp = item.rp;
-        let sk = AppDelegate.app.monsterConfigYingShe[sp];
-        let mons = new Monster(nn,sp,sk);
-        mons.x = item.ca.x;
-        mons.y = item.ca.y;
-        AppDelegate.app.container.addChild(mons);
-        mons.uid = item.uid;
-        AppDelegate.app.allMonster.push(mons);
-        if(item.nn == "chacha" && item.nn != this.userinfo.nn){
-            //如果该玩家的名字是 chacha,且这个玩家的名字和自己的不同,则证明自己是队员,会被队长带着走
-            this.master = mons;
-        }
-        return mons;
+        //let nn = item.nn;
+        //let sp = item.rp;
+        //let sk = AppDelegate.app.monsterConfigYingShe[sp];
+        //let mons = new Monster(nn,sp,sk);
+        //mons.x = item.ca.x;
+        //mons.y = item.ca.y;
+        //AppDelegate.app.container.addChild(mons);
+        //mons.uid = item.uid;
+        //AppDelegate.app.allMonster.push(mons);
+        //if(item.nn == "chacha" && item.nn != this.userinfo.nn){
+        //    //如果该玩家的名字是 chacha,且这个玩家的名字和自己的不同,则证明自己是队员,会被队长带着走
+        //    this.master = mons;
+        //}
+        //return mons;
+        console.log("其他人进入教室:"+item)
     }
 
     //其它用户退出
     userOut(item){
-        if(item.nn == "chacha"){
-            //如果该玩家的名字是 chacha,则标识,队长离开了
-            this.master = null;
-        }
-        let j = AppDelegate.app.allMonster.length;
-        let arr = AppDelegate.app.allMonster
-        for(var i=0;i<j;i++){
-            let mons =  arr[i]
-            if(mons.uid == item.uid){
-                AppDelegate.app.container.removeChild(mons)
-                arr.splice(i,1);
-                break;
-            }
-        }
-    }
-
-    startSelf(){
-        this.allUserArr.forEach(function(item,idx){
-            let mons = AppDelegate.app.userIn(item)
-            if(item.uid == AppDelegate.app.userinfo.uid){
-                //是自己
-                AppDelegate.app.selfMonster = mons;
-            }
-        })
-    }
-
-    ongKeyDown(e){
-        let kc = e.data.keyCode;
-        switch(kc){
-            case 40:this.keyMoveY = 1;this.updateSelfMonster();break;
-            case 38:this.keyMoveY = -1;this.updateSelfMonster();break;
-            case 37:this.keyMoveX = -1;this.updateSelfMonster();break;
-            case 39:this.keyMoveX = 1;this.updateSelfMonster();break;
-            case 83:this.keyMoveY = 1;this.updateSelfMonster();break;
-            case 87:this.keyMoveY = -1;this.updateSelfMonster();break;
-            case 65:this.keyMoveX = -1;this.updateSelfMonster();break;
-            case 68:this.keyMoveX = 1;this.updateSelfMonster();break;
-        }
-
-    }
-
-    ongKeyUp(e){
-        let kc = e.data.keyCode;
-        switch(kc){
-            case 40:this.keyMoveY = 0;this.updateSelfMonster();break;
-            case 38:this.keyMoveY = 0;this.updateSelfMonster();break;
-            case 37:this.keyMoveX = 0;this.updateSelfMonster();break;
-            case 39:this.keyMoveX = 0;this.updateSelfMonster();break;
-            case 83:this.keyMoveY = 0;this.updateSelfMonster();break;
-            case 87:this.keyMoveY = 0;this.updateSelfMonster();break;
-            case 65:this.keyMoveX = 0;this.updateSelfMonster();break;
-            case 68:this.keyMoveX = 0;this.updateSelfMonster();break;
-        }
-    }
-
-    /**
-     * 更新自身怪物动画
-     * */
-    updateSelfMonster(){
-        let key = this.keyMoveX + "," + this.keyMoveY;
-        if(this.selfMonster)
-        {
-            this.selfMonster.changeAniType(this.fangxiangDic[key],this.keyMoveX,this.keyMoveY)
-        }
+        console.log("其他人离开教室:"+item)
     }
 
 
