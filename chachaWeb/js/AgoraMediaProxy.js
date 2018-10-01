@@ -1,0 +1,200 @@
+/**
+ * Created by guominglong on 2018/10/1.
+ */
+class AgoraMediaProxy{
+    /**
+     * 单例
+     * */
+    static get instance(){
+        if(!window.agoraMediaHandler)
+            window.agoraMediaHandler = new AgoraMediaProxy();
+        return window.agoraMediaHandler;
+    }
+
+    static get mediaAppId(){
+        return "220af8ce9af94710bc0302bfc373f9cb";
+    }
+
+    constructor(){
+        this.started = false;
+        this.client = null;//媒体引擎客户端引用
+        this.localStream = null;//本地的音视频流
+        this.camera = 0;//当前正在使用的摄像头ID
+        this.microphone = 0;//当前正在使用的麦克风ID
+
+        this.cameraArr = [];//可选 摄像头数组
+        this.microphoneArr = [];//可选麦克风数组
+
+        //客户端逻辑所使用的uint32 uid
+        this.clientUID = 0;
+        //媒体频道名称
+        this.channelName = "";
+        //媒体引擎返回的针对channelName 映射而成的 媒体逻辑需要用的channelID
+        this.mediaChannelID = "";
+        //媒体引擎返回的针对clientUID 映射而成的 媒体逻辑需要用的mediaUID
+        this.mediaUID = 0;
+        //media模式
+        this.mediaType = "video";//默认为音视频模式video,  也可以为audio纯音频模式
+    }
+
+
+    /**
+     * 检查浏览器是否支持WEBRTC
+     * */
+    checkWebRTCSuport(){
+        if(!AgoraRTC.checkSystemRequirements()) {
+            return false;
+        }
+        return true
+    }
+
+    /**
+     * 开始sdk
+     * */
+    start(_clientUID,_channelName){
+        this.clientUID = _clientUID;
+        this.channelName = _channelName;
+        if(this.checkWebRTCSuport()){
+            //获取硬件列表
+            this.getDevices();
+            this.started = true;
+        }else{
+            alert("Your browser does not support WebRTC!");
+        }
+    }
+
+    /**
+     * 停止sdk
+     * */
+    stop(){
+        this.started = false;
+    }
+
+    /**
+     * 获取硬件列表
+     * */
+    getDevices() {
+        AgoraRTC.getDevices(function (devices) {
+            //清空原有列表
+            AgoraMediaProxy.instance.microphoneArr = [];
+            AgoraMediaProxy.instance.cameraArr = [];
+            //重新填充列表
+            for (var i = 0; i !== devices.length; ++i) {
+                var device = devices[i];
+                if (device.kind === 'audioinput') {
+                    AgoraMediaProxy.instance.microphoneArr.push(device.deviceId);
+                } else if (device.kind === 'videoinput') {
+                    AgoraMediaProxy.instance.cameraArr.push(device.deviceId);
+                } else {
+                    console.log('Some other kind of source/device: ', device);
+                }
+            }
+            if(AgoraMediaProxy.instance.cameraArr.length > 0 && AgoraMediaProxy.instance.microphoneArr.length > 0){
+                //硬件列表获取成功后,调用进入教室
+                AgoraMediaProxy.instance.joinChanel();
+            }
+        });
+    }
+
+    /**
+     * 进入频道
+     * */
+    joinChanel(){
+        let selfInstance = AgoraMediaProxy.instance;
+        let appId = AgoraMediaProxy.mediaAppId;
+        console.log("Init AgoraRTC client with App ID: " + appId);
+        this.client = AgoraRTC.createClient({mode: 'interop'});//创建互动音视频教室interop
+        this.client.init(appId, function () {
+            console.log("AgoraRTC client initialized");
+            selfInstance.client.join(selfInstance.mediaChannelID, selfInstance.channelName, null, function(uid) {
+                selfInstance.mediaUID = uid;
+                console.log("User " + uid + " join channel successfully");
+                let needVideoMode = selfInstance.mediaType === "video";
+                if (needVideoMode) {
+                    //使用默认设备selfInstance.camera和selfInstance.microPhone 生成音视频流
+                    selfInstance.localStream = AgoraRTC.createStream({streamID: uid, audio: true, cameraId: selfInstance.camera, microphoneId: selfInstance.microphone, video: needVideoMode, screen: false});
+                    //selfInstance.localStream = AgoraRTC.createStream({streamID: uid, audio: false, cameraId: camera, microphoneId: microphone, video: false, screen: true, extensionId: 'minllpmhdgpndnkomcoccfekfegnlikg'});
+                    if (needVideoMode) {
+                        //selfInstance.localStream.setVideoProfile('720p_3');
+                        selfInstance.localStream.setVideoProfile('480p_4');//降低清晰度,减少带宽占用
+                    }
+
+                    // The user has granted access to the camera and mic.
+                    selfInstance.localStream.on("accessAllowed", function() {
+                        console.log("accessAllowed");
+                    });
+
+                    // The user has denied access to the camera and mic.
+                    selfInstance.localStream.on("accessDenied", function() {
+                        console.log("accessDenied");
+                    });
+
+                    selfInstance.localStream.init(function() {
+                        console.log("getUserMedia successfully");
+                        selfInstance.localStream.play(selfInstance.clientUID);//在属于自己的视频窗口上,渲染视频
+                        selfInstance.client.publish(selfInstance.localStream, function (err) {
+                            console.log("Publish local stream error: " + err);
+                        });
+
+                        selfInstance.client.on('stream-published', function (evt) {
+                            console.log("Publish local stream successfully");
+                        });
+                    }, function (err) {
+                        console.log("getUserMedia failed", err);
+                    });
+                }
+            }, function(err) {
+                console.log("Join channel failed", err);
+            });
+        }, function (err) {
+            console.log("AgoraRTC client init failed", err);
+        });
+
+
+        this.client.on('error', function(err) {
+            console.log("Got error msg:", err.reason);
+            if (err.reason === 'DYNAMIC_KEY_TIMEOUT') {
+                client.renewChannelKey(selfInstance.mediaChannelID, function(){
+                    console.log("Renew channel key successfully");
+                }, function(err){
+                    console.log("Renew channel key failed: ", err);
+                });
+            }
+        });
+    }
+
+    /**
+     * 离开频道
+     * */
+    leaveChanel() {
+        if(!this.client)
+            return;
+        this.client.leave(function () {
+            console.log("Leavel channel successfully");
+        }, function (err) {
+            console.log("Leave channel failed");
+        });
+    }
+
+    /**
+     * 发布音视频
+     * */
+    publish() {
+        if(!this.client)
+            return;
+        this.client.publish(localStream, function (err) {
+            console.log("Publish local stream error: " + err);
+        });
+    }
+
+    /**
+     * 关闭音视频发布
+     * */
+    unpublish() {
+        if(!this.client)
+            return;
+        this.client.unpublish(localStream, function (err) {
+            console.log("Unpublish local stream failed" + err);
+        });
+    }
+}

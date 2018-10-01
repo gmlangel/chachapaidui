@@ -10,7 +10,10 @@ class AppDelegate{
     }
 
     constructor(){
+        this.minWidth = 1000;//界面最小宽度
         this.welcomePanel = document.getElementById("welcome");
+        //测试用
+        this.selfVideoDivID = "testMaster";
     }
 
     /**
@@ -19,7 +22,6 @@ class AppDelegate{
     init(){
         //设置清晰度为1倍屏,不要设置2倍白板会有问题
         ScreenManager.main.quilaty = 1;
-
         //初始化音频播放器
         this.bgAudio = new GMLAudio();
         this.bgAudio.preload = true;
@@ -31,10 +33,14 @@ class AppDelegate{
         //this.bgAudio.src = "./gameResource/bg.mp4"
 
         //初始化白板区域
-        this.whiteBoard = document.getElementById("classRoom");
+        this.whiteBoard = document.getElementById("whiteBoard");
         this.whiteBoard.style.display = "none";
 
-
+        //初始化右侧面板
+        this.rightPanel = document.getElementById("rightPanel");
+        this.rightPanel.style.display = "none";
+        this.masterVideo = document.getElementsByClassName("masterVideo")[0];
+        this.subVideoContainer = document.getElementById("subVideoContainer")
     }
 
     /**
@@ -83,6 +89,7 @@ class AppDelegate{
         this.bgAudio.loop = true;
         this.bgVideo.play();
         this.bgVideo.loop = true;
+        this.fullScreen();//默认全屏
 
         //链接socket
         this.ws = new WebSocketHandler("ws://39.106.135.11:31111",[]);//localhost:31111
@@ -140,10 +147,13 @@ class AppDelegate{
      * 正式开始*/
     _trueBegin(){
         AppDelegate.app.whiteBoard.style.display = "block";
+        AppDelegate.app.rightPanel.style.display = "block";
         AppDelegate.app.welcomePanel.style.display = "none";
 
         //初始化白板数据
         AppDelegate.app.h5Init();
+        //启动媒体引擎
+        AgoraMediaProxy.instance.start(AppDelegate.app.selfVideoDivID,"799547");
     }
 
     h5Init(){
@@ -215,8 +225,8 @@ class AppDelegate{
         return {
             "back":true,/*回退*/
             "clear":true,/*清空*/
-            "draft":true,/*拖拽*/
-            "newrub":true,/*新橡皮擦*/
+            "draft":false,/*拖拽*/
+            "newrub":false,/*新橡皮擦*/
             "pen":true,/*画笔*/
             "rec":true,/*矩形*/
             "rub":true,/*旧版橡皮擦*/
@@ -315,7 +325,13 @@ class AppDelegate{
      * 尺寸变更
      * */
     resize(w,h){
+        w = w < AppDelegate.app.minWidth ? AppDelegate.app.minWidth : w;
         BaseScene.main.resize(w,h)
+        if(AppDelegate.app.whiteBoard)
+        {
+            AppDelegate.app.whiteBoard.style.width = (w - 320) + "px";
+            AppDelegate.app.subVideoContainer.style.height = (h - 240) + "px";
+        }
     }
 
     /**
@@ -323,5 +339,34 @@ class AppDelegate{
      * */
     stop(){
         BaseScene.main.stop();
+    }
+
+    /**
+     * 进入全屏
+     * */
+    fullScreen(){
+        let el = document.documentElement;
+        let rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullscreen;
+        if(typeof rfs != "undefined" && rfs) {
+            rfs.call(el);
+        };
+    }
+
+    /**
+     * 退出全屏
+     * */
+    exitScreen(){
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+        else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        }
+        else if (document.webkitCancelFullScreen) {
+            document.webkitCancelFullScreen();
+        }
+        else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
     }
 }
