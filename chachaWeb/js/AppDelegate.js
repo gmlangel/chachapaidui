@@ -10,10 +10,16 @@ class AppDelegate{
     }
 
     constructor(){
+        this.dataBuffer = "";
+        this.packageSize = 500;//数据包的最大长度
         this.minWidth = 1000;//界面最小宽度
         this.welcomePanel = document.getElementById("welcome");
         //测试用
-        this.selfVideoDivID = "testMaster";
+        this.selfVideoDivID = "";
+        this.nickName = "";//用户登录名称
+        this.roomCode = "";//教室邀请码
+        this.roomInfo = null;//教室信息
+        this.videoStreamPoolArr = [];//视频流集合
     }
 
     /**
@@ -46,7 +52,7 @@ class AppDelegate{
     /**
      * 开始游戏
      * */
-    startClass(_nickName){
+    startClass(_nickName,_roomCode = "testchanel_1"){
         if(OSManager.OS == "IOS" || OSManager.OS == "Android")
         {
             window.addEventListener("touchstart",function(evt){
@@ -85,14 +91,16 @@ class AppDelegate{
         }
 
         this.nickName = _nickName.length > 17 ? _nickName.substr(0,17) : _nickName;
+        this.roomCode = _roomCode;
         this.bgAudio.play();
         this.bgAudio.loop = true;
         this.bgVideo.play();
         this.bgVideo.loop = true;
-        this.fullScreen();//默认全屏
+        //this.fullScreen();//默认全屏
 
         //链接socket
-        this.ws = new WebSocketHandler("ws://39.106.135.11:31111",[]);//localhost:31111
+        //this.ws = new WebSocketHandler("ws://39.106.135.11:31111",[]);//localhost:31111
+        this.ws = new WebSocketHandler("ws://localhost:31111",[]);
         this.ws.addEventListener(WebSocketEvent.SOCKET_CLOSE,this.onSocketClose,this)
         this.ws.addEventListener(WebSocketEvent.SOCKET_DATA,this.onSocketData,this);
         this.ws.addEventListener(WebSocketEvent.SOCKET_ERROR,this.onSocketError,this)
@@ -102,9 +110,24 @@ class AppDelegate{
         setInterval(function(){
             if(AppDelegate.app.ws.isOpen){
                 let req = {"cmd":0x00FF0001,"seq":0,"lt":0};
-                AppDelegate.app.ws.sendData(JSON.stringify(req))
+                AppDelegate.app.sendDataToServer(JSON.stringify(req))
             }
         },30000)
+    }
+
+    /**
+     * 拆包发送,保证每个包都能正常送达到服务器
+     * */
+    sendDataToServer(jsonStr){
+        var waitSendStr = "<gmlb>" + jsonStr + "<gmle>";
+        var result = "";
+        //拆包发送，  如果要发送的内容长度大于500 则拆成N个包，发送
+        while(waitSendStr.length > this.packageSize){
+            result = waitSendStr.substring(0,this.packageSize);
+            this.ws.sendData(result);
+            waitSendStr = waitSendStr.substring(this.packageSize,waitSendStr.length);
+        }
+        this.ws.sendData(waitSendStr);
     }
 
     ongMouseDown(evt){
@@ -129,7 +152,26 @@ class AppDelegate{
         console.log("socket断开")
     }
     onSocketData(e){
-        this.jiexiData(e.data);
+        this.dataBuffer = this.dataBuffer + e.data;
+        var tempStr = this.dataBuffer;
+        var pkgHeadIdx = tempStr.indexOf("<gmlb>");//取包头
+        var pkgEndIdx = tempStr.indexOf("<gmle>");//取包尾
+        var waitJSONStr = "";
+        while(pkgHeadIdx >= 0 && pkgEndIdx > 0){
+            if(pkgEndIdx > pkgHeadIdx){
+                //可以读出一个数据包
+                waitJSONStr = tempStr.substring(pkgHeadIdx + 6,pkgEndIdx);
+                //清空pkgEndIdx以前的所有数据
+                tempStr = tempStr.substring(pkgEndIdx+6,tempStr.length);
+                this.jiexiData(waitJSONStr);
+            }else{
+                //清空pkgHeadIdx以前的所有数据
+                tempStr = tempStr.substring(pkgHeadIdx,tempStr.length);
+            }
+            this.dataBuffer = tempStr;
+            pkgHeadIdx = tempStr.indexOf("<gmlb>");//重新取包头
+            pkgEndIdx = tempStr.indexOf("<gmle>");//重新取包尾
+        }
     }
 
     onSocketError(e){
@@ -139,7 +181,7 @@ class AppDelegate{
     onSocketConnected(e){
         //开始登陆
         let req = {"cmd":0x00FF0003,"seq":0,"ln":this.nickName};
-        this.ws.sendData(JSON.stringify(req));
+        this.sendDataToServer(JSON.stringify(req));
     }
 
     /**
@@ -152,14 +194,118 @@ class AppDelegate{
 
         //初始化白板数据
         AppDelegate.app.h5Init();
+
+        //根据用户列表创建 视频容器
+        let userArr = this.roomInfo.ua;
+        let ownnerUID = this.roomInfo.ownnerUID
+        $('div#video').empty();//移除所有子元素
+        userArr.forEach(function(item){
+            //如果Item不是主讲,则创建新的学生视频窗口
+            if(ownnerUID != item.uid)
+                $('div#subVideoContainer').append('<div id="stu_'+item.uid+'" style="float:left; width:160px;height:120px;display:inline-block;"></div>');
+        });
         //启动媒体引擎
-        AgoraMediaProxy.instance.start(AppDelegate.app.selfVideoDivID,"799547");
+        AgoraMediaProxy.instance.start(this.userinfo.uid,this.roomInfo.rn);//自己是主讲
+    }
+
+    //上报给服务器,让其他人知道我的媒体ID
+    upLoadMediaUserChange(clientUID,mediaId){
+        this.roomInfo.mediaMap[clientUID] = mediaId;
+        let req = {
+            "cmd":0x00FF0020,
+            "uid":clientUID,
+            "rid":this.roomInfo.rid,
+            "mid":mediaId
+        };
+        this.sendDataToServer(JSON.stringify(req))
+    }
+
+    getUIDbyMediaId(mediaId){
+        let tempmap = this.roomInfo.mediaMap;
+        let resultUid = -1;
+        for(var key in tempmap){
+            if(tempmap[key] == mediaId)
+            {
+                resultUid = key;
+                break;
+            }
+        }
+        return resultUid;
+    }
+
+    //添加视频流
+    addStream(stream){
+        let streamID = stream.getId();
+        let clientUID = this.getUIDbyMediaId(streamID);
+        if(clientUID == -1)
+            return;//如果为寻找到对应的uid,则return
+        let arr = this.videoStreamPoolArr;
+        let j = arr.length;
+        //遍历视频流集合,去重
+        for(var i=0;i<j;i++){
+            if(arr[i].getId() == streamID){
+                //移除相同mediaID的stream
+                this.videoStreamPoolArr.slice(i,1);
+                break;
+            }
+        }
+
+        //添加
+        this.videoStreamPoolArr.push(stream);
+
+        //刷新视频
+        this.refreshVideo(clientUID,streamID);
+    }
+
+    //移除视频流
+    removeStream(stream){
+        let streamID = stream.getId();
+        let clientUID = this.getUIDbyMediaId(streamID);
+        if(clientUID == -1)
+            return;//如果为寻找到对应的uid,则return
+        this.roomInfo.mediaMap[clientUID] = -1;
+        let arr = this.videoStreamPoolArr;
+        let j = arr.length;
+        //遍历视频流集合,删除视频流
+        for(var i=0;i<j;i++){
+            if(arr[i].getId() == streamID){
+                //移除相同mediaID的stream
+                this.videoStreamPoolArr.slice(i,1);
+                break;
+            }
+        }
+        //停止视频
+        stream.stop()
+    }
+
+    //刷新视频
+    refreshVideo(clientUID,mediaId){
+        let divId = this.makeVideoDivId(clientUID);
+        let arr = this.videoStreamPoolArr;
+        let j = arr.length;
+        //遍历视频流集合
+        for(var i=0;i<j;i++){
+            if(arr[i].getId() == mediaId){
+                //开始渲染
+                arr[i].play(divId);
+                break;
+            }
+        }
+    }
+
+    //根据uid生成对应的渲染视频用的div的ID
+    makeVideoDivId(clientUID){
+        if(this.roomInfo.ownnerUID == clientUID)
+            return "mainVideo";
+        else
+            return "stu_" + clientUID;
     }
 
     h5Init(){
+        let isTeacher = this.roomInfo.ownnerUID == this.userinfo.uid;
         //测试代码
         let course_H5Entity = new H5Entity_course_simple();
-        course_H5Entity.data["courserole"] = 1;
+        course_H5Entity.data["courserole"] = isTeacher ? 1 : 0;
         course_H5Entity.data["coursestyle"] = 0;
         course_H5Entity.data["metrialtype"] = 0;//1比1的教材比例
         course_H5Entity.data["startedTime"] = parseInt(new Date().valueOf() / 1000);
@@ -167,31 +313,14 @@ class AppDelegate{
 
         let user_H5Entity = new H5Entity_user_simple();
         user_H5Entity.data["usergroup"] = 1;
-        user_H5Entity.data["userid"] = 799547;
-        user_H5Entity.data["userrole"] = 1;
-        user_H5Entity.data["usertype"] = 1;//self.teacherRole() ? 1 : 2;//gmlok
+        user_H5Entity.data["userid"] = this.userinfo.uid;
+        user_H5Entity.data["userrole"] = isTeacher ? 1 : 0;
+        user_H5Entity.data["usertype"] = isTeacher ? 1 : 2;//self.teacherRole() ? 1 : 2;//gmlok
 
         //构建pdf下载地址
         let urlInfo = new H5Entity_url_simple();
         //加载网络pdf资源
-        //        var pdfPath = currentCourse!.teaCourseSource;
-        //        pdfPath = pdfPath == "" ? currentCourse!.courseSource : pdfPath;
-        //        var path:NSString=NSString(string: pdfPath)
-        //        // 去空格处理和URI处理
-        //        if(pdfPath.contains("%") == false)
-        //        {
-        //            // 需要URI处理
-        //            path = path.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)! as NSString
-        //        }
-        //        path = path.replacingOccurrences(of: " ", with: "%20") as NSString;
-        //
-        //        var headUrlBeforeBase64 = path as String;//path as String;//本地加载本地pdf必须在同一个目录才可以，本地加载网上资源可以，网上JS加载本地pdf不可以，网上JS只能加载同域下的资源。
-        //        //"http://localhost:8080/1b26189c48018d410c8a78fb89f6a3d6.pdf";//"http://172.16.0.98/web/1.pdf";//"file://" + ACDataCachePresenter.sharedinstance.documentPath() + "/51TalkAbout/51talkPDFS/1b26189c48018d410c8a78fb89f6a3d6.pdf";//"http://localhost:8080/1b26189c48018d410c8a78fb89f6a3d6.pdf"; ////"http://172.16.0.98/web/1.pdf";//"file://" + Bundle.main.path(forResource: "pdfloaderByH5/1b26189c48018d410c8a78fb89f6a3d6", ofType: "pdf")!
-        //        var headUrl:String? = headUrlBeforeBase64.data(using: String.Encoding.utf8)?.base64EncodedString();
-        //        headUrl = headUrl == nil ? "" : headUrl;
-
-        //加载本地pdf资源
-        let headUrlBeforeBase64 = "../../4b7598199953ffe850ed9d672991ccc6.pdf";//"file://" + PDFCacheProxy.instance._localPdfPath;
+        let headUrlBeforeBase64 = this.roomInfo.teachingMaterialPath;//"../../4b7598199953ffe850ed9d672991ccc6.pdf";
         var headUrl = window.MyBase64.encode(headUrlBeforeBase64);
         headUrl = headUrl || "";
         urlInfo.data["pdf"] = headUrl;
@@ -250,7 +379,7 @@ class AppDelegate{
                         let req = {
                             "cmd":0x00FF0014,
                             "seq":0,
-                            "rc":"testchanel",
+                            "rc":this.roomCode,
                             "uid":this.userinfo.uid,
                             "nn":this.userinfo.nn,
                             "hi":this.userinfo.hi,
@@ -258,7 +387,7 @@ class AppDelegate{
                             "ca":{x:34,y:387},//{x:parseInt(this.scene.width/2+Math.random()*100),y:parseInt(this.scene.height/2+Math.random()*100)},
                             "rp":this.userinfo.resourcePath.toString().replace("resource","gameResource")/*这个替换只是临时解决方案,真正的解决办法要从服务器入手,下发资源ID,本地根据资源ID动态算资源地址*/
                         };
-                        this.ws.sendData(JSON.stringify(req));
+                        this.sendDataToServer(JSON.stringify(req));
                     }else{
                         console.log("登录失败")
                     }
@@ -271,6 +400,7 @@ class AppDelegate{
                 case 0x00FF0015:
                     //进入教室回调
                     if(jsonObj.code == 0){
+                        this.roomInfo = jsonObj;
                         console.log("进入教室成功");
                         this._trueBegin();
                     }else{
@@ -290,6 +420,13 @@ class AppDelegate{
                         }
                     })
                     break;
+                case 0x00FF0021:
+                    //其它用户的mediaId变更
+                    let tempUid = jsonObj.suid;
+                    let tempMediaId = jsonObj.mediaId;
+                    this.roomInfo.mediaMap[tempUid] = tempMediaId;
+                    this.refreshVideo(tempUid,tempMediaId);//刷新视频
+                    break;
             }
         }catch(err){
             console.log("数据不是json",data)
@@ -298,25 +435,32 @@ class AppDelegate{
 
     //其它用户进入
     userIn(item){
-        //let nn = item.nn;
-        //let sp = item.rp;
-        //let sk = AppDelegate.app.monsterConfigYingShe[sp];
-        //let mons = new Monster(nn,sp,sk);
-        //mons.x = item.ca.x;
-        //mons.y = item.ca.y;
-        //AppDelegate.app.container.addChild(mons);
-        //mons.uid = item.uid;
-        //AppDelegate.app.allMonster.push(mons);
-        //if(item.nn == "chacha" && item.nn != this.userinfo.nn){
-        //    //如果该玩家的名字是 chacha,且这个玩家的名字和自己的不同,则证明自己是队员,会被队长带着走
-        //    this.master = mons;
-        //}
-        //return mons;
+        let divID = this.makeVideoDivId(item.uid);
+        let tempDiv = document.getElementById(divID)
+        //如果视频DIV不存在,则创建视频div
+        if(!divID)
+            $('div#subVideoContainer').append('<div id=' + divID + ' style="float:left; width:160px;height:120px;display:inline-block;"></div>');
         console.log("其他人进入教室:"+item)
     }
 
     //其它用户退出
     userOut(item){
+        //停止视频渲染
+        let divID = this.makeVideoDivId(item.uid);
+        let mediaId = this.roomInfo.mediaMap[item.uid] || -1;
+        if(mediaId == -1){
+            return;
+        }
+        let arr = this.videoStreamPoolArr;
+        let j = arr.length;
+        for(var i=0;i<j;i++){
+            if(arr[i].getId() == mediaId){
+                arr[i].stop();
+                this.videoStreamPoolArr.slice(i,1);
+                break;
+            }
+        }
+
         console.log("其他人离开教室:"+item)
     }
 

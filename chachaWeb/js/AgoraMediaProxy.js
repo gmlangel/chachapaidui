@@ -52,8 +52,8 @@ class AgoraMediaProxy{
      * 开始sdk
      * */
     start(_clientUID,_channelName){
-        this.clientUID = _clientUID;
-        this.channelName = _channelName;
+        this.clientUID = _clientUID;//用户客户端uid
+        this.channelName = _channelName;//频道名称
         if(this.checkWebRTCSuport()){
             //获取硬件列表
             this.getDevices();
@@ -108,6 +108,7 @@ class AgoraMediaProxy{
             console.log("AgoraRTC client initialized");
             selfInstance.client.join(selfInstance.mediaChannelID, selfInstance.channelName, null, function(uid) {
                 selfInstance.mediaUID = uid;
+                AppDelegate.app.upLoadMediaUserChange(selfInstance.clientUID,selfInstance.mediaUID);//上报给服务器,让其他人知道我的媒体ID
                 console.log("User " + uid + " join channel successfully");
                 let needVideoMode = selfInstance.mediaType === "video";
                 if (needVideoMode) {
@@ -131,7 +132,7 @@ class AgoraMediaProxy{
 
                     selfInstance.localStream.init(function() {
                         console.log("getUserMedia successfully");
-                        selfInstance.localStream.play(selfInstance.clientUID);//在属于自己的视频窗口上,渲染视频
+                        AppDelegate.app.addStream(selfInstance.localStream);//在属于自己的视频窗口上,渲染视频
                         selfInstance.client.publish(selfInstance.localStream, function (err) {
                             console.log("Publish local stream error: " + err);
                         });
@@ -159,6 +160,40 @@ class AgoraMediaProxy{
                 }, function(err){
                     console.log("Renew channel key failed: ", err);
                 });
+            }
+        });
+
+        //当有新的视频流进来
+        this.client.on('stream-added', function (evt) {
+            var stream = evt.stream;
+            console.log("New stream added: " + stream.getId());
+            console.log("Subscribe ", stream);
+            selfInstance.client.subscribe(stream, function (err) {
+                console.log("Subscribe stream failed", err);
+            });
+        });
+
+        //当新的视频流订阅成功
+        this.client.on('stream-subscribed', function (evt) {
+            var stream = evt.stream;
+            console.log("Subscribe remote stream successfully: " + stream.getId());
+            AppDelegate.app.addStream(stream)
+        });
+
+
+        //当视频流被服务器断开
+        this.client.on('stream-removed', function (evt) {
+            var stream = evt.stream;
+            AppDelegate.app.removeStream(stream)
+            console.log("Remote stream is removed " + stream.getId());
+        });
+
+        //当视频流主动离开了频道
+        this.client.on('peer-leave', function (evt) {
+            var stream = evt.stream;
+            if (stream) {
+                AppDelegate.app.removeStream(stream)
+                console.log(evt.uid + " leaved from this channel");
             }
         });
     }
