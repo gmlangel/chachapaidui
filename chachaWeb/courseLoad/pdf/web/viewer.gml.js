@@ -3434,15 +3434,15 @@ handleChlIO = function() {
                             }
                             var g = this.linkService;
                             d.then(function() {
-                                if (a.PDFJS.disableAutoFetch) t();
-                                else for (var s = i,
-                                r = 1; r <= i; ++r) e.getPage(r).then(function(e, i) {
-                                    var r = n._pages[e - 1];
-                                    r.pdfPage || r.setPdfPage(i),
-                                    g.cachePageRef(e, i.ref),
-                                    s--,
-                                    s || t()
-                                }.bind(null, r))
+                                //if (a.PDFJS.disableAutoFetch) t();
+                                //else for (var s = i,
+                                //r = 1; r <= i; ++r) e.getPage(r).then(function(e, i) {
+                                //    var r = n._pages[e - 1];
+                                //    r.pdfPage || r.setPdfPage(i),
+                                //    g.cachePageRef(e, i.ref),
+                                //    s--,
+                                //    s || t()
+                                //}.bind(null, r))
                             });
                             var p = document.createEvent("CustomEvent");
                             p.initCustomEvent("pagesinit", !0, !0, null),
