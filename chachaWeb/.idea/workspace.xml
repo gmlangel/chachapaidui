@@ -24,8 +24,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.745098">
-              <caret line="91" column="61" selection-start-line="91" selection-start-column="44" selection-end-line="91" selection-end-column="61" />
+            <state vertical-scroll-proportion="-6.5686274">
+              <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
               <folding>
                 <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -46,11 +46,29 @@
       <file leaf-file-name="AppDelegate.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/AppDelegate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.88313854">
-              <caret line="339" column="58" selection-start-line="339" selection-start-column="58" selection-end-line="339" selection-end-column="58" />
+            <state vertical-scroll-proportion="0.6828047">
+              <caret line="432" column="20" selection-start-line="432" selection-start-column="20" selection-end-line="432" selection-end-column="20" />
               <folding>
-                <marker date="1539083021000" expanded="true" signature="6953:7011" placeholder="..." />
-                <marker date="1539083021000" expanded="true" signature="14793:14851" placeholder="..." />
+                <marker date="1539155671000" expanded="true" signature="7052:7110" placeholder="..." />
+                <marker date="1539155671000" expanded="true" signature="14942:15000" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/pdfLoaderJs/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.37037">
+              <caret line="4830" column="19" selection-start-line="4830" selection-start-column="19" selection-end-line="4830" selection-end-column="19" />
+              <folding>
+                <marker date="1539141000000" expanded="false" signature="120300:120310" placeholder="..." />
+                <marker date="1539141000000" expanded="false" signature="120388:120399" placeholder="..." />
+                <marker date="1539141000000" expanded="true" signature="120478:120490" placeholder="..." />
+                <marker date="1539141000000" expanded="true" signature="122065:122078" placeholder="..." />
+                <marker date="1539141000000" expanded="true" signature="123125:123138" placeholder="..." />
+                <marker date="1539141000000" expanded="true" signature="129149:129193" placeholder="..." />
+                <marker date="1539141000000" expanded="true" signature="131658:131701" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -71,8 +89,8 @@
       <file leaf-file-name="agora_index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/agora_index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.208333">
-              <caret line="156" column="45" selection-start-line="156" selection-start-column="40" selection-end-line="156" selection-end-column="45" />
+            <state vertical-scroll-proportion="-9.833333">
+              <caret line="157" column="5" selection-start-line="157" selection-start-column="5" selection-end-line="157" selection-end-column="5" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <marker date="1538279325000" expanded="true" signature="5695:5753" placeholder="..." />
@@ -99,12 +117,12 @@
         <option value="$PROJECT_DIR$/chat-1v1-normal.html" />
         <option value="$PROJECT_DIR$/js/PdfLoaderModel.js" />
         <option value="$PROJECT_DIR$/courseLoad/pdf/pdf.html" />
-        <option value="$PROJECT_DIR$/js/pdfLoaderJs/main.js" />
         <option value="$PROJECT_DIR$/css/pdfLoaderCss/main.min.css" />
         <option value="$PROJECT_DIR$/css/gmlIndex.css" />
         <option value="$PROJECT_DIR$/js/gameEngine/Custom.js" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/AgoraMediaProxy.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/js/pdfLoaderJs/main.js" />
         <option value="$PROJECT_DIR$/js/AppDelegate.js" />
       </list>
     </option>
@@ -188,24 +206,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chachaWeb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="chachaWeb" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="courseLoad" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pdf" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -551,22 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/pdfLoaderJs/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.481482">
-          <caret line="3635" column="68" selection-start-line="3635" selection-start-column="68" selection-end-line="3635" selection-end-column="68" />
-          <folding>
-            <marker date="1538314686000" expanded="false" signature="120300:120310" placeholder="..." />
-            <marker date="1538314686000" expanded="false" signature="120388:120399" placeholder="..." />
-            <marker date="1538314686000" expanded="true" signature="120478:120490" placeholder="..." />
-            <marker date="1538314686000" expanded="true" signature="122065:122078" placeholder="..." />
-            <marker date="1538314686000" expanded="true" signature="123125:123138" placeholder="..." />
-            <marker date="1538314686000" expanded="true" signature="129149:129193" placeholder="..." />
-            <marker date="1538314686000" expanded="true" signature="131658:131701" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/pdfLoaderCss/main.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="12.752381">
@@ -615,16 +599,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.745098">
-          <caret line="91" column="61" selection-start-line="91" selection-start-column="44" selection-end-line="91" selection-end-column="61" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/gmlIndex.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.875">
@@ -633,13 +607,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/agora_index.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.208333">
-          <caret line="156" column="45" selection-start-line="156" selection-start-column="40" selection-end-line="156" selection-end-column="45" />
+        <state vertical-scroll-proportion="-6.5686274">
+          <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
           <folding>
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1538279325000" expanded="true" signature="5695:5753" placeholder="..." />
+            <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -654,13 +627,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/agora_index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.833333">
+          <caret line="157" column="5" selection-start-line="157" selection-start-column="5" selection-end-line="157" selection-end-column="5" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1538279325000" expanded="true" signature="5695:5753" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/pdfLoaderJs/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.37037">
+          <caret line="4830" column="19" selection-start-line="4830" selection-start-column="19" selection-end-line="4830" selection-end-column="19" />
+          <folding>
+            <marker date="1539141000000" expanded="false" signature="120300:120310" placeholder="..." />
+            <marker date="1539141000000" expanded="false" signature="120388:120399" placeholder="..." />
+            <marker date="1539141000000" expanded="true" signature="120478:120490" placeholder="..." />
+            <marker date="1539141000000" expanded="true" signature="122065:122078" placeholder="..." />
+            <marker date="1539141000000" expanded="true" signature="123125:123138" placeholder="..." />
+            <marker date="1539141000000" expanded="true" signature="129149:129193" placeholder="..." />
+            <marker date="1539141000000" expanded="true" signature="131658:131701" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/AppDelegate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.88313854">
-          <caret line="339" column="58" selection-start-line="339" selection-start-column="58" selection-end-line="339" selection-end-column="58" />
+        <state vertical-scroll-proportion="0.6828047">
+          <caret line="432" column="20" selection-start-line="432" selection-start-column="20" selection-end-line="432" selection-end-column="20" />
           <folding>
-            <marker date="1539083021000" expanded="true" signature="6953:7011" placeholder="..." />
-            <marker date="1539083021000" expanded="true" signature="14793:14851" placeholder="..." />
+            <marker date="1539155671000" expanded="true" signature="7052:7110" placeholder="..." />
+            <marker date="1539155671000" expanded="true" signature="14942:15000" placeholder="..." />
           </folding>
         </state>
       </provider>

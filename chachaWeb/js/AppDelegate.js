@@ -99,8 +99,9 @@ class AppDelegate{
         //this.fullScreen();//默认全屏
 
         //链接socket
-        //this.ws = new WebSocketHandler("ws://39.106.135.11:31111",[]);//localhost:31111
-        this.ws = new WebSocketHandler("ws://localhost:31111",[]);
+        this.ws = new WebSocketHandler("wss://39.106.135.11:443/gmlws",[]);//https的请求格式
+        //this.ws = new WebSocketHandler("ws://39.106.135.11:31111",[]);//http的请求格式
+        //this.ws = new WebSocketHandler("ws://localhost:31111",[]);//本地http服务的请求格式
         this.ws.addEventListener(WebSocketEvent.SOCKET_CLOSE,this.onSocketClose,this)
         this.ws.addEventListener(WebSocketEvent.SOCKET_DATA,this.onSocketData,this);
         this.ws.addEventListener(WebSocketEvent.SOCKET_ERROR,this.onSocketError,this)
@@ -422,8 +423,9 @@ class AppDelegate{
                     break;
                 case 0x00FF0021:
                     //其它用户的mediaId变更
-                    let tempUid = jsonObj.suid;
-                    let tempMediaId = jsonObj.mediaId;
+                    let trueData = jsonObj.data
+                    let tempUid = trueData.suid;
+                    let tempMediaId = trueData.mediaId;
                     this.roomInfo.mediaMap[tempUid] = tempMediaId;
                     this.refreshVideo(tempUid,tempMediaId);//刷新视频
                     break;
