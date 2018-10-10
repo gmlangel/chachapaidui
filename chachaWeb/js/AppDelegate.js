@@ -246,7 +246,7 @@ class AppDelegate{
         for(var i=0;i<j;i++){
             if(arr[i].getId() == streamID){
                 //移除相同mediaID的stream
-                this.videoStreamPoolArr.slice(i,1);
+                this.videoStreamPoolArr.splice(i,1);
                 break;
             }
         }
@@ -264,19 +264,16 @@ class AppDelegate{
         let clientUID = this.getUIDbyMediaId(streamID);
         if(clientUID == -1)
             return;//如果为寻找到对应的uid,则return
-        this.roomInfo.mediaMap[clientUID] = -1;
         let arr = this.videoStreamPoolArr;
         let j = arr.length;
         //遍历视频流集合,删除视频流
         for(var i=0;i<j;i++){
             if(arr[i].getId() == streamID){
                 //移除相同mediaID的stream
-                this.videoStreamPoolArr.slice(i,1);
+                this.videoStreamPoolArr.splice(i,1);
                 break;
             }
         }
-        //停止视频
-        stream.stop()
     }
 
     //刷新视频
@@ -287,6 +284,8 @@ class AppDelegate{
         //遍历视频流集合
         for(var i=0;i<j;i++){
             if(arr[i].getId() == mediaId){
+                //由于agora每次都会在div容器中创建新的div,所以要先移除div中原有的子视图,再重新刷新,防止agora影响HTML样式
+                $('#' + divId).empty();
                 //开始渲染
                 arr[i].play(divId);
                 break;
@@ -440,7 +439,7 @@ class AppDelegate{
         let divID = this.makeVideoDivId(item.uid);
         let tempDiv = document.getElementById(divID)
         //如果视频DIV不存在,则创建视频div
-        if(!divID)
+        if(!tempDiv)
             $('div#subVideoContainer').append('<div id=' + divID + ' style="float:left; width:160px;height:120px;display:inline-block;"></div>');
         console.log("其他人进入教室:"+item)
     }
@@ -458,7 +457,7 @@ class AppDelegate{
         for(var i=0;i<j;i++){
             if(arr[i].getId() == mediaId){
                 arr[i].stop();
-                this.videoStreamPoolArr.slice(i,1);
+                this.videoStreamPoolArr.splice(i,1);
                 break;
             }
         }

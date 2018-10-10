@@ -46,11 +46,11 @@
       <file leaf-file-name="AppDelegate.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/AppDelegate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6828047">
-              <caret line="432" column="20" selection-start-line="432" selection-start-column="20" selection-end-line="432" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.33222038">
+              <caret line="264" column="26" selection-start-line="264" selection-start-column="22" selection-end-line="264" selection-end-column="26" />
               <folding>
-                <marker date="1539155671000" expanded="true" signature="7052:7110" placeholder="..." />
-                <marker date="1539155671000" expanded="true" signature="14942:15000" placeholder="..." />
+                <marker date="1539160092000" expanded="true" signature="7052:7110" placeholder="..." />
+                <marker date="1539160092000" expanded="true" signature="14984:15042" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -656,11 +656,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/AppDelegate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6828047">
-          <caret line="432" column="20" selection-start-line="432" selection-start-column="20" selection-end-line="432" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.33222038">
+          <caret line="264" column="26" selection-start-line="264" selection-start-column="22" selection-end-line="264" selection-end-column="26" />
           <folding>
-            <marker date="1539155671000" expanded="true" signature="7052:7110" placeholder="..." />
-            <marker date="1539155671000" expanded="true" signature="14942:15000" placeholder="..." />
+            <marker date="1539160092000" expanded="true" signature="7052:7110" placeholder="..." />
+            <marker date="1539160092000" expanded="true" signature="14984:15042" placeholder="..." />
           </folding>
         </state>
       </provider>
