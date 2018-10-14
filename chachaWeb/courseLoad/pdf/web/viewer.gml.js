@@ -3744,7 +3744,12 @@ handleChlIO = function() {
                 var t = new URL(window.location.href).origin || "null";
                 if (ue.indexOf(t) >= 0) return;
                 var i = new URL(e, window.location.href).origin;
-                if (i !== t) throw new Error("file origin does not match viewer's")
+                t = t.toLowerCase().replace("https","http")
+                i = i.toLowerCase().replace("https","http")
+                if (i !== t){
+                    //禁止跨域访问
+                    throw new Error("禁止跨域访问 file origin does not match viewer's")
+                }
             } catch(e) {
                 var n = e && e.message,
                 s = V.get("loading_error", null, "An error occurred while loading the PDF."),
