@@ -375,3 +375,71 @@ class H5Entity_animate_simple extends H5EntityBase{
         }
     }
 }
+
+//-----------聊天相关mode
+class H5Entity1v1ChatBase{
+
+
+    constructor(){
+        this._key = ""
+        this._data = {
+            "play":"true",/*true false*/
+            "path":""/*动画html系统绝对路径*/
+        }
+    }
+
+    get key(){
+        return this._key;
+    }
+
+    /**
+     获取当前数据模型中的数据
+     */
+    get data(){
+        return this._data
+    }
+
+    set data(d){
+        this._data = d;
+    }
+
+    toJSStr(){
+        let str = "";
+        try{
+            str = JSON.stringify(this.data);
+            str = transcodingJavascriptMessage(str);
+            str = window.MyBase64.encode(str)
+        }catch(err){
+            console.log("H5EntityBase==>数据封装错误,原因:"+err);
+        }
+        return str;
+    }
+}
+
+class H5Entity_1v1chat_init extends H5Entity1v1ChatBase{
+    constructor(){
+        super();
+        this._key = "init"
+        this._data = {
+            "allBlock":"false",
+            "classType":"1v1",
+            "id":"799547",/*svc偏移后的id*/
+            "is1vNPDF":"false",
+            "lang":"Cn",
+            "name":"Jarine",
+            "type":"tea",
+            "headImg":""
+        }
+    }
+}
+
+class H5Entity_1v1chat_sendData extends H5Entity1v1ChatBase{
+    constructor(){
+        super();
+        this._key = "data"
+        this._data = {
+            "handle":"show",
+            "type":"tipInfo"/*可选值为tipInfo  text img tipELRoom*/
+        }
+    }
+}

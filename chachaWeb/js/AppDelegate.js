@@ -47,6 +47,11 @@ class AppDelegate{
         this.rightPanel.style.display = "none";
         this.masterVideo = document.getElementsByClassName("masterVideo")[0];
         this.subVideoContainer = document.getElementById("subVideoContainer")
+
+        //初始化聊天面板
+        this.chatPanel = document.getElementById("chatContainer");
+        this.chatPanel.style.display = "none";
+
     }
 
     /**
@@ -191,10 +196,14 @@ class AppDelegate{
     _trueBegin(){
         AppDelegate.app.whiteBoard.style.display = "block";
         AppDelegate.app.rightPanel.style.display = "block";
+        AppDelegate.app.chatPanel.style.display = "inline-block";
         AppDelegate.app.welcomePanel.style.display = "none";
 
         //初始化白板数据
         AppDelegate.app.h5Init();
+
+        //初始化聊天框
+        AppDelegate.app.ChatInit();
 
         //根据用户列表创建 视频容器
         let userArr = this.roomInfo.ua;
@@ -206,7 +215,7 @@ class AppDelegate{
                 $('div#subVideoContainer').append('<div id="stu_'+item.uid+'" style="float:left; width:160px;height:120px;display:inline-block;"></div>');
         });
         //启动媒体引擎
-        AgoraMediaProxy.instance.start(this.userinfo.uid,this.roomInfo.rn);//自己是主讲
+        //AgoraMediaProxy.instance.start(this.userinfo.uid,this.roomInfo.rn);//自己是主讲
     }
 
     //上报给服务器,让其他人知道我的媒体ID
@@ -301,6 +310,35 @@ class AppDelegate{
             return "stu_" + clientUID;
     }
 
+    //初始化聊天框
+    ChatInit() {
+        let isTeacher = this.roomInfo.ownnerUID == this.userinfo.uid;
+        let init_H5Entity = new H5Entity_1v1chat_init();
+        init_H5Entity.data["id"] = this.userinfo.uid;
+        init_H5Entity.data["type"] = isTeacher ? "tea" : "stu";
+        init_H5Entity.data["name"] = this.userinfo.nn;
+        init_H5Entity.data["clienttype"] = "7";
+        this.callChat(init_H5Entity.key, init_H5Entity.toJSStr());
+
+
+        //测试信息
+        let sendMsgReq = new H5Entity_1v1chat_sendData();
+        sendMsgReq.data["type"] = "tipInfo";
+        sendMsgReq.data["userInfo"] = {
+            "courserole":-1,
+            "headImg":"",
+            "id":"0",
+            "name":""
+        };
+        sendMsgReq.data["value"] = {
+            "id": "",
+            "isMe": "True",
+            "time": "",
+            "data": "这是测试"
+        }
+        this.callChat(sendMsgReq.key, sendMsgReq.toJSStr());
+    }
+
     h5Init(){
         let isTeacher = this.roomInfo.ownnerUID == this.userinfo.uid;
         //测试代码
@@ -348,6 +386,13 @@ class AppDelegate{
      * */
     callH5(type,JSONStrValue){
         window.comm_type_get(type,JSONStrValue);
+    }
+
+    callChat(type,JSONStrValue){
+        if(!this.chatWindow){
+            this.chatWindow = document.getElementById('chatIframe').contentWindow;//获取chat的window
+        }
+        this.chatWindow.comm_chat_set(type,JSONStrValue);
     }
 
     createWhiteConfigDic(){
@@ -471,11 +516,13 @@ class AppDelegate{
      * */
     resize(w,h){
         w = w < AppDelegate.app.minWidth ? AppDelegate.app.minWidth : w;
-        BaseScene.main.resize(w,h)
+        //BaseScene.main.resize(w,h)
         if(AppDelegate.app.whiteBoard)
         {
             AppDelegate.app.whiteBoard.style.width = (w - 320) + "px";
             AppDelegate.app.subVideoContainer.style.height = (h - 240) + "px";
+            AppDelegate.app.chatPanel.style.top = ((h - 500) / 2) + "px";
+            AppDelegate.app.chatPanel.style.left = ((w - 500) / 2) + "px";
         }
     }
 
@@ -483,7 +530,7 @@ class AppDelegate{
      * 停止
      * */
     stop(){
-        BaseScene.main.stop();
+       // BaseScene.main.stop();
     }
 
     /**

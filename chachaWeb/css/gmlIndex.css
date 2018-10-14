@@ -34,3 +34,13 @@ html,body{
 .subVideoContainerClass{
     width: 100%;
 }
+
+.chatContainerClass{
+    width: 500px;
+    height:500px;
+    display: none;
+    position: fixed;
+    z-index: 1000000;
+    top:100px;
+    left: 100px;
+}
