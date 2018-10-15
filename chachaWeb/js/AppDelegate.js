@@ -215,7 +215,7 @@ class AppDelegate{
                 $('div#subVideoContainer').append('<div id="stu_'+item.uid+'" style="float:left; width:160px;height:120px;display:inline-block;"></div>');
         });
         //启动媒体引擎
-        AgoraMediaProxy.instance.start(this.userinfo.uid,this.roomInfo.rn);//自己是主讲
+        //AgoraMediaProxy.instance.start(this.userinfo.uid,this.roomInfo.rn);
     }
 
     //上报给服务器,让其他人知道我的媒体ID
@@ -358,7 +358,7 @@ class AppDelegate{
         //构建pdf下载地址
         let urlInfo = new H5Entity_url_simple();
         //加载网络pdf资源
-        let headUrlBeforeBase64 = this.roomInfo.teachingMaterialPath;//"../../4b7598199953ffe850ed9d672991ccc6.pdf";
+        let headUrlBeforeBase64 = "../../4b7598199953ffe850ed9d672991ccc6.pdf";//this.roomInfo.teachingMaterialPath;//
         var headUrl = window.MyBase64.encode(headUrlBeforeBase64);
         headUrl = headUrl || "";
         urlInfo.data["pdf"] = headUrl;
