@@ -1,4 +1,4 @@
-.toolbarRight .item_chat{width:23px;height:23px;margin-left:8px;order:3}
-.toolbarRight #btn_chat{width:23px;height:23px;background-image:url(../../images/chat_img.png);}
-.toolbarRight #btn_chat:hover{background-position:-46px}
-.toolbarRight #btn_chat:active{background-position:-92px}
+.toolbarRight .item_chat{width:23px;height:23px;margin-left:10px;margin-top:-2px;order:3}
+.toolbarRight #btn_chat{width:100%;height:100%;background-image:url(../../images/chat_img.png);}
+.toolbarRight #btn_chat:hover{background-position:-23px}
+.toolbarRight #btn_chat:active{background-position:-46px}

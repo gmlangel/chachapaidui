@@ -2029,6 +2029,10 @@ define('eventBind',['boardConf','enDataSend','moduleTools'],function (require, e
                             targetPage:seaConf.classInfo.serverInfo.curPage
                         }
                         break;
+                    case 'btn_chat':
+                        //显示或者隐藏聊天窗口
+                        AppDelegate.app.chatPro.showOrHide();
+                        break;
                     default:
                         break;
                 }

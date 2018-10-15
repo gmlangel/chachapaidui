@@ -43,4 +43,74 @@ html,body{
     z-index: 1000000;
     top:100px;
     left: 100px;
+    background-color: rgba(239,243,247,1);
+    border-radius: 10px;
+    -webkit-box-shadow: rgba(0,0,0,0.3) 4px 4px 13px;
+    -moz-box-shadow:rgba(0,0,0,0.3) 4px 4px 13px;
+    box-shadow:rgba(0,0,0,0.3) 4px 4px 13px;
+}
+
+.chatContainerClass #chatRecord{
+    width: 496px;
+    height:380px;
+    background-color: #3c88c0;
+    margin-top: 30px;
+    margin-left: 2px;
+    float: none;
+    clear: both;
+}
+.chatContainerClass #chatInput{
+    width: 496px;
+    height:86px;
+    margin-top: 2px;
+    margin-left: 2px;
+    background-color: #ffffff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.chatContainerClass #chatInput #tb_chatInput{
+    margin-top: 4px;
+    margin-left: 4px;
+    float: left;
+    border: none;
+}
+
+.chatContainerClass #chatInput #btn_sendMsg{
+    margin-top: 7px;
+    margin-left: 2px;
+    float: left;
+    background-color: #ff6600;
+    width: 75px;
+    height:75px;
+    line-height: 75px;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.chatContainerClass #chatInput #btn_sendMsg:hover{
+    background-color: #ed6300;
+}
+.chatContainerClass #chatInput #btn_sendMsg:active{
+    background-color: #ff8800;
+}
+
+.chatContainerClass #btn_closeChatPanel{
+    width: 15px;
+    height:17px;
+    background-image: url('../images/btn_close_normal.png');
+    float: right;
+    margin-top: 7px;
+    margin-right: 7px;
+}
+
+.chatContainerClass #btn_closeChatPanel:hover{
+    background-image: url('../images/btn_close_hover.png');
+}
+
+.chatContainerClass #btn_closeChatPanel:active{
+    width: 15px;
+    height:17px;
+    background-image: url('../images/btn_close_pressed.png');
 }

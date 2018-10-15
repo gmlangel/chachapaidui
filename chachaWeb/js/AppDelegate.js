@@ -49,9 +49,7 @@ class AppDelegate{
         this.subVideoContainer = document.getElementById("subVideoContainer")
 
         //初始化聊天面板
-        this.chatPanel = document.getElementById("chatContainer");
-        this.chatPanel.style.display = "none";
-
+        this.chatPro = new ChatProxy("chatContainer");
     }
 
     /**
@@ -65,7 +63,7 @@ class AppDelegate{
                     //点击位移方式
                     let t = evt.targetTouches[0];
                     let me = new GMLMouseEvent()
-                    me.data = {"globelX":t.pageX,"globelY": t.pageY}
+                    me.data = {"target":evt.target,"globelX":t.pageX,"globelY": t.pageY}
                     AppDelegate.app.ongMouseDown(me)
                 }
             })
@@ -74,7 +72,7 @@ class AppDelegate{
                     //点击位移方式
                     let t = evt.targetTouches[0];
                     let me = new GMLMouseEvent()
-                    me.data = {"globelX":t.pageX,"globelY": t.pageY}
+                    me.data = {"target":evt.target,"globelX":t.pageX,"globelY": t.pageY}
                     AppDelegate.app.ongMouseUp(me)
                 }
             })
@@ -83,15 +81,31 @@ class AppDelegate{
                     //点击位移方式
                     let t = evt.targetTouches[0];
                     let me = new GMLMouseEvent()
-                    me.data = {"globelX":t.pageX,"globelY": t.pageY}
+                    me.data = {"target":evt.target,"globelX":t.pageX,"globelY": t.pageY}
                     AppDelegate.app.ongMouseMove(me)
                 }
             })
         }else{
+
             window.addEventListener("mousedown",function(evt){
                 let me = new GMLMouseEvent()
-                me.data = {"globelX": evt.target.x,"globelY": evt.target.y};
+                me.data = {"target":evt.target,"globelX": evt.x,"globelY": evt.y};
                 AppDelegate.app.ongMouseDown(me)
+            })
+            window.addEventListener("mousemove",function(evt){
+                let me = new GMLMouseEvent()
+                me.data = {"target":evt.target,"globelX": evt.x,"globelY": evt.y};
+                AppDelegate.app.ongMouseMove(me)
+            })
+            window.addEventListener("mouseout",function(evt){
+                let me = new GMLMouseEvent()
+                me.data = {"target":evt.target,"globelX": evt.x,"globelY": evt.y};
+                AppDelegate.app.ongMouseOut(me)
+            })
+            window.addEventListener("mouseup",function(evt){
+                let me = new GMLMouseEvent()
+                me.data = {"target":evt.target,"globelX": evt.x,"globelY": evt.y};
+                AppDelegate.app.ongMouseUp(me)
             })
         }
 
@@ -101,7 +115,7 @@ class AppDelegate{
         this.bgAudio.loop = true;
         this.bgVideo.play();
         this.bgVideo.loop = true;
-        //this.fullScreen();//默认全屏
+        this.fullScreen();//默认全屏
 
         //链接socket
         this.ws = new WebSocketHandler("wss://www.juliaol.cn/gmlws",[]);//https的请求格式
@@ -139,19 +153,44 @@ class AppDelegate{
     ongMouseDown(evt){
         let wX = evt.data.globelX;//全局坐标
         let wY = evt.data.globelY;
-        console.log("mouseDown,wX="+wX + ",wY=" + wY);
+        //console.log("mouseDown,wX="+wX + ",wY=" + wY);
+        if(evt.data.target == this.chatPro.chatPanel){
+            //开始文本框拖拽
+            this.dropObj = this.chatPro.chatPanel;//设置拖拽对象
+            this.beginRect = {"x":wX,"y":wY,"w":parseInt(this.dropObj.clientWidth || 0),"h":parseInt(this.dropObj.clientHeight || 0)};
+        }
     }
 
     ongMouseUp(evt){
+        this.dropObj = null;//清除拖拽对象
+        this.beginRect = null;
         let wX = evt.data.globelX;//全局坐标
         let wY = evt.data.globelY;
-        console.log("mouseUp,wX="+wX + ",wY=" + wY);
+        //console.log("mouseUp,wX="+wX + ",wY=" + wY);
+    }
+    ongMouseOut(evt){
+        this.dropObj = null;//清除拖拽对象
+        this.beginRect = null;
+        let wX = evt.data.globelX;//全局坐标
+        let wY = evt.data.globelY;
+        if(wX >= 0 && wX <= document.body.clientWidth && wY >= 0 && wY <= document.body.clientWidth){
+
+        }else{
+            this.dropObj = null;//清除拖拽对象
+        }
+        //console.log("mouseOut,wX="+wX + ",wY=" + wY);
     }
 
     ongMouseMove(evt){
         let wX = evt.data.globelX;//全局坐标
         let wY = evt.data.globelY;
         //console.log("mouseMove,wX="+wX + ",wY=" + wY);
+        if(this.dropObj){
+            this.dropObj.style.top = (parseInt(this.dropObj.style.top || 0) + (wY - this.beginRect.y)) + "px"
+            this.dropObj.style.left = (parseInt(this.dropObj.style.left || 0) + (wX - this.beginRect.x)) + "px"
+            this.beginRect.y = wY;
+            this.beginRect.x = wX;
+        }
     }
 
     onSocketClose(e){
@@ -196,14 +235,13 @@ class AppDelegate{
     _trueBegin(){
         AppDelegate.app.whiteBoard.style.display = "block";
         AppDelegate.app.rightPanel.style.display = "block";
-        //AppDelegate.app.chatPanel.style.display = "inline-block";
         AppDelegate.app.welcomePanel.style.display = "none";
 
         //初始化白板数据
         AppDelegate.app.h5Init();
 
         //初始化聊天框
-        AppDelegate.app.ChatInit();
+        AppDelegate.app.chatPro.initial();
 
         //根据用户列表创建 视频容器
         let userArr = this.roomInfo.ua;
@@ -216,6 +254,13 @@ class AppDelegate{
         });
         //启动媒体引擎
         //AgoraMediaProxy.instance.start(this.userinfo.uid,this.roomInfo.rn);
+    }
+
+    /**
+     * 向服务器发送文本消息
+     * */
+    sendChatMSG(msg){
+        alert(msg);
     }
 
     //上报给服务器,让其他人知道我的媒体ID
@@ -310,35 +355,6 @@ class AppDelegate{
             return "stu_" + clientUID;
     }
 
-    //初始化聊天框
-    ChatInit() {
-        let isTeacher = this.roomInfo.ownnerUID == this.userinfo.uid;
-        let init_H5Entity = new H5Entity_1v1chat_init();
-        init_H5Entity.data["id"] = this.userinfo.uid;
-        init_H5Entity.data["type"] = isTeacher ? "tea" : "stu";
-        init_H5Entity.data["name"] = this.userinfo.nn;
-        init_H5Entity.data["clienttype"] = "7";
-        this.callChat(init_H5Entity.key, init_H5Entity.toJSStr());
-
-
-        //测试信息
-        let sendMsgReq = new H5Entity_1v1chat_sendData();
-        sendMsgReq.data["type"] = "tipInfo";
-        sendMsgReq.data["userInfo"] = {
-            "courserole":-1,
-            "headImg":"",
-            "id":"0",
-            "name":""
-        };
-        sendMsgReq.data["value"] = {
-            "id": "",
-            "isMe": "True",
-            "time": "",
-            "data": "这是测试"
-        }
-        this.callChat(sendMsgReq.key, sendMsgReq.toJSStr());
-    }
-
     h5Init(){
         let isTeacher = this.roomInfo.ownnerUID == this.userinfo.uid;
         //测试代码
@@ -386,13 +402,6 @@ class AppDelegate{
      * */
     callH5(type,JSONStrValue){
         window.comm_type_get(type,JSONStrValue);
-    }
-
-    callChat(type,JSONStrValue){
-        if(!this.chatWindow){
-            this.chatWindow = document.getElementById('chatIframe').contentWindow;//获取chat的window
-        }
-        this.chatWindow.comm_chat_set(type,JSONStrValue);
     }
 
     createWhiteConfigDic(){
@@ -521,8 +530,8 @@ class AppDelegate{
         {
             AppDelegate.app.whiteBoard.style.width = (w - 320) + "px";
             AppDelegate.app.subVideoContainer.style.height = (h - 240) + "px";
-            AppDelegate.app.chatPanel.style.top = ((h - 500) / 2) + "px";
-            AppDelegate.app.chatPanel.style.left = ((w - 500) / 2) + "px";
+            AppDelegate.app.chatPro.chatPanel.style.top = ((h - 500) / 2) + "px";
+            AppDelegate.app.chatPro.chatPanel.style.left = ((w - 500) / 2) + "px";
         }
     }
 
