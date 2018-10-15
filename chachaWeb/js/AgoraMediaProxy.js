@@ -68,6 +68,7 @@ class AgoraMediaProxy{
      * */
     stop(){
         this.started = false;
+        this.leaveChanel();
     }
 
     /**

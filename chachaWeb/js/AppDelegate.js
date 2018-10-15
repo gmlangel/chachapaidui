@@ -115,19 +115,18 @@ class AppDelegate{
         this.bgAudio.loop = true;
         this.bgVideo.play();
         this.bgVideo.loop = true;
-        this.fullScreen();//默认全屏
+        //this.fullScreen();//默认全屏
 
         //链接socket
-        this.ws = new WebSocketHandler("wss://www.juliaol.cn/gmlws",[]);//https的请求格式
-        //this.ws = new WebSocketHandler("ws://39.106.135.11:31111",[]);//http的请求格式
-        //this.ws = new WebSocketHandler("ws://localhost:31111",[]);//本地http服务的请求格式
+        //this.ws = new WebSocketHandler("wss://www.juliaol.cn/gmlws",[]);//https的请求格式
+        this.ws = new WebSocketHandler("ws://localhost:31111",[]);//本地http服务的请求格式
         this.ws.addEventListener(WebSocketEvent.SOCKET_CLOSE,this.onSocketClose,this)
         this.ws.addEventListener(WebSocketEvent.SOCKET_DATA,this.onSocketData,this);
         this.ws.addEventListener(WebSocketEvent.SOCKET_ERROR,this.onSocketError,this)
         this.ws.addEventListener(WebSocketEvent.SOCKET_CONNECTED,this.onSocketConnected,this)
 
         //长连接心跳 30秒发一次
-        setInterval(function(){
+        this.xintiaoTimerID = setInterval(function(){
             if(AppDelegate.app.ws.isOpen){
                 let req = {"cmd":0x00FF0001,"seq":0,"lt":0};
                 AppDelegate.app.sendDataToServer(JSON.stringify(req))
@@ -253,7 +252,7 @@ class AppDelegate{
                 $('div#subVideoContainer').append('<div id="stu_'+item.uid+'" style="float:left; width:160px;height:120px;display:inline-block;"></div>');
         });
         //启动媒体引擎
-        //AgoraMediaProxy.instance.start(this.userinfo.uid,this.roomInfo.rn);
+        AgoraMediaProxy.instance.start(this.userinfo.uid,this.roomInfo.rn);
     }
 
     /**
@@ -450,6 +449,10 @@ class AppDelegate{
                 case 0x00FF0007:
                     //掉线通知
                     console.log("掉线了");
+                    clearInterval(this.xintiaoTimerID);//释放心跳
+                    //停止媒体引擎
+                    AgoraMediaProxy.instance.stop();
+                    alert("您已经被强制下线");
                     break;
                 case 0x00FF0015:
                     //进入教室回调
