@@ -44,14 +44,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppDelegate.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AppDelegate.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/AppDelegate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5826377">
-              <caret line="373" column="0" selection-start-line="373" selection-start-column="0" selection-end-line="373" selection-end-column="0" />
+            <state vertical-scroll-proportion="-10.0">
+              <caret line="202" column="33" selection-start-line="202" selection-start-column="33" selection-end-line="202" selection-end-column="33" />
               <folding>
-                <marker date="1539512251000" expanded="true" signature="7347:7405" placeholder="..." />
-                <marker date="1539512251000" expanded="true" signature="16448:16506" placeholder="..." />
+                <marker date="1539577414000" expanded="true" signature="7305:7363" placeholder="..." />
+                <marker date="1539577414000" expanded="true" signature="16404:16462" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -77,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="viewer.gml.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="viewer.gml.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/courseLoad/pdf/web/viewer.gml.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.148149">
-              <caret line="3751" column="17" selection-start-line="3751" selection-start-column="17" selection-end-line="3751" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.5826377">
+              <caret line="3761" column="9" selection-start-line="3761" selection-start-column="9" selection-end-line="3761" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -111,8 +111,8 @@
         <option value="$PROJECT_DIR$/css/gmlIndex.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/PdfLoaderModel.js" />
-        <option value="$PROJECT_DIR$/courseLoad/pdf/web/viewer.gml.js" />
         <option value="$PROJECT_DIR$/js/AppDelegate.js" />
+        <option value="$PROJECT_DIR$/courseLoad/pdf/web/viewer.gml.js" />
       </list>
     </option>
   </component>
@@ -824,22 +824,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/PdfLoaderModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="438" column="25" selection-start-line="438" selection-start-column="25" selection-end-line="438" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/courseLoad/pdf/web/viewer.gml.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.148149">
-          <caret line="3751" column="17" selection-start-line="3751" selection-start-column="17" selection-end-line="3751" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/gmlIndex.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.5">
@@ -861,12 +845,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/AppDelegate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5826377">
-          <caret line="373" column="0" selection-start-line="373" selection-start-column="0" selection-end-line="373" selection-end-column="0" />
+        <state vertical-scroll-proportion="-10.0">
+          <caret line="202" column="33" selection-start-line="202" selection-start-column="33" selection-end-line="202" selection-end-column="33" />
           <folding>
-            <marker date="1539512251000" expanded="true" signature="7347:7405" placeholder="..." />
-            <marker date="1539512251000" expanded="true" signature="16448:16506" placeholder="..." />
+            <marker date="1539577414000" expanded="true" signature="7305:7363" placeholder="..." />
+            <marker date="1539577414000" expanded="true" signature="16404:16462" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/PdfLoaderModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="438" column="25" selection-start-line="438" selection-start-column="25" selection-end-line="438" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/courseLoad/pdf/web/viewer.gml.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5826377">
+          <caret line="3761" column="9" selection-start-line="3761" selection-start-column="9" selection-end-line="3761" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>

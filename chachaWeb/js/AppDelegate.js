@@ -104,7 +104,7 @@ class AppDelegate{
         //this.fullScreen();//默认全屏
 
         //链接socket
-        this.ws = new WebSocketHandler("wss://39.106.135.11:443/gmlws",[]);//https的请求格式
+        this.ws = new WebSocketHandler("wss://www.juliaol.cn/gmlws",[]);//https的请求格式
         //this.ws = new WebSocketHandler("ws://39.106.135.11:31111",[]);//http的请求格式
         //this.ws = new WebSocketHandler("ws://localhost:31111",[]);//本地http服务的请求格式
         this.ws.addEventListener(WebSocketEvent.SOCKET_CLOSE,this.onSocketClose,this)
@@ -196,7 +196,7 @@ class AppDelegate{
     _trueBegin(){
         AppDelegate.app.whiteBoard.style.display = "block";
         AppDelegate.app.rightPanel.style.display = "block";
-        AppDelegate.app.chatPanel.style.display = "inline-block";
+        //AppDelegate.app.chatPanel.style.display = "inline-block";
         AppDelegate.app.welcomePanel.style.display = "none";
 
         //初始化白板数据
@@ -215,7 +215,7 @@ class AppDelegate{
                 $('div#subVideoContainer').append('<div id="stu_'+item.uid+'" style="float:left; width:160px;height:120px;display:inline-block;"></div>');
         });
         //启动媒体引擎
-        //AgoraMediaProxy.instance.start(this.userinfo.uid,this.roomInfo.rn);//自己是主讲
+        AgoraMediaProxy.instance.start(this.userinfo.uid,this.roomInfo.rn);//自己是主讲
     }
 
     //上报给服务器,让其他人知道我的媒体ID
