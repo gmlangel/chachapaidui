@@ -252,7 +252,7 @@ class AppDelegate{
                 $('div#subVideoContainer').append('<div id="stu_'+item.uid+'" style="float:left; width:160px;height:120px;display:inline-block;"></div>');
         });
         //启动媒体引擎
-        AgoraMediaProxy.instance.start(this.userinfo.uid,this.roomInfo.rn);
+       // AgoraMediaProxy.instance.start(this.userinfo.uid,this.roomInfo.rn);
     }
 
     /**
