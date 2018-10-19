@@ -4818,41 +4818,42 @@ define('commCef',['boardConf','checkData'],function (require, exports, module) {
 
     //function used to send data to the outer（c++/mac/ios/....）  用于js向c++通信
     window.comm_type_send=function(type,jsonStr){
-        return;
         try{
             console.log("js->client:",type,jsonStr);
-            //for mac test
-            if(seaConf.host.mainHost==='mac'){
-                window.webkit.messageHandlers.AcJs_get.postMessage(JSON.stringify({type:type,value:jsonStr}));
-                return;
-            }
-            //window.AcJs_get(type,jsonStr); 调用c++预先定义的函数
-            if(!seaConf.isSupportEncodeFunc){
-                window.AcJs_get(type,jsonStr);
-            }else{
-                seaConf.jsToCArr.push({
-                    type : type,
-                    value : JSON.parse(jsonStr)
-                });
-                //判断当前是否在时间段内
-                if(seaConf.jsToCTimer == null){
-                    //未在时间段内，启动监听
-                    seaConf.jsToCTimer = window.setTimeout(function () {
-                        try{
-                            var targetData = JSON.stringify(seaConf.jsToCArr.splice(0));
-                            window.AcJs_get_encode(targetData);
-                        }catch (e){
-                            console.warn('|-------------AcJs_get_encode---------->发送到C++时出错!');
-                            console.warn(e);
-                        }finally{
-                            //还原状态
-                            window.clearTimeout(seaConf.jsToCTimer);
-                            seaConf.jsToCTimer = null;
-                        }
-                    },seaConf.jsToCTime);
-                }
-
-            }
+            AppDelegate.app.jsWhiteBoardDatatoMain(JSON.stringify({type:type,value:jsonStr}));
+            ////for mac test
+            //if(seaConf.host.mainHost==='mac'){
+            //
+            //    window.webkit.messageHandlers.AcJs_get.postMessage(JSON.stringify({type:type,value:jsonStr}));
+            //    return;
+            //}
+            ////window.AcJs_get(type,jsonStr); 调用c++预先定义的函数
+            //if(!seaConf.isSupportEncodeFunc){
+            //    window.AcJs_get(type,jsonStr);
+            //}else{
+            //    seaConf.jsToCArr.push({
+            //        type : type,
+            //        value : JSON.parse(jsonStr)
+            //    });
+            //    //判断当前是否在时间段内
+            //    if(seaConf.jsToCTimer == null){
+            //        //未在时间段内，启动监听
+            //        seaConf.jsToCTimer = window.setTimeout(function () {
+            //            try{
+            //                var targetData = JSON.stringify(seaConf.jsToCArr.splice(0));
+            //                window.AcJs_get_encode(targetData);
+            //            }catch (e){
+            //                console.warn('|-------------AcJs_get_encode---------->发送到C++时出错!');
+            //                console.warn(e);
+            //            }finally{
+            //                //还原状态
+            //                window.clearTimeout(seaConf.jsToCTimer);
+            //                seaConf.jsToCTimer = null;
+            //            }
+            //        },seaConf.jsToCTime);
+            //    }
+            //
+            //}
         }catch(e){
             console.log('[%s] -----> failed to send data to cef3 : [%s]',window.getTimeNow(),e);
         }

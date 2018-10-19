@@ -41,7 +41,7 @@ class AppDelegate{
         //初始化白板区域
         this.whiteBoard = document.getElementById("whiteBoard");
         this.whiteBoard.style.display = "none";
-
+        this.whiteBoardPro = new WhiteBoardProxy();
         //初始化右侧面板
         this.rightPanel = document.getElementById("rightPanel");
         this.rightPanel.style.display = "none";
@@ -50,6 +50,7 @@ class AppDelegate{
 
         //初始化聊天面板
         this.chatPro = new ChatProxy("chatContainer");
+
     }
 
     /**
@@ -117,7 +118,17 @@ class AppDelegate{
         this.bgVideo.loop = true;
         //this.fullScreen();//默认全屏
 
+        this.linkServerTimerId = -1;
+        this.linkServer();
+    }
+
+    /**
+     * 链接服务器
+     * */
+    linkServer(){
+        clearTimeout(this.linkServerTimerId);//清除上一次的倒计时重连
         //链接socket
+        this.remoteStopWS = false;
         //this.ws = new WebSocketHandler("wss://www.juliaol.cn/gmlws",[]);//https的请求格式
         this.ws = new WebSocketHandler("ws://localhost:31111",[]);//本地http服务的请求格式
         this.ws.addEventListener(WebSocketEvent.SOCKET_CLOSE,this.onSocketClose,this)
@@ -194,6 +205,14 @@ class AppDelegate{
 
     onSocketClose(e){
         console.log("socket断开")
+        if(this.remoteStopWS == false){
+            clearTimeout(this.linkServerTimerId);
+            //非服务器强制断开连接,则重连
+            this.linkServerTimerId = setTimeout(function(){
+                //10秒重连
+                AppDelegate.app.linkServer();
+            },10000);
+        }
     }
     onSocketData(e){
         this.dataBuffer = this.dataBuffer + e.data;
@@ -220,6 +239,14 @@ class AppDelegate{
 
     onSocketError(e){
         console.log("socket发生错误");
+        if(this.remoteStopWS == false){
+            clearTimeout(this.linkServerTimerId);
+            //非服务器强制断开连接,则重连
+            this.linkServerTimerId = setTimeout(function(){
+                //10秒重连
+                AppDelegate.app.linkServer();
+            },10000);
+        }
     }
 
     onSocketConnected(e){
@@ -415,7 +442,7 @@ class AppDelegate{
      * 调用 白板的各种协议接口
      * */
     callH5(type,JSONStrValue){
-        window.comm_type_get(type,JSONStrValue);
+        this.whiteBoardPro.callH5(type,JSONStrValue)
     }
 
     createWhiteConfigDic(){
@@ -463,7 +490,7 @@ class AppDelegate{
                     break;
                 case 0x00FF0007:
                     //掉线通知
-                    console.log("掉线了");
+                    this.remoteStopWS = true;
                     clearInterval(this.xintiaoTimerID);//释放心跳
                     //停止媒体引擎
                     AgoraMediaProxy.instance.stop();
@@ -514,6 +541,11 @@ class AppDelegate{
         }catch(err){
             console.log("数据不是json",data)
         }
+    }
+
+    jsWhiteBoardDatatoMain(_dataObj){
+        //白板派发到主程序中的相关协议数据
+        this.whiteBoardPro.jsWhiteBoardDatatoMain(_dataObj);
     }
 
     //其它用户进入
