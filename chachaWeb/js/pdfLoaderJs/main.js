@@ -2704,6 +2704,7 @@ define('moduleSet',['boardConf','animate'],function (require, exports, module) {
             $('#mainContainer').append(str);
         },
         'moduleUpdate' : function () {
+            return;
             var str=
                 '<div id="update_cue">' +
                 '<ul>'+

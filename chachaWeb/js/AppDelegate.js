@@ -537,6 +537,13 @@ class AppDelegate{
                     this.roomInfo.mediaMap[tempUid] = tempMediaId;
                     this.refreshVideo(tempUid,tempMediaId);//刷新视频
                     break;
+                case 0x00FF001D:
+                    //收到通用教学命令
+                    let tongyongarr = jsonObj.datas;
+                    tongyongarr.forEach(function(obj,idx){
+                        AppDelegate.app.whiteBoardPro.reciveServerData(obj.data);
+                    })
+                    break;
             }
         }catch(err){
             console.log("数据不是json",data)
