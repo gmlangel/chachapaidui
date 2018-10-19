@@ -691,7 +691,7 @@ var CHAT = {
         100)
     },
     handleTip: function(e) {
-        "show" == e ? ($("#recordTip").find(".tip_data").html("<span>" + CHAT.numUnknowRecord + "条新消息</span>"), $("#recordTip").show()) : (CHAT.numUnknowRecord = 0, $("#recordTip").hide())
+        /*"show" == e*/1 == 0 ? ($("#recordTip").find(".tip_data").html("<span>" + CHAT.numUnknowRecord + "条新消息</span>"), $("#recordTip").show()) : (CHAT.numUnknowRecord = 0, $("#recordTip").hide())
     },
     updateScroll: function() {
         var e = parseFloat($(".thumb").css("height").replace("px", "")),

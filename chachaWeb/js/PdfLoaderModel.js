@@ -407,7 +407,6 @@ class H5Entity1v1ChatBase{
         let str = "";
         try{
             str = JSON.stringify(this.data);
-            str = transcodingJavascriptMessage(str);
             str = window.MyBase64.encode(str)
         }catch(err){
             console.log("H5EntityBase==>数据封装错误,原因:"+err);

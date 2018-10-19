@@ -258,8 +258,23 @@ class AppDelegate{
     /**
      * 向服务器发送文本消息
      * */
-    sendChatMSG(msg){
-        alert(msg);
+    sendChatMSG(msgObj){
+        let uid = this.userinfo.uid || -1;
+        let rid = this.roomInfo.rid || -1;
+        if(uid > -1 && rid > -1){
+            let nickName = this.userinfo.nn
+            //封装发送数据结构
+            let msgReq = {
+                "cmd":0x00FF0018,
+                "seq":0,
+                "lt":parseInt(new Date().valueOf() / 1000),
+                "uid":uid,
+                "rid":rid,
+                "nn":nickName,
+                "msg":msgObj
+            }
+            this.sendDataToServer(JSON.stringify(msgReq))
+        }
     }
 
     //上报给服务器,让其他人知道我的媒体ID
@@ -477,6 +492,16 @@ class AppDelegate{
                         }
                     })
                     break;
+                case 0x00FF0019:
+                    //收到文本消息
+                    let arr2 = jsonObj.msga;
+                    arr2.forEach(function(obj,idx){
+                        let senderUID = obj.suid;
+                        let senderNickName = obj.snn;
+                        let msgObj = obj.msg;
+                        AppDelegate.app.chatPro.showMsg(senderUID,senderNickName,msgObj.msgType,msgObj.msg,senderUID == AppDelegate.app.userinfo.uid ? 2 : 1)
+                    })
+                    break;
                 case 0x00FF0021:
                     //其它用户的mediaId变更
                     let trueData = jsonObj.data
@@ -493,16 +518,21 @@ class AppDelegate{
 
     //其它用户进入
     userIn(item){
+        console.log("其他人进入教室:"+item)
+        let tempJson = {"list":[{"enter":item.nn + "进入教室"}]};
+        this.chatPro.showMsg(item.uid,item.nn,"text",JSON.stringify(tempJson),5);
         let divID = this.makeVideoDivId(item.uid);
         let tempDiv = document.getElementById(divID)
         //如果视频DIV不存在,则创建视频div
         if(!tempDiv)
             $('div#subVideoContainer').append('<div id=' + divID + ' style="float:left; width:160px;height:120px;display:inline-block;"></div>');
-        console.log("其他人进入教室:"+item)
     }
 
     //其它用户退出
     userOut(item){
+        console.log("其他人离开教室:"+item)
+        let tempJson = {"list":[{"leave":item.nn + "离开教室"}]};
+        this.chatPro.showMsg(item.uid,item.nn,"text",JSON.stringify(tempJson),5);
         //停止视频渲染
         let divID = this.makeVideoDivId(item.uid);
         let mediaId = this.roomInfo.mediaMap[item.uid] || -1;
@@ -518,8 +548,6 @@ class AppDelegate{
                 break;
             }
         }
-
-        console.log("其他人离开教室:"+item)
     }
 
 

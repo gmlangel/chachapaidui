@@ -127,7 +127,7 @@ class ChatProxy{
                     "data": msg
                 }
             }else if(msgStyle == 1){
-                //右侧显示文本
+                //左侧显示文本
                 sendMsgReq.data["type"] = "text";
                 userInfo["courserole"] = isTeacher ? 1 : 0;
                 userInfo["name"] = senderNickName;
