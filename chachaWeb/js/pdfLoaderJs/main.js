@@ -348,6 +348,12 @@ define('whiteBoard',['boardConf','enDataSend'],function (require,exports,module)
                         }
                         break;
                     case 'text':
+                        WEBTools.mouseData.startX -= 22;
+                        WEBTools.mouseData.startY -= 24;
+                        WEBTools.mouseData.minX=WEBTools.mouseData.startX;
+                        WEBTools.mouseData.minY=WEBTools.mouseData.startY;
+                        WEBTools.mouseData.maxX=WEBTools.mouseData.startX;
+                        WEBTools.mouseData.maxY=WEBTools.mouseData.startY;
                         var target = e.target || e.srcElement;
                         if(target.id=='input'){//拖拽
                             //标记哨兵 表明现在正在处于拖拽状态
