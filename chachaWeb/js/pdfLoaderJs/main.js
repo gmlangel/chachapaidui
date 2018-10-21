@@ -2486,7 +2486,7 @@ define('moduleSet',['boardConf','animate'],function (require, exports, module) {
                 '<li class="item_num"><input type="tel" id="pageNumber" value="1"/></li>'+
                 '<li class="item_count"><span id="numPages"></span></li>'+
                 '<li class="item_next"><span title="下一页" id="nextPage"  tabindex="14"></span></li>'+
-                '<li class="item_chat"><span title="聊天" id="btn_chat"  tabindex="15"></span></li>'+
+                '<li class="item_chat"><span title="聊天" class="btn_chatClass" id="btn_chat"  tabindex="15"></span></li>'+
                 '</ul>'+
                 '</div>'+
                 '</div>'+

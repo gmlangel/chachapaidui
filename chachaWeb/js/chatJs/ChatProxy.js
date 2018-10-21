@@ -46,12 +46,23 @@ class ChatProxy{
         this.tbInput.value = ""
     }
 
+    get isShow(){
+        let chatPanelState = this.chatPanel.style.display || "none";
+        if(chatPanelState === "none"){
+            return false;
+        }else{
+            return true;
+        }
+    }
     /**
      * 显示或者隐藏
      * */
     showOrHide(){
-        let chatPanelState = this.chatPanel.style.display || "none";
-        if(chatPanelState === "none"){
+        let msgIcon = document.getElementById("btn_chat");
+        if(msgIcon){
+            msgIcon.className = "btn_chatClass";//还原icon为无新信息状态
+        }
+        if(this.isShow == false){
             this.chatPanel.style.display = "inline-block";
             $("#tb_chatInput").focus();
         }else{

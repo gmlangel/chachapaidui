@@ -116,7 +116,7 @@ class AppDelegate{
         this.bgAudio.loop = true;
         this.bgVideo.play();
         this.bgVideo.loop = true;
-        this.fullScreen();//默认全屏
+        //this.fullScreen();//默认全屏
 
         this.linkServerTimerId = -1;
         this.linkServer();
@@ -129,8 +129,8 @@ class AppDelegate{
         clearTimeout(this.linkServerTimerId);//清除上一次的倒计时重连
         //链接socket
         this.remoteStopWS = false;
-        //this.ws = new WebSocketHandler("wss://www.juliaol.cn/gmlws",[]);//https的请求格式
-        this.ws = new WebSocketHandler("ws://localhost:31111",[]);//本地http服务的请求格式
+        this.ws = new WebSocketHandler("wss://www.juliaol.cn/gmlws",[]);//https的请求格式
+        //this.ws = new WebSocketHandler("ws://localhost:31111",[]);//本地http服务的请求格式
         this.ws.addEventListener(WebSocketEvent.SOCKET_CLOSE,this.onSocketClose,this)
         this.ws.addEventListener(WebSocketEvent.SOCKET_DATA,this.onSocketData,this);
         this.ws.addEventListener(WebSocketEvent.SOCKET_ERROR,this.onSocketError,this)
@@ -543,6 +543,10 @@ class AppDelegate{
                         let msgObj = obj.msg;
                         AppDelegate.app.chatPro.showMsg(senderUID,senderNickName,msgObj.msgType,msgObj.msg,senderUID == AppDelegate.app.userinfo.uid ? 2 : 1)
                     })
+                    let msgIcon = document.getElementById("btn_chat");
+                    if(AppDelegate.app.chatPro.isShow == false && msgIcon){
+                        msgIcon.className = "btn_chatClassMSG";//更改icon为有信息状态
+                    }
                     break;
                 case 0x00FF0021:
                     //其它用户的mediaId变更
