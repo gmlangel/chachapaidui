@@ -116,7 +116,7 @@ class AppDelegate{
         this.bgAudio.loop = true;
         this.bgVideo.play();
         this.bgVideo.loop = true;
-        //this.fullScreen();//默认全屏
+        this.fullScreen();//默认全屏
 
         this.linkServerTimerId = -1;
         this.linkServer();
@@ -279,7 +279,7 @@ class AppDelegate{
                 $('div#subVideoContainer').append('<div id="stu_'+item.uid+'" style="float:left; width:160px;height:120px;display:inline-block;"></div>');
         });
         //启动媒体引擎
-       // AgoraMediaProxy.instance.start(this.userinfo.uid,this.roomInfo.rn);
+        AgoraMediaProxy.instance.start(this.userinfo.uid,this.roomInfo.rn);
     }
 
     /**
@@ -423,7 +423,7 @@ class AppDelegate{
         let hostInfo = new H5Entity_host_simple();
         hostInfo.data["language"] = "cn";
         hostInfo.data["showtype"] = "normal"//成人还是青少
-        let whiteConfigDic = this.createWhiteConfigDic();
+        let whiteConfigDic = this.createWhiteConfigDic(isTeacher);
         hostInfo.data["toolsconf"] = whiteConfigDic;
 
         let courseAll = new H5Entity_courseAll();
@@ -445,18 +445,33 @@ class AppDelegate{
         this.whiteBoardPro.callH5(type,JSONStrValue)
     }
 
-    createWhiteConfigDic(){
-        return {
-            "back":true,/*回退*/
-            "clear":true,/*清空*/
-            "draft":false,/*拖拽*/
-            "newrub":false,/*新橡皮擦*/
-            "pen":true,/*画笔*/
-            "rec":true,/*矩形*/
-            "rub":true,/*旧版橡皮擦*/
-            "signpen":true,/*荧光笔*/
-            "text":true/*文本*/
+    createWhiteConfigDic(_isTeacher){
+        if(_isTeacher){
+            return {
+                "back":true,/*回退*/
+                "clear":true,/*清空*/
+                "draft":false,/*拖拽*/
+                "newrub":false,/*新橡皮擦*/
+                "pen":true,/*画笔*/
+                "rec":true,/*矩形*/
+                "rub":true,/*旧版橡皮擦*/
+                "signpen":true,/*荧光笔*/
+                "text":true/*文本*/
+            }
+        }else{
+            return {
+                "back":false,/*回退*/
+                "clear":false,/*清空*/
+                "draft":false,/*拖拽*/
+                "newrub":false,/*新橡皮擦*/
+                "pen":false,/*画笔*/
+                "rec":false,/*矩形*/
+                "rub":false,/*旧版橡皮擦*/
+                "signpen":false,/*荧光笔*/
+                "text":false/*文本*/
+            }
         }
+
     }
 
     /**
