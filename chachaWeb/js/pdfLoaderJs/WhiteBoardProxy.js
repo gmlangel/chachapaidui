@@ -153,6 +153,7 @@ class WhiteBoardProxy{
      * */
     scrollToH5(_dic){
         let req = new H5Entity_scroll_simple();
+        req.data = _dic;
         this.callH5(req.key,req.toJSStr())
     }
 
@@ -161,6 +162,7 @@ class WhiteBoardProxy{
      * */
     wbDataToH5(_dic){
         let req = new H5Entity_paint_simple();
+        req.data = _dic;
         this.callH5(req.key,req.toJSStr())
     }
 
