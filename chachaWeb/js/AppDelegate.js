@@ -415,7 +415,7 @@ class AppDelegate{
         //构建pdf下载地址
         let urlInfo = new H5Entity_url_simple();
         //加载网络pdf资源
-        let headUrlBeforeBase64 = "../../4b7598199953ffe850ed9d672991ccc6.pdf";//this.roomInfo.teachingMaterialPath;//
+        let headUrlBeforeBase64 = this.roomInfo.teachingMaterialPath;//"../../4b7598199953ffe850ed9d672991ccc6.pdf";//
         var headUrl = window.MyBase64.encode(headUrlBeforeBase64);
         headUrl = headUrl || "";
         urlInfo.data["pdf"] = headUrl;

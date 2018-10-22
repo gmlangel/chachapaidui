@@ -92,14 +92,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppDelegate.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AgoraMediaProxy.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/AgoraMediaProxy.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.18196996">
+              <caret line="50" column="7" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
+              <folding>
+                <element signature="n#!!doc;n#AgoraMediaProxy#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AgoraRTCSDK-2.4.1.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/agora/AgoraRTCSDK-2.4.1.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.9259257">
+              <caret line="2189" column="31" selection-start-line="2189" selection-start-column="31" selection-end-line="2189" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppDelegate.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/AppDelegate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.93322206">
-              <caret line="660" column="5" selection-start-line="660" selection-start-column="5" selection-end-line="660" selection-end-column="5" />
+            <state vertical-scroll-proportion="58.185184">
+              <caret line="424" column="52" selection-start-line="424" selection-start-column="52" selection-end-line="424" selection-end-column="52" />
               <folding>
-                <marker date="1540091917000" expanded="true" signature="9854:9912" placeholder="..." />
-                <marker date="1540091917000" expanded="true" signature="20438:20496" placeholder="..." />
+                <marker date="1540092234000" expanded="true" signature="9854:9912" placeholder="..." />
+                <marker date="1540092234000" expanded="true" signature="20438:20496" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -111,30 +133,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="62" column="39" selection-start-line="62" selection-start-column="39" selection-end-line="62" selection-end-column="39" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WhiteBoardProxy.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/pdfLoaderJs/WhiteBoardProxy.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.592592">
-              <caret line="166" column="5" selection-start-line="166" selection-start-column="5" selection-end-line="166" selection-end-column="5" />
-              <folding>
-                <element signature="n#!!doc;n#WhiteBoardProxy#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.min.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/pdfLoaderJs/main.min.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="1258" selection-start-line="0" selection-start-column="1258" selection-end-line="0" selection-end-column="1258" />
-              <folding>
-                <marker date="1536828974000" expanded="true" signature="51587:51630" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -699,14 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/agora/AgoraRTCSDK-2.4.1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47603834">
-          <caret line="4173" column="14" selection-start-line="4173" selection-start-column="14" selection-end-line="4173" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/agora_index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.833333">
@@ -763,16 +753,6 @@
         <state vertical-scroll-proportion="-1.5367413">
           <caret line="357" column="8" selection-start-line="357" selection-start-column="8" selection-end-line="357" selection-end-column="8" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/AgoraMediaProxy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.1709266">
-          <caret line="146" column="17" selection-start-line="146" selection-start-column="17" selection-end-line="146" selection-end-column="17" />
-          <folding>
-            <element signature="n#!!doc;n#AgoraMediaProxy#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -927,11 +907,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/AppDelegate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.93322206">
-          <caret line="660" column="5" selection-start-line="660" selection-start-column="5" selection-end-line="660" selection-end-column="5" />
+        <state vertical-scroll-proportion="58.185184">
+          <caret line="424" column="52" selection-start-line="424" selection-start-column="52" selection-end-line="424" selection-end-column="52" />
           <folding>
-            <marker date="1540091917000" expanded="true" signature="9854:9912" placeholder="..." />
-            <marker date="1540091917000" expanded="true" signature="20438:20496" placeholder="..." />
+            <marker date="1540092234000" expanded="true" signature="9854:9912" placeholder="..." />
+            <marker date="1540092234000" expanded="true" signature="20438:20496" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/agora/AgoraRTCSDK-2.4.1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.9259257">
+          <caret line="2189" column="31" selection-start-line="2189" selection-start-column="31" selection-end-line="2189" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/AgoraMediaProxy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18196996">
+          <caret line="50" column="7" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
+          <folding>
+            <element signature="n#!!doc;n#AgoraMediaProxy#0" expanded="false" />
           </folding>
         </state>
       </provider>
