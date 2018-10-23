@@ -104,7 +104,7 @@ class AgoraMediaProxy{
         let selfInstance = AgoraMediaProxy.instance;
         let appId = AgoraMediaProxy.mediaAppId;
         console.log("Init AgoraRTC client with App ID: " + appId);
-        this.client = AgoraRTC.createClient({mode: 'interop'});//创建互动音视频教室interop
+        this.client = AgoraRTC.createClient({mode: 'h264_interop'});//如果和移动端通信则所有端都必须设置为'h264_interop'编码// OSManager.OS == "IOS" ?AgoraRTC.createClient({mode: 'h264_interop'}) : AgoraRTC.createClient({mode: 'interop'});//创建互动音视频教室interop,ios需要特殊处理否则publish失败
         this.client.init(appId, function () {
             console.log("AgoraRTC client initialized");
             selfInstance.client.join(selfInstance.mediaChannelID, selfInstance.channelName, null, function(uid) {
@@ -118,7 +118,13 @@ class AgoraMediaProxy{
                     //selfInstance.localStream = AgoraRTC.createStream({streamID: uid, audio: false, cameraId: camera, microphoneId: microphone, video: false, screen: true, extensionId: 'minllpmhdgpndnkomcoccfekfegnlikg'});
                     if (needVideoMode) {
                         //selfInstance.localStream.setVideoProfile('720p_3');
-                        selfInstance.localStream.setVideoProfile('480p_4');//降低清晰度,减少带宽占用
+                        if(OSManager.OS == "IOS"){
+                            //IOS的清晰度,需要特殊处理,否则video publish 失败
+                            selfInstance.localStream.setVideoProfile('480p_4');//降低清晰度,减少带宽占用
+                        }else{
+                            //PC 和android的清晰度设置
+                            selfInstance.localStream.setVideoProfile('480p_4');//降低清晰度,减少带宽占用
+                        }
                     }
 
                     // The user has granted access to the camera and mic.
@@ -218,7 +224,7 @@ class AgoraMediaProxy{
     publish() {
         if(!this.client)
             return;
-        this.client.publish(localStream, function (err) {
+        this.client.publish(this.localStream, function (err) {
             console.log("Publish local stream error: " + err);
         });
     }
@@ -229,7 +235,7 @@ class AgoraMediaProxy{
     unpublish() {
         if(!this.client)
             return;
-        this.client.unpublish(localStream, function (err) {
+        this.client.unpublish(this.localStream, function (err) {
             console.log("Unpublish local stream failed" + err);
         });
     }

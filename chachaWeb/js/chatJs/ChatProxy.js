@@ -64,7 +64,7 @@ class ChatProxy{
         }
         if(this.isShow == false){
             this.chatPanel.style.display = "inline-block";
-            $("#tb_chatInput").focus();
+            //$("#tb_chatInput").focus();//不聚焦,否则在移动端一打开聊天界面就弹出键盘
         }else{
             this.chatPanel.style.display = "none";
             $("#tb_chatInput").blur();
