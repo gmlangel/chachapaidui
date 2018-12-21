@@ -19,7 +19,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     fileprivate var reconnectTimer:Timer!;//用于重连的timer
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        
         //开启Socket 服务
         toConnectSocket();
         NotificationCenter.default.addObserver(self, selector: #selector(onSocketConnected), name: SOCKET_CONNECTED, object: nil);
