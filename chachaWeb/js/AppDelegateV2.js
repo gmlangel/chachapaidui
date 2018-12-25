@@ -10,6 +10,7 @@ class AppDelegate{
     }
 
     constructor(){
+        //.rn  .ri .ownnerUID
         this.dataBuffer = "";
         this.packageSize = 500;//数据包的最大长度
         this.minWidth = 1000;//界面最小宽度
@@ -39,10 +40,41 @@ class AppDelegate{
                     "loginName":getUserUid.toString(10),
                     "resourcePath":""
                 };
-                AppDelegate.app.linkServer();//链接socket
+                //获取课程信息
+                AppDelegate.app.reqServer(this.gmlhost + "getLessonInfoByCid",{
+                        "cid":AppDelegate.app.cid,
+                    },"post",function(data){
+                    if(data.Code == "1"){
+                        let jsonStr = data.Msg[0].BlescustomInfo;
+                        let dataObj = JSON.parse(jsonStr);
+                        AppDelegate.app.roomInfo = data.Msg[0];
+                        AppDelegate.app.roomInfo["rn"] = "gmlchannel_"+AppDelegate.app.cid;
+                        AppDelegate.app.roomInfo["rid"] = AppDelegate.app.cid;
+                        AppDelegate.app.roomInfo["teachingMaterialPath"] = dataObj.teachingMaterialPath;
+                        AppDelegate.app.getOwnnerUID(AppDelegate.app.cid);
+
+                    }
+
+                });
+
             }
 
         });
+    }
+
+    /**
+     * 获取教室的主讲
+     * */
+    getOwnnerUID(_cid){
+        //获取课程信息
+        AppDelegate.app.reqServer(this.gmlhost + "getOwnerUIDByCid",{
+            "cid":AppDelegate.app.cid,
+        },"post",function(data){
+            if(data.Code == "1"){
+                this.roomInfo["ownnerUID"] = data.Msg;
+                AppDelegate.app.linkServer();//链接socket
+            }
+        })
     }
 
     /**
@@ -100,7 +132,7 @@ class AppDelegate{
     /**
      * 开始游戏
      * */
-    startClass(_loginName,_roomCode = "testchanel_1"){
+    startClass(_loginName,cid = "1"){
         if(OSManager.OS == "IOS" || OSManager.OS == "Android")
         {
             window.addEventListener("touchstart",function(evt){
@@ -155,7 +187,8 @@ class AppDelegate{
         }
 
         this.loginName = _loginName;
-        this.roomCode = _roomCode;
+        this.roomCode = "testchanel_" + cid;
+        this.cid = cid;
         this.bgAudio.play();
         this.bgAudio.loop = true;
         this.bgVideo.play();
@@ -173,8 +206,8 @@ class AppDelegate{
         clearTimeout(this.linkServerTimerId);//清除上一次的倒计时重连
         //链接socket
         this.remoteStopWS = false;
-        //this.ws = new WebSocketHandler("wss://www.juliaol.cn/gmlws",[]);//https的请求格式
-        this.ws = new WebSocketHandler("ws://localhost:31111",[]);//本地http服务的请求格式
+        //this.ws = new WebSocketHandler("wss://www.juliaol.cn/acpws",[]);//https的请求格式
+        this.ws = new WebSocketHandler("ws://localhost:32222",[]);//本地http服务的请求格式
         this.ws.addEventListener(WebSocketEvent.SOCKET_CLOSE,this.onSocketClose,this)
         this.ws.addEventListener(WebSocketEvent.SOCKET_DATA,this.onSocketData,this);
         this.ws.addEventListener(WebSocketEvent.SOCKET_ERROR,this.onSocketError,this)
@@ -526,23 +559,22 @@ class AppDelegate{
             let jsonObj = JSON.parse(data);
             switch(jsonObj.cmd){
                 case 0x00FF0004:
+                    this.userinfo = jsonObj;//设置全局用户信息
                     //登陆信息回调
                     if(jsonObj.code == 0){
-                        需要先通过CID 获取课程信息,然后改写AppDelegate_TestGame2.js 的roomMap 以及进入教室逻辑,做到roomMap的自动创建,而不是预留
-                        //this.userinfo = jsonObj;//设置全局用户信息
                         ////进入教室
-                        //let req = {
-                        //    "cmd":0x00FF0014,
-                        //    "seq":0,
-                        //    "rc":this.roomCode,
-                        //    "uid":this.httpUserinfo.uid,
-                        //    "nn":this.httpUserinfo.nn,
-                        //    "hi":this.httpUserinfo.hi,
-                        //    "sex":this.httpUserinfo.sex,
-                        //    "ca":{x:34,y:387},//{x:parseInt(this.scene.width/2+Math.random()*100),y:parseInt(this.scene.height/2+Math.random()*100)},
-                        //    "rp":""
-                        //};
-                        //this.sendDataToServer(JSON.stringify(req));
+                        let req = {
+                            "cmd":0x00FF0014,
+                            "seq":0,
+                            "rid":parseInt(this.cid),
+                            "uid":this.httpUserinfo.uid,
+                            "nn":this.httpUserinfo.nickName,
+                            "hi":this.httpUserinfo.headerImage,
+                            "sex":this.httpUserinfo.sex,
+                            "ca":{x:34,y:387},//{x:parseInt(this.scene.width/2+Math.random()*100),y:parseInt(this.scene.height/2+Math.random()*100)},
+                            "rp":""
+                        };
+                        this.sendDataToServer(JSON.stringify(req));
                     }else{
                         console.log("登录失败")
                     }
@@ -559,7 +591,8 @@ class AppDelegate{
                 case 0x00FF0015:
                     //进入教室回调
                     if(jsonObj.code == 0){
-                        this.roomInfo = jsonObj;
+                        this.roomInfo.ua = jsonObj.ua;
+                        this.roomInfo.mediaMap = jsonObj.mediaMap;
                         console.log("进入教室成功");
                         this._trueBegin();
                     }else{

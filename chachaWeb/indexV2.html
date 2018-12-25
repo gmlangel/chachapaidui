@@ -41,11 +41,22 @@
             rukou.style.display = "none";
             AppDelegate.app.init();
             AppDelegate.app.resize(window.innerWidth,window.innerHeight);
-            let cid = 15;
-            let uid = 5;
-            AppDelegate.app.startClass(uid.toString(10),"testchanel_" + cid);
+            let cid = getQueryString("cid");
+            let uid = getQueryString("uid");
+            AppDelegate.app.startClass(uid,cid);
         }
 
+        //取URL参数
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);  //获取url中"?"符后的字符串并正则匹配
+            var context = "";
+            if (r != null)
+                context = r[2];
+            reg = null;
+            r = null;
+            return context == null || context == "" || context == "undefined" ? "" : context;
+        }
 
         window.addEventListener("resize",function(){
             AppDelegate.app.resize(window.innerWidth,window.innerHeight);

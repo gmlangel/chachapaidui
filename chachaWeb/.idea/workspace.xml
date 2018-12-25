@@ -21,24 +21,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../ACP/GMLClinet/webClient/src/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="27.5">
-              <caret line="20" column="47" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppDelegateV2.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AppDelegateV2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/AppDelegateV2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2821369">
-              <caret line="530" column="107" selection-start-line="530" selection-start-column="107" selection-end-line="530" selection-end-column="107" />
+            <state vertical-scroll-proportion="-5.148148">
+              <caret line="204" column="14" selection-start-line="204" selection-start-column="4" selection-end-line="204" selection-end-column="14" />
               <folding>
-                <marker date="1545386285000" expanded="true" signature="11023:11081" placeholder="..." />
-                <marker date="1545386285000" expanded="true" signature="21639:21697" placeholder="..." />
+                <marker date="1545724177000" expanded="true" signature="12235:12293" placeholder="..." />
+                <marker date="1545724177000" expanded="true" signature="22807:22865" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -47,8 +37,8 @@
       <file leaf-file-name="indexV2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/indexV2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.1764708">
-              <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+            <state vertical-scroll-proportion="-2.6470587">
+              <caret line="9" column="42" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="42" />
               <folding>
                 <element signature="n#style#0;n#input#0;n#span#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -57,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppDelegate.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AppDelegate.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/AppDelegate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.703704">
-              <caret line="493" column="50" selection-start-line="493" selection-start-column="50" selection-end-line="493" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.8080134">
+              <caret line="417" column="114" selection-start-line="417" selection-start-column="78" selection-end-line="417" selection-end-column="114" />
               <folding>
                 <marker date="1545386159000" expanded="true" signature="9854:9912" placeholder="..." />
                 <marker date="1545386159000" expanded="true" signature="20438:20496" placeholder="..." />
@@ -100,8 +90,8 @@
         <option value="$PROJECT_DIR$/css/pdfLoaderCss/gmlExtention.css" />
         <option value="$PROJECT_DIR$/js/chatJs/ChatProxy.js" />
         <option value="$PROJECT_DIR$/js/AgoraMediaProxy.js" />
-        <option value="$PROJECT_DIR$/indexV2.html" />
         <option value="$PROJECT_DIR$/js/AppDelegate.js" />
+        <option value="$PROJECT_DIR$/indexV2.html" />
         <option value="$PROJECT_DIR$/js/AppDelegateV2.js" />
       </list>
     </option>
@@ -112,6 +102,7 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="-24" />
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="723" />
@@ -141,7 +132,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -353,6 +343,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -361,6 +352,7 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ACP/GMLClinet" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -441,7 +433,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="723" extended-state="6" />
+    <frame x="-24" y="23" width="1280" height="723" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -693,11 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2821369">
           <caret line="810" column="16" selection-start-line="810" selection-start-column="16" selection-end-line="810" selection-end-column="16" />
-          <folding>
-            <marker date="1539935065000" expanded="true" signature="11483:11494" placeholder="..." />
-            <marker date="1539935065000" expanded="true" signature="11545:11582" placeholder="..." />
-            <marker date="1539935065000" expanded="true" signature="35219:35248" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -752,7 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="65" selection-start-line="6" selection-start-column="65" selection-end-line="6" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -768,9 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34551495">
           <caret line="69" column="12" selection-start-line="69" selection-start-column="12" selection-end-line="69" selection-end-column="12" />
-          <folding>
-            <marker date="1538279325000" expanded="true" signature="5695:5753" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -831,16 +814,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../ACP/GMLClinet/webClient/src/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="27.5">
-          <caret line="20" column="47" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.72591364">
+          <caret line="417" column="97" selection-start-line="417" selection-start-column="97" selection-end-line="417" selection-end-column="97" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/indexV2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.1764708">
-          <caret line="43" column="25" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+        <state vertical-scroll-proportion="-2.6470587">
+          <caret line="9" column="42" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="42" />
           <folding>
             <element signature="n#style#0;n#input#0;n#span#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#span#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -848,24 +831,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/AppDelegate.js">
+    <entry file="file://$PROJECT_DIR$/js/AppDelegateV2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.703704">
-          <caret line="493" column="50" selection-start-line="493" selection-start-column="50" selection-end-line="493" selection-end-column="50" />
+        <state vertical-scroll-proportion="-5.148148">
+          <caret line="204" column="14" selection-start-line="204" selection-start-column="4" selection-end-line="204" selection-end-column="14" />
           <folding>
-            <marker date="1545386159000" expanded="true" signature="9854:9912" placeholder="..." />
-            <marker date="1545386159000" expanded="true" signature="20438:20496" placeholder="..." />
+            <marker date="1545724177000" expanded="true" signature="12235:12293" placeholder="..." />
+            <marker date="1545724177000" expanded="true" signature="22807:22865" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/AppDelegateV2.js">
+    <entry file="file://$PROJECT_DIR$/js/AppDelegate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2821369">
-          <caret line="530" column="107" selection-start-line="530" selection-start-column="107" selection-end-line="530" selection-end-column="107" />
+        <state vertical-scroll-proportion="0.8080134">
+          <caret line="417" column="114" selection-start-line="417" selection-start-column="78" selection-end-line="417" selection-end-column="114" />
           <folding>
-            <marker date="1545386285000" expanded="true" signature="11023:11081" placeholder="..." />
-            <marker date="1545386285000" expanded="true" signature="21639:21697" placeholder="..." />
+            <marker date="1545386159000" expanded="true" signature="9854:9912" placeholder="..." />
+            <marker date="1545386159000" expanded="true" signature="20438:20496" placeholder="..." />
           </folding>
         </state>
       </provider>
